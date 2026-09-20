@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+% are used to comment out text
+
+%------------------------------------------------------------------------------------------------------------
+%EDIT THESE FIELDS WITH YOUR DETAILS
+%------------------------------------------------------------------------------------------------------------
+\newcommand{\studentname}{Chen Zhi Shen}
+\newcommand{\studentnumber}{1644420}
+
+\title{Lab 3 Report}
+
+%\newcommand{\tutor}{Fan Hao}
+\newcommand{\labgroup}{M1.03}
+\newcommand{\labdate}{28th October 2024}
+\newcommand{\reportdate}{\today}
+%------------------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------------------
+%PACKAGES. PACKAGES ARE USED TO EXTEND THE FUNCTIONALITY OF LATEX. YOU SHOULDN'T
+%NEED ANY MORE, SPEND YOUR TIME ON THE CONTENT!
+%------------------------------------------------------------------------------------------------------------
+
+\usepackage[a4paper,left=25mm,right=25mm,bottom=25mm,top=25mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage[british]{babel}
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage{csvsimple}
+\usepackage{graphicx}
+\usepackage{pgfplotstable,filecontents}
+\usepackage{gensymb}
+\usepackage{array}
+\usepackage{tabu}
+\usepackage{multirow}
+\usepackage{url}
+\pgfplotsset{compat=1.9}% supress warning
+\begin{document}
+
+%------------------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------------------
+%DO NOT EDIT THESE FIELDS
+%------------------------------------------------------------------------------------------------------------
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+\author{\studentname ~ \studentnumber. Lab group: \labgroup.}
+\date{Lab date: \labdate. Report date: \reportdate.}
+
+\renewcommand\abstractname{Summary}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\studentname~\studentnumber}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand\bibname{References}
+
+%------------------------------------------------------------------------------------------------------------
+
+%\renewcommand\abstractname{Abstract}
+\maketitle
+
+%------------------------------------------------------------------------------------------------------------
+%YOUR REPORT BEGINS HERE
+%------------------------------------------------------------------------------------------------------------
+\section{Lab Introduction and Team Information}
+The aim of this laboratory work\cite{Paper2014} is to ...
+
+Our team members include ...
+
+Tasks for team members.
+
+\section{Individual Work}
+Question 1:
+
+Answer 1:
+
+Question 2:
+
+Answer 2:
+
+\section{Team Work}
+Task 1:
+
+Answer 1:
+
+Task 2:
+
+Answer 2:
+
+\section{Discussion}
+...
+
+\section{Conclusions}
+...
+%------------------------------------------------------------------------------------------------------------
+%YOUR REPORT ENDS HERE, THEN THE BIBLIOGRAPHY IS CREATED AND DOCUMENT ENDED
+%------------------------------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+
+%------------------------------------------------------------------------------------------------------------
+%BELOW ARE JUST EXAMPLE SECTIONS TO HELP YOU - PLEASE DELETE THEM
+%------------------------------------------------------------------------------------------------------------
+
+\end{document}
