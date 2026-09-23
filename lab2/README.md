@@ -11,3 +11,5 @@ LAB2 简要实验说明：https://spurious-cornflower-507.notion.site/Lab2-ROS-1
 LAB2实验代码：https://github.com/MIT-SPARK/VNAV-labs
 
 实验报告同之前要求
+
+实施规划见：[Lab2 实施方案](PLAN.md)（环境与版本、步骤、数学校验、验收和一周安排）。
