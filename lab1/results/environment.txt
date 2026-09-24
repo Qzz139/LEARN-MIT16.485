@@ -1,0 +1,95 @@
+Lab 1 — scoring item 1: Ubuntu installation and setup
+Recorded on: 2026-09-24 (Asia/Shanghai)
+
+Requirement and installation method
+-----------------------------------
+The course slide asks for Ubuntu 20.04 and recommends a VM for class use.
+The actual environment is Ubuntu 20.04.6 LTS (amd64) on WSL 2, installed
+alongside the pre-existing Ubuntu 26.04.1 LTS distribution. It is not a
+bare-metal or full-desktop Ubuntu installation. The Windows default distro
+was left as the pre-existing "Ubuntu" distribution.
+
+Image source and integrity
+--------------------------
+Official image: https://releases.ubuntu.com/focal/ubuntu-20.04.6-wsl-amd64.wsl
+Download command on Windows:
+  curl.exe -L --fail --silent --show-error --output C:\Users\QZ\Downloads\ubuntu-20.04.6-wsl-amd64.wsl https://releases.ubuntu.com/focal/ubuntu-20.04.6-wsl-amd64.wsl
+Verification command:
+  certutil.exe -hashfile C:\Users\QZ\Downloads\ubuntu-20.04.6-wsl-amd64.wsl SHA256
+Observed SHA-256:
+  a9073f3726aab9661076506603706eadf284b80a791dec3adfde8e1989906fa4
+This matches https://releases.ubuntu.com/focal/SHA256SUMS.
+Install command:
+  wsl.exe --install --from-file C:\Users\QZ\Downloads\ubuntu-20.04.6-wsl-amd64.wsl
+
+System verification
+-------------------
+Command: wsl.exe --list --verbose
+Observed after installation:
+  NAME           STATE    VERSION
+* Ubuntu         Running  2
+  Ubuntu-20.04   Running  2
+
+Command: wsl.exe --distribution Ubuntu-20.04 --user root --exec cat /etc/os-release
+Relevant observed lines:
+  PRETTY_NAME="Ubuntu 20.04.6 LTS"
+  VERSION_ID="20.04"
+  VERSION_CODENAME=focal
+
+Command: wsl.exe --distribution Ubuntu-20.04 --user root --exec uname -m
+Observed output: x86_64
+
+Package update and development tools
+------------------------------------
+Commands executed successfully inside Ubuntu-20.04 as root:
+  apt-get update
+  DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+  DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake git
+The update fetched package indexes from archive.ubuntu.com and
+security.ubuntu.com. The upgrade updated 6 packages. The install added 40
+packages; Git was already installed. A subsequent `apt-get -s upgrade`
+reported: "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded."
+
+Command: dpkg-query -W build-essential cmake git
+Observed output:
+  build-essential  12.8ubuntu1.1
+  cmake            3.16.3-1ubuntu1.20.04.1
+  git              1:2.25.1-1ubuntu3.14
+
+Command: g++ --version
+Observed first line: g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Command: cmake --version
+Observed first line: cmake version 3.16.3
+Command: git --version
+Observed output: git version 2.25.1
+Command: make --version
+Observed first line: GNU Make 4.2.1
+
+Normal user and sudo verification
+---------------------------------
+The owner completed first-run setup interactively and chose Linux user qz.
+Command: wsl.exe --distribution Ubuntu-20.04 --exec id
+Observed output:
+  uid=1000(qz) gid=1000(qz) groups=1000(qz),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev)
+Command: wsl.exe --distribution Ubuntu-20.04 --user root --exec passwd -S qz
+Observed first two fields: qz P (a password is set).
+Command: wsl.exe --distribution Ubuntu-20.04 --user root --exec sudo -l -U qz
+Observed permission: (ALL : ALL) ALL
+
+Compiler smoke test as the normal user
+--------------------------------------
+Source: lab1/results/toolchain_smoke.cpp (also copied to
+        /home/qz/lab1-toolchain-smoke.cpp in Ubuntu-20.04)
+Command:
+  g++ -std=c++11 -Wall -Wextra -pedantic /home/qz/lab1-toolchain-smoke.cpp -o /home/qz/lab1-toolchain-smoke
+Compile exit status: 0, no warnings or errors.
+Command: /home/qz/lab1-toolchain-smoke
+Observed output: Ubuntu 20.04 toolchain OK
+Run exit status: 0. Both the source and executable are owned by qz.
+
+Scope of this verification
+--------------------------
+The installation and command-line development setup are complete for the
+chosen WSL 2 route. No Ubuntu 20.04 desktop GUI or Lab 3/4 Unity simulation
+has been validated here. A WSL localhost-proxy warning appeared on startup,
+but package downloads from Ubuntu's official repositories succeeded.

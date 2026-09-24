@@ -1,0 +1,75 @@
+Lab 1 — scoring item 3: Shell operations
+Recorded on: 2026-09-24 (Asia/Shanghai)
+Environment: Ubuntu 20.04.6 LTS on WSL 2, user qz.
+Exercise source: https://vnav.mit.edu/labs_2023/lab1/exercises.html
+
+Exercise 1 — Dante text
+-----------------------
+Original input URL:
+  https://raw.githubusercontent.com/dlang/dmd/master/druntime/benchmark/extra-files/dante.txt
+The Ubuntu wget attempt connected but did not receive a response; the
+Windows curl GET was reset. The file was fetched from the same repository
+through jsDelivr and compared byte-for-byte with GitHub's official Contents
+API response. Thus the input is the repository file, not a rewritten copy.
+CDN URL:
+  https://cdn.jsdelivr.net/gh/dlang/dmd@master/druntime/benchmark/extra-files/dante.txt
+GitHub API URL:
+  https://api.github.com/repos/dlang/dmd/contents/druntime/benchmark/extra-files/dante.txt
+Git blob SHA-1: b1e6976c42f8e92fc9a71a0f0633f36f4c7a904a
+File size: 557042 bytes
+SHA-256 on Ubuntu (also matches local lab1/data/dante.txt):
+  1cd578e12a35c885028c64ee6c6b3ee1643be9dd8e45e0a9fbfa77acb2f6c279
+
+Actual Ubuntu commands and output:
+  wc -l -w /home/qz/lab1/data/dante.txt
+  19567  97676 /home/qz/lab1/data/dante.txt
+
+  grep -cve '^[[:space:]]*$' /home/qz/lab1/data/dante.txt
+  14338
+
+  grep -cve '^$' /home/qz/lab1/data/dante.txt
+  14338
+
+Blank means empty or whitespace-only. The two grep definitions agree for
+this input; there are no whitespace-only nonempty lines. The file ends with
+a newline, so wc -l also equals its text-line count. See lab1/exercise1.txt
+for the three direct answers.
+
+The default macOS locale gave wc -w = 97765 for the same bytes, whereas
+LC_ALL=C on macOS gave 97676. The submitted answer is the Ubuntu result.
+This is why the report should name the command and environment alongside
+the count.
+
+Exercise 2 — fortune append
+---------------------------
+Packages installed: fortune-mod and fortunes-min. In this non-login WSL
+shell the command was invoked as /usr/games/fortune.
+One standalone test run succeeded before the five recorded appends.
+Script: lab1/results/append_fortunes.sh
+The script creates fortunes.txt once with `: > "$output"`, then executes
+`/usr/games/fortune >> "$output"` exactly five times. Observed output:
+  append 1: 53 bytes total
+  append 2: 175 bytes total
+  append 3: 365 bytes total
+  append 4: 388 bytes total
+  append 5: 441 bytes total
+
+Final artifact: lab1/fortunes.txt, 441 bytes, 9 text lines.
+SHA-256 (same in Ubuntu and the local working tree):
+  4bf79873e408c5c1db4c1100a7d315a04b20a6a93e29044358b6a4d6970418aa
+The file's 9 text lines are not the number of fortune invocations; each
+fortune can contain multiple lines. The script and cumulative byte totals
+record the five separate append operations.
+
+Basic Shell operations
+----------------------
+Script: lab1/results/shell_basics.sh
+The Ubuntu run used mkdir, cd, pwd, >, cp, mv, chmod, find, a pipe, and wc.
+Relevant observed output:
+  working directory: /home/qz/lab1/shell-demo
+  files: original.txt renamed.txt
+  renamed file permissions: 640
+  word count through a pipe: 2
+The command exited with status 0. The `>` operator created/replaced the
+single-line practice file; the `>>` operator in the fortune exercise kept
+the existing file and appended each new result.

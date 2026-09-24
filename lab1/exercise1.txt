@@ -1,0 +1,21 @@
+Lab 1 Shell exercise 1 — Dante text statistics
+
+Input: dante.txt from the MIT exercise URL
+https://raw.githubusercontent.com/dlang/dmd/master/druntime/benchmark/extra-files/dante.txt
+SHA-256: 1cd578e12a35c885028c64ee6c6b3ee1643be9dd8e45e0a9fbfa77acb2f6c279
+
+1. How many lines does it contain? 19567
+   Command on Ubuntu 20.04: wc -l data/dante.txt
+
+2. How many words does it contain? 97676
+   Command on Ubuntu 20.04: wc -w data/dante.txt
+
+3. How many lines are not blank? 14338
+   Command on Ubuntu 20.04: grep -cve '^[[:space:]]*$' data/dante.txt
+   A blank line means an empty line or a line containing only whitespace.
+   For this input, grep -cve '^$' gives the same result: there are no
+   whitespace-only nonempty lines. The file ends with a newline.
+
+The downloaded bytes were checked against the GitHub repository via its API.
+The file is 557042 bytes. The word count above is from Ubuntu; macOS with
+its default locale gave a different word count, while LC_ALL=C matched Ubuntu.

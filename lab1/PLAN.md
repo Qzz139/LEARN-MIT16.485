@@ -1,6 +1,6 @@
 # Lab 1 实施方案
 
-状态：规划稿，2026-09-24。本文安排后续实验，尚未安装 Ubuntu、编写实验代码或生成实测结果。
+状态：执行中，2026-09-24。得分点 1–3 已在远程 x86-64 主机的 WSL 2 Ubuntu 20.04.6 中完成；实测记录见 [environment.txt](results/environment.txt)、[compile_examples.txt](results/compile_examples.txt) 和 [shell.txt](results/shell.txt)。C++ 问答、实践及报告待完成。
 
 目标：搭好后续课程可复用的 Linux 开发环境，完成 Lab 1 各项练习，形成可复现的代码、实验报告和现场演示。
 
@@ -10,7 +10,7 @@
 
 | 评分部分 | 本课程分值 | 计划完成内容 | 验收证据 |
 | --- | ---: | --- | --- |
-| Ubuntu 安装与配置 | 40 | 可用的 Ubuntu 20.04、软件源与开发工具 | 系统及架构信息、工具版本、配置过程与运行截图 |
+| Ubuntu 安装与配置 | 40 | 可用的 Ubuntu 20.04、软件源与开发工具 | 系统及架构信息、工具版本、配置过程与运行记录 |
 | 编译示例代码 | 5 | 编译并运行教学示例，理解编译和链接流程 | 源文件、编译命令、实际输出 |
 | Shell 操作 | 5 | 文本统计、输出追加，练习文件和权限操作 | `exercise1.txt`、`fortunes.txt`、命令记录 |
 | C++ 问答 | 25 | 按原题逐题解释运算符、引用指针和数值类型 | `cpp-warmup.txt`、必要的小程序验证 |
@@ -24,15 +24,20 @@ Git 学习贯穿实验；本课程评分表没有单列 Git 分数。课程还�
 
 课程指定 Ubuntu 20.04，课件第 2 页推荐课堂使用虚拟机；后续 Lab 2 对应的 MIT 教程使用 ROS Noetic，所以本方案保留这套版本组合。[MIT 环境要求](https://vnav.mit.edu/labs_2023/lab1/ubuntu.html)、[Lab 2 ROS 安装说明](https://vnav.mit.edu/labs_2023/lab2/ros.html)。
 
-当前工作区宿主机实测为 macOS / arm64，但实际做实验的设备尚未确认，按以下条件选择：
+当前工作区宿主机为 macOS / arm64；Lab 1 实际使用远程 Windows x86-64 主机上的 WSL 2 Ubuntu 20.04。下表保留其他路线供后续实验选择：
 
 | 可用设备 | 建议路线 | 开始前需核实 |
 | --- | --- | --- |
 | 已有 Ubuntu 20.04 机器 | 复用并记录环境；补齐开发工具 | 是否有安装软件权限、是否能保留实验文件 |
-| 可用 x86-64 电脑或实验室电脑 | 优先使用 Ubuntu 20.04 amd64 虚拟机或已有安装 | 宿主机资源、桌面与网络是否可用 |
+| 可用 x86-64 电脑或实验室电脑 | 覆盖全部 Lab 时优先原生 Ubuntu 20.04 amd64（独立安装或双系统）；Lab 1/2 可先用虚拟机 | Ubuntu 安装方式、图形性能与磁盘空间 |
 | 仅有当前 Apple 芯片 Mac | 用 UTM 的 ARM64 虚拟机路线评估 Ubuntu 20.04；先验证软件包和桌面 | 后续 Noetic、RViz 及课程依赖能否运行；不能直接承诺后续所有 Lab 均兼容 |
+| 打算使用树莓派 | 树莓派 4 可评估 Ubuntu 20.04 ARM64 完成 Lab 1/2 等任务；Lab 3/4 的仿真需另有 x86-64 电脑 | 树莓派型号、内存和系统版本；树莓派 5 的官方 Ubuntu 支持从 24.04 LTS 起 |
 
 Apple 芯片上的 ARM64 虚拟化与 x86-64 模拟是不同路线；UTM 官方说明后者性能更低。若只能使用 Mac，优先评估 ARM64，并尽早做 Lab 2 图形环境验证；若后续依赖受阻，再转实验室 x86 环境。[UTM 官方说明](https://mac.getutm.app/)。
+
+树莓派也不能作为“后续所有 Lab 都可独立完成”的默认保证：MIT 2023 [Lab 3](https://vnav.mit.edu/labs_2023/lab3/exercises.html) 和 [Lab 4](https://vnav.mit.edu/labs_2023/lab4/exercises.html) 分别要求运行预编译的 `lab3.x86_64` 和 `lab4.x86_64` Unity 仿真程序，ARM 设备不能原样执行。树莓派可以承担部分 ROS、C++、视觉代码的开发；仿真演示和 Lab 9 的完整 SLAM 数据集建议预留 x86-64 电脑。[Ubuntu 树莓派支持表](https://ubuntu.com/hardware/docs/boards/how-to/ubuntu_supported/raspberry-pi/)。
+
+若 x86 主机原来运行 Windows，三种方式按全课程适用性排序：双系统原生 Ubuntu 优先；虚拟机可先做早期实验，但应尽早试跑 Lab 3 Unity 仿真和 RViz；WSL2 更适合作为代码与命令行辅助环境。WSL2 支持单个 Linux 图形应用，但并非完整桌面，默认 NAT 网络也可能增加仿真桥接配置。[WSL 图形应用](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)、[WSL 网络](https://learn.microsoft.com/en-us/windows/wsl/networking)。虚拟机具备 3D 加速支持，但实际帧率需在目标机器验证。[VirtualBox 3D 说明](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/guestadditions.html)。双系统安装前备份数据；若 Windows 启用 BitLocker，先核对密钥与安装流程。[Ubuntu 双系统安装说明](https://ubuntu.com/tutorials/install-ubuntu-desktop)。
 
 虚拟机资源建议从 4 核、4–8 GB 内存、40–60 GB 磁盘起步，按宿主机余量调整；这是实施建议，不是评分条件。x86 安装镜像可从 [Ubuntu 20.04.6 官方目录](https://releases.ubuntu.com/20.04/) 获取；ARM64 需要选择对应架构的镜像，不能混用 amd64 ISO。
 
@@ -40,11 +45,12 @@ Ubuntu 20.04 已于 2025 年 5 月结束标准维护；实施时需检查实际�
 
 ### 环境配置和验收
 
-在目标 Ubuntu 中安装基础依赖；以下为计划命令，并未在当前 Mac 上执行：
+已在目标 Ubuntu 中以 root 执行以下命令，并记录了实际输出；`wget`、Eigen 和 fortune 数据包按后续练习需要再安装，详见 [environment.txt](results/environment.txt)：
 
 ```bash
-sudo apt update
-sudo apt install build-essential cmake git wget libeigen3-dev fortune-mod fortunes-min
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake git
 
 cat /etc/os-release
 uname -m
@@ -53,7 +59,7 @@ cmake --version
 git --version
 ```
 
-完成联网、终端、编辑器和文件共享配置，保存实际版本信息到 `results/environment.txt`。配置完成后保存虚拟机快照或环境说明，便于后续 Lab 复用。
+已验证软件源联网、普通用户终端和工具版本，实测信息保存在 `results/environment.txt`。编辑器、文件共享和 WSL 备份按后续实验需要配置。
 
 退出条件：Ubuntu 能启动；依赖安装完成；`g++`、CMake 和 Git 可用；能在 Ubuntu 内编译并运行最小 C++ 程序。Mac 上的编译结果可辅助开发，最终保留目标 Ubuntu 中的验收结果。
 
@@ -139,7 +145,7 @@ g++ -std=c++11 -Wall -pedantic -o random_vector main.cpp random_vector.cpp
 
 ## 5. 交付物组织
 
-建议在现有 `lab1/` 下逐步增加以下内容，保留原始课件和报告模板。本次只新增本方案文件，以下实验产物仍待完成。
+建议在现有 `lab1/` 下逐步增加以下内容，保留原始课件和报告模板。环境、示例编译和 Shell 练习产物已完成，C++ 问答、实践和报告仍待完成。
 
 ```text
 lab1/
@@ -156,7 +162,8 @@ lab1/
     dante.txt
   results/
     environment.txt
-    commands.txt           # 运行命令、工作目录、输入来源及版本
+    compile_examples.txt   # 两种编译方式的命令和输出
+    shell.txt              # Shell 命令、数据来源和结果
     random_vector.txt
     validation.md          # 预期行为、实测行为与解释
     screenshots/
@@ -167,13 +174,13 @@ lab1/
 
 构建目录和可执行文件作为本地产物管理；保留重建它们所需的源代码和命令。若提交平台要求不同目录结构，在提交时调整打包布局。
 
-报告采用“目的与任务 → 环境配置 → 各部分方法和结果 → 问题分析 → 个人总结”的结构，代码与终端截图配解释。现有 [template.tex](Materials1LabReport/template.tex) 可参考，但其中学生信息、`Lab 3 Report`、组号和旧日期都是占位内容，需要替换；同目录下的 `Torsion.csv` 不是当前 Lab 1 的明确任务输入。
+报告采用“目的与任务 → 环境配置 → 各部分方法和结果 → 问题分析 → 个人总结”的结构，代码与文字记录或终端截图配解释。现有 [template.tex](Materials1LabReport/template.tex) 可参考，但其中学生信息、`Lab 3 Report`、组号和旧日期都是占位内容，需要替换；同目录下的 `Torsion.csv` 不是当前 Lab 1 的明确任务输入。
 
 ## 6. 提交与现场检查清单
 
-- [ ] Ubuntu、工具版本和实际设备架构有记录。
-- [ ] 所选教学示例能运行，并能说明实际编译命令。
-- [ ] Shell 统计可从保存的输入重新计算，fortune 确为五次追加。
+- [x] Ubuntu、工具版本和实际设备架构有记录；见 [environment.txt](results/environment.txt)。
+- [x] 所选教学示例能运行，并能说明实际编译命令；见 [compile_examples.txt](results/compile_examples.txt)。
+- [x] Shell 统计可从保存的输入重新计算，fortune 确为五次追加；见 [shell.txt](results/shell.txt)。
 - [ ] C++ 问答覆盖原题，答案有推导并体现平台差异。
 - [ ] RandomVector 全部 TODO 完成，基础实现未使用 `<algorithm>` 函数。
 - [ ] 保留默认入口演示和边界验证结果，直方图计数守恒。

@@ -1,0 +1,47 @@
+Lab 1 — scoring item 2: compile example code
+Recorded on: 2026-09-24 (Asia/Shanghai)
+Environment: Ubuntu 20.04.6 LTS, WSL 2, x86_64, user qz, g++ 9.4.0,
+             CMake 3.16.3.
+
+The examples are small adaptations of the MIT VNAV C++ and CMake tutorials:
+https://vnav.mit.edu/labs_2023/lab1/cpp.html
+https://vnav.mit.edu/labs_2023/lab1/cmake.html
+
+1. Direct g++ build
+Source: lab1/examples/hello.cpp
+Working location in Ubuntu: /home/qz/lab1/examples
+Command:
+  g++ -std=c++11 -Wall -Wextra -pedantic /home/qz/lab1/examples/hello.cpp -o /home/qz/lab1/examples/hello
+Compile result: exit status 0; no warnings or errors.
+Run command:
+  /home/qz/lab1/examples/hello
+Observed output:
+  Hello from Lab 1 on Ubuntu 20.04!
+Run result: exit status 0.
+
+2. Multi-file CMake build
+Sources: lab1/examples/cmake-example/CMakeLists.txt, main.cpp,
+         message.hpp, message.cpp
+Commands:
+  cmake -S /home/qz/lab1/examples/cmake-example -B /home/qz/lab1/examples/cmake-example/build
+  cmake --build /home/qz/lab1/examples/cmake-example/build
+Relevant observed configure output:
+  -- The CXX compiler identification is GNU 9.4.0
+  -- Configuring done
+  -- Generating done
+Relevant observed build output:
+  [ 50%] Linking CXX static library libmessage.a
+  [100%] Linking CXX executable example
+  [100%] Built target example
+Both commands exited with status 0.
+Run command:
+  /home/qz/lab1/examples/cmake-example/build/example
+Observed output:
+  CMake library link OK
+Run result: exit status 0.
+
+Interpretation: message.hpp declares the function; message.cpp defines it.
+CMake compiled message.cpp into a static library, compiled main.cpp into an
+object file, then linked both into the executable. The build directory is
+generated output; the source files and commands above are sufficient to
+reproduce it.
