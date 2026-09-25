@@ -1,0 +1,41 @@
+Lab 2 environment record, 2026-09-25 02:58 EDT
+--- lsb_release -ds
+Ubuntu 20.04.6 LTS
+--- uname -r -m
+6.18.33.2-microsoft-standard-WSL2 x86_64
+--- rosversion -d
+noetic
+--- rosversion roscpp / tf2_ros / rviz / turtlesim
+roscpp 1.17.4
+tf2_ros 0.7.10
+rviz 1.14.26
+turtlesim 0.10.3
+--- catkin --version
+catkin_tools 0.9.4 (C) 2014-2026 Open Source Robotics Foundation
+--- g++ / cmake
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+cmake version 3.16.3
+--- ROS apt source (ros-apt-source 1.3.0~focal)
+Types: deb deb-src
+URIs: http://packages.ros.org/ros/ubuntu
+Suites: focal
+Components: main
+Signed-By: /usr/share/keyrings/ros-archive-keyring.gpg
+--- ROS environment
+ROS_DISTRO=noetic
+ROS_MASTER_URI=http://localhost:11311
+ROS_PYTHON_VERSION=3
+ROS_VERSION=1
+--- display
+DISPLAY=:0 WAYLAND_DISPLAY=wayland-0
+--- upstream lab code
+VNAV2023
+7d234d8b3618f0090b61fc6551f3e582db116f9c
+--- Windows host (cmd /c ver; wsl.exe --version)
+
+Microsoft Windows [Version 10.0.26200.9457]
+WSL version: 2.7.12.0
+Kernel version: 6.18.33.2-2
+WSLg version: 1.0.73.2
+MSRDC version: 1.2.7214
+Windows version: 10.0.26200.9457

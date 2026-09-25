@@ -1,0 +1,15 @@
+python3 check_tf.py 12 tf_samples.csv   (2026-09-25 03:35 EDT)
+samples: 300 over 11.96 s -> tf_samples.csv
+max |AV1: x^2 + y^2 - 1| = 2.22e-16
+max |AV1: z| = 0.00e+00
+max |AV1: yaw - atan2(y, x)  [rad]| = 4.44e-16
+max |AV1: |(q_x, q_y)| (roll/pitch part)| = 0.00e+00
+max |AV2: y| = 0.00e+00
+max |AV2: z - (1 - 2 x^2)| = 3.33e-16
+max |AV2: rotation angle  [rad]| = 0.00e+00
+max |av1->av2 vs analytic o_2^1(t)  [m]| = 6.14e-16
+max |av1->av2: z - 2y - 1| = 6.66e-16
+max |plane frame: z_p| = 2.98e-16
+max |plane frame: x_p^2/(1/4) + y_p^2/(5/4) - 1| = 1.78e-15
+AV1 phase rate d(atan2(y, x))/d(stamp) = 1.000000 rad/s
+x_p range: [-0.5000, 0.4999]   y_p range: [-1.1180, 1.1180]

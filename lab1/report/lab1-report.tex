@@ -21,8 +21,8 @@
   xleftmargin=0.5em,xrightmargin=0.5em,aboveskip=0.6em,belowskip=0.7em}
 
 \title[Lab 1 Report]{Lab 1: Linux, Shell, and C++ Foundations}
-\author{Xu Xuanye (24020036071 / H00490299)}
-\date{24 September 2026}
+\author{Xuanye Xu (24020036071 / H00490299)}
+\date{25 September 2026}
 
 \begin{document}
 \maketitle
@@ -50,11 +50,11 @@ its method, observed result, and saved evidence.
 \toprule
 No. & Assessed part & Points & Primary evidence \\
 \midrule
-1 & Ubuntu installation and setup & 40 & Distribution, architecture, account, and tool versions (Fig.~1). \\
-2 & Compile example code & 5 & Successful \texttt{g++} and CMake builds and executable output (Fig.~2). \\
-3 & Shell operations & 5 & Dante counts and five appended fortunes (Fig.~3). \\
-4 & C++ questions & 25 & Ten reasoned answers and compiled checks (Fig.~4). \\
-5 & C++ practice & 25 & Implemented class, histogram, and boundary checks (Fig.~5). \\
+1 & Ubuntu installation and setup & 40 & Distribution, architecture, account, and tool versions (Fig.~\ref{fig:ubuntu}); real terminal-window screenshot (Fig.~\ref{fig:ubuntu-window}). \\
+2 & Compile example code & 5 & Successful \texttt{g++} and CMake builds and executable output (Fig.~\ref{fig:compile}). \\
+3 & Shell operations & 5 & Dante counts and five appended fortunes (Fig.~\ref{fig:shell}). \\
+4 & C++ questions & 25 & Ten reasoned answers and compiled checks (Fig.~\ref{fig:warmup}). \\
+5 & C++ practice & 25 & Implemented class, histogram, and boundary checks (Fig.~\ref{fig:vector}). \\
 \bottomrule
 \end{tabularx}
 \end{fullwidth}
@@ -64,10 +64,11 @@ No. & Assessed part & Points & Primary evidence \\
 The course slide requests Ubuntu 20.04 and recommends a virtual machine for
 classroom use. For this experiment I used an x86\_64 Windows host running
 \textbf{WSL 2}, with a separate \texttt{Ubuntu-20.04} distribution. The existing
-Ubuntu 26.04 distribution was left in place. This is a command-line Ubuntu
-environment, not a full desktop or a bare-metal installation. No result in
-this report claims that later Unity or ROS graphical experiments have already
-been validated under WSL.
+Ubuntu 26.04 distribution was left in place. It is not a bare-metal
+installation and has no separate Ubuntu desktop session; Linux GUI programs
+are shown directly on the Windows desktop through WSLg
+(Figure~\ref{fig:ubuntu-window}). Lab~2 later ran turtlesim and RViz in the
+same way; the Unity simulators of Labs~3 and~4 have not been tested yet.
 
 The official Ubuntu 20.04.6 WSL image was downloaded from the Ubuntu release
 site. Its SHA-256 was checked against the published \texttt{SHA256SUMS}; the
@@ -83,16 +84,28 @@ After updating and upgrading the package lists, I installed
 \path{build-essential}, CMake, and Git. The measured versions were
 \texttt{g++ 9.4.0}, \texttt{cmake 3.16.3}, \texttt{git 2.25.1}, and
 \texttt{GNU Make 4.2.1}. A C++ compiler smoke test built without warnings and
-printed \texttt{Ubuntu 20.04 toolchain OK}. Figure~1 shows a
+printed \texttt{Ubuntu 20.04 toolchain OK}. Figure~\ref{fig:ubuntu} shows a
 fresh verification of the OS, architecture, user, and packages.
+Figure~\ref{fig:ubuntu-window} is a real screenshot of an Ubuntu terminal
+window (xterm) opened through WSLg, in which the same checks were typed; its
+transcript is saved beside the image.
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{01_ubuntu_environment.png}
 \caption{Ubuntu environment verification. This figure is typeset from live
 SSH/WSL command output and retains its original text transcript; it is not a
-desktop-window screenshot.}
-\label{fig:ubuntu}
+desktop-window screenshot.\protect\label{fig:ubuntu}}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{01b_ubuntu_terminal_window.png}
+\caption{Real screenshot of an Ubuntu 20.04 terminal window (xterm) displayed
+on the Windows desktop through WSLg, 25 September 2026. The commands were
+typed into this interactive shell and the window was captured from the X
+server; transcript in
+\texttt{results/\allowbreak figures/\allowbreak 01b\_\allowbreak ubuntu\_\allowbreak terminal\_\allowbreak window.txt}.\protect\label{fig:ubuntu-window}}
 \end{figure*}
 \FloatBarrier
 
@@ -115,8 +128,7 @@ an executable concrete.
 \centering
 \includegraphics[width=\linewidth]{02_compile_examples.png}
 \caption{Direct C++ compilation and CMake build, followed by the two actual
-program outputs. Rendered from live SSH/WSL output.}
-\label{fig:compile}
+program outputs. Rendered from live SSH/WSL output.\protect\label{fig:compile}}
 \end{figure*}
 \FloatBarrier
 
@@ -148,7 +160,7 @@ cumulative byte totals after each append were 53, 175, 365, 388, and 441.
 The final file is 441 bytes. Its nine text lines do not imply nine invocations:
 a single fortune may span multiple lines. I also exercised \texttt{mkdir},
 \texttt{cd}, \texttt{pwd}, copying, moving, \texttt{chmod}, \texttt{find}, pipes,
-and \texttt{wc}. Figure~3 records the counts and the append
+and \texttt{wc}. Figure~\ref{fig:shell} records the counts and the append
 script. The original text and script remain available for inspection.
 
 The word count differed under the default macOS locale (97,765) even though
@@ -160,8 +172,7 @@ command and environment stated.
 \centering
 \includegraphics[width=\linewidth]{03_shell_operations.png}
 \caption{Dante line/word counts, nonblank-line count, five-append script, and
-final fortune-file size and hash. Rendered from live SSH/WSL output.}
-\label{fig:shell}
+final fortune-file size and hash. Rendered from live SSH/WSL output.\protect\label{fig:shell}}
 \end{figure*}
 \FloatBarrier
 
@@ -214,15 +225,14 @@ The assumption about character width is essential.
 \noindent\textbf{N4 --- Boolean condition.} Nonzero \texttt{42} converts
 to true. The first branch sets \(i=0\); the \texttt{else} branch is skipped.
 
-The compiled run in Figure~4 agreed with every predicted
+The compiled run in Figure~\ref{fig:warmup} agreed with every predicted
 value. The source file and plain-text output are kept alongside the report.
 
 \begin{figure*}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{04_cpp_warmup.png}
 \caption{Compiled verification of all ten C++ warm-up answers, including
-platform-specific type sizes. Rendered from live SSH/WSL output.}
-\label{fig:warmup}
+platform-specific type sizes. Rendered from live SSH/WSL output.\protect\label{fig:warmup}}
 \end{figure*}
 \FloatBarrier
 
@@ -254,7 +264,7 @@ nonfinite or negative upper bound, and nonpositive bin count raise
 
 The Ubuntu default run produced 20 values with mean \(0.55804\), minimum
 \(0.0278694\), and maximum \(0.982655\). Its five column counts were
-\(5,1,4,3,7\), summing exactly to 20. Figure~5 shows both the
+\(5,1,4,3,7\), summing exactly to 20. Figure~\ref{fig:vector} shows both the
 actual histogram and the verification summary. The test program also checked
 the printed value count and range, independent bin classification from the
 seeded inputs, a singleton, zero and scaled upper bounds, one bin, more bins
@@ -270,8 +280,7 @@ bin conservation rather than by copying the sample numbers.
 \centering
 \includegraphics[width=\linewidth]{05_random_vector.png}
 \caption{\texttt{RandomVector} default output and boundary verification on
-Ubuntu 20.04. Rendered from live SSH/WSL output.}
-\label{fig:vector}
+Ubuntu 20.04. Rendered from live SSH/WSL output.\protect\label{fig:vector}}
 \end{figure*}
 \FloatBarrier
 
@@ -287,8 +296,9 @@ clamping the maximum to the last bin, the natural formula can index past the
 array. These were verified with the original inputs and targeted boundary
 checks rather than inferred from the example output.
 
-WSL 2 supported all Lab 1 command-line tasks. Later graphical simulation
-remains untested and needs its own validation.
+WSL 2 supported all Lab 1 command-line tasks, and WSLg displays Linux GUI
+windows (Figure~\ref{fig:ubuntu-window}). The Unity simulators of later labs
+still need their own validation.
 
 To reproduce the C++ practice from \texttt{lab1/RandomVector} on Ubuntu:
 \begin{lstlisting}

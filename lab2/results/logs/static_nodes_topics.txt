@@ -1,0 +1,87 @@
+Static scene (roslaunch two_drones_pkg two_drones.launch static:=True), 2026-09-25 03:17 EDT
+--- rosnode list
+/av1broadcaster
+/av2broadcaster
+/plots_publisher_node
+/rosout
+/rviz
+--- rostopic list
+/clicked_point
+/initialpose
+/move_base_simple/goal
+/rosout
+/rosout_agg
+/tf
+/tf_static
+/visuals
+--- rosnode info /av1broadcaster
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Subscriptions: None
+
+--- rosnode info /av2broadcaster
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Subscriptions: None
+
+--- rosnode info /plots_publisher_node
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /visuals [visualization_msgs/MarkerArray]
+
+Subscriptions: 
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+--- rosnode info /rviz
+Publications: 
+ * /clicked_point [geometry_msgs/PointStamped]
+ * /initialpose [geometry_msgs/PoseWithCovarianceStamped]
+ * /move_base_simple/goal [geometry_msgs/PoseStamped]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+ * /visuals [visualization_msgs/MarkerArray]
+
+--- rostopic info /visuals
+Type: visualization_msgs/MarkerArray
+
+Publishers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:44670/)
+
+Subscribers: 
+ * /rviz (http://DESKTOP-91LK43L:44850/)
+
+
+--- rostopic info /tf_static
+Type: tf2_msgs/TFMessage
+
+Publishers: 
+ * /av1broadcaster (http://DESKTOP-91LK43L:44124/)
+ * /av2broadcaster (http://DESKTOP-91LK43L:43680/)
+
+Subscribers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:44670/)
+ * /rviz (http://DESKTOP-91LK43L:44850/)
+
+
+--- rosrun tf tf_echo world av1 (one sample)
+At time 0.000
+- Translation: [1.000, 0.000, 0.000]
+- Rotation: in Quaternion [0.000, 0.000, 0.000, 1.000]
+            in RPY (radian) [0.000, -0.000, 0.000]
+            in RPY (degree) [0.000, -0.000, 0.000]
+At time 0.000
+--- rosrun tf tf_echo world av2 (one sample)
+At time 0.000
+- Translation: [0.000, 0.000, 1.000]
+- Rotation: in Quaternion [0.000, 0.000, 0.000, 1.000]
+            in RPY (radian) [0.000, -0.000, 0.000]
+            in RPY (degree) [0.000, -0.000, 0.000]
+At time 0.000
