@@ -1,0 +1,23 @@
+Ubuntu terminal window (xterm on WSLg), Lab 1 environment check
+Real window of the Ubuntu-20.04 WSL 2 distribution, displayed on the Windows desktop through WSLg.
+The commands were typed into this interactive shell with xdotool; the image was captured
+from the X server with ImageMagick 'import -window'. Transcript recorded by 'script -q -f'.
+
+qz@DESKTOP-91LK43L:~$ TZ=Asia/Shanghai date '+%F %T %Z'
+2026-09-25 15:53:15 CST
+qz@DESKTOP-91LK43L:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.6 LTS
+Release:	20.04
+Codename:	focal
+qz@DESKTOP-91LK43L:~$ uname -srm
+Linux 6.18.33.2-microsoft-standard-WSL2 x86_64
+qz@DESKTOP-91LK43L:~$ g++ --version | head -n1
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+qz@DESKTOP-91LK43L:~$ cmake --version | head -n1; git --version
+cmake version 3.16.3
+git version 2.25.1
+qz@DESKTOP-91LK43L:~$ exit
+
+Script done on 2026-09-25 03:53:41-04:00 [COMMAND_EXIT_CODE="0"]
