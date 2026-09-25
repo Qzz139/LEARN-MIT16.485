@@ -1,0 +1,21 @@
+{
+  "left": "lab0/data/stereo/aloeL.jpg",
+  "right": "lab0/data/stereo/aloeR.jpg",
+  "image_size_px": [
+    641,
+    555
+  ],
+  "assumed_rectified": true,
+  "scale": 0.5,
+  "min_disparity": 0,
+  "num_disparities": 128,
+  "block_size": 5,
+  "valid_fraction": 0.7050357689983275,
+  "cx_difference_px": 0.0,
+  "opencv_version": "4.12.0",
+  "depth_unit": "arbitrary baseline unit",
+  "metric_depth": false,
+  "focal_px": 512.8000000000001,
+  "baseline": 1.0,
+  "warning": "焦距是 OpenCV Aloe 示例的估计值；深度没有真实米制尺度"
+}

@@ -1,4 +1,4 @@
-"""Compute disparity and depth from an already rectified stereo image pair."""
+"""对已完成立体校正的左右图计算视差与深度。"""
 
 import argparse
 import json
@@ -13,6 +13,7 @@ SAMPLE_BASE = "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/
 
 
 def read_image(path):
+    # 字节流读取兼容包含中文字符的图像路径。
     return cv.imdecode(np.fromfile(str(path), dtype=np.uint8), cv.IMREAD_COLOR)
 
 
@@ -24,6 +25,7 @@ def write_image(path, image):
 
 
 def sample_images(directory):
+    # 示例图来自 OpenCV 官方仓库；下载一次后即可从本地复用。
     directory.mkdir(parents=True, exist_ok=True)
     paths = []
     for name in ("aloeL.jpg", "aloeR.jpg"):
@@ -36,6 +38,8 @@ def sample_images(directory):
 
 
 def colour_map(values, valid, reverse=False):
+    # 仅为报告作图：用有效值的 2%～98% 分位数增强颜色对比。
+    # 真实计算使用原始 .npy 数组，不能用彩色图反推视差或深度。
     result = np.zeros((*values.shape, 3), dtype=np.uint8)
     if not np.any(valid):
         return result
@@ -92,12 +96,14 @@ def main():
     if left.shape != right.shape:
         raise RuntimeError("左右图像分辨率必须一致")
     if args.scale != 1:
+        # 图像缩小时，以像素为单位的焦距和主点横坐标差也须同比缩小。
         left = cv.resize(left, None, fx=args.scale, fy=args.scale, interpolation=cv.INTER_AREA)
         right = cv.resize(right, None, fx=args.scale, fy=args.scale, interpolation=cv.INTER_AREA)
 
     height, width = left.shape[:2]
     if width <= args.num_disparities + max(args.min_disparity, 0):
         parser.error("图像宽度不足以使用当前的视差搜索范围")
+    # SGBM 在同一水平线上寻找对应点；P1/P2 控制视差变化的平滑惩罚。
     matcher = cv.StereoSGBM_create(
         minDisparity=args.min_disparity,
         numDisparities=args.num_disparities,
@@ -112,12 +118,15 @@ def main():
     )
     gray_left = cv.cvtColor(left, cv.COLOR_BGR2GRAY)
     gray_right = cv.cvtColor(right, cv.COLOR_BGR2GRAY)
+    # OpenCV 的 SGBM 以 1/16 像素为单位存储定点视差，这里转回像素。
     disparity = matcher.compute(gray_left, gray_right).astype(np.float32) / 16.0
+    # 排除无效匹配和不能用于正常正深度计算的零/负视差。
     valid = np.isfinite(disparity) & (disparity > args.min_disparity) & (disparity > 0)
     args.output.mkdir(parents=True, exist_ok=True)
     np.save(args.output / "disparity_px.npy", disparity)
     write_image(args.output / "disparity.png", colour_map(disparity, valid))
 
+    # 水平线用于人工检查极线是否大致对齐；不改变输入图像。
     pair = np.hstack((left, right))
     for y in range(40, height, max(height // 8, 1)):
         cv.line(pair, (0, y), (pair.shape[1] - 1, y), (0, 255, 0), 1)
@@ -132,8 +141,8 @@ def main():
         "opencv_version": cv.__version__,
     }
     if args.focal_px is None:
-        # The official Aloe example guesses f = 0.8 * image width. B=1 is an
-        # arbitrary baseline unit, so these values are illustrative only.
+        # 官方 Aloe 示例假设 f=0.8×图像宽度；B=1 是任意基线单位。
+        # 因而默认结果只能说明相对近远，不能解释为真实米数。
         focal = 0.8 * width
         baseline = 1.0
         filename = "depth_approx_baseline_units.npy"
@@ -147,9 +156,11 @@ def main():
         summary.update({"depth_unit": "m", "metric_depth": True,
                         "focal_px": focal, "baseline_m": baseline})
 
+    # 已校正双目几何：d = fB/Z + (cx_left-cx_right)，故 Z=fB/(d-主点差)。
     denominator = disparity - args.cx_difference_px
     valid &= denominator > 0
     write_image(args.output / "valid_mask.png", (valid * 255).astype(np.uint8))
+    # 无效点用 NaN 标记，避免被误认为距离为 0 的真实测量值。
     depth = np.full(disparity.shape, np.nan, dtype=np.float32)
     depth[valid] = (focal * baseline / denominator[valid]).astype(np.float32)
     np.save(args.output / filename, depth)
