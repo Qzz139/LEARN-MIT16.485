@@ -1,0 +1,35 @@
+Manual reproduction of the static scenario (no roslaunch), 2026-09-25 03:26 EDT
+# Each command in its own terminal, after: source ~/vnav_ws/devel/setup.bash
+roscore
+rosrun tf2_ros static_transform_publisher 1 0 0 0 0 0 1 world av1 __name:=av1broadcaster
+rosrun tf2_ros static_transform_publisher 0 0 1 0 0 0 1 world av2 __name:=av2broadcaster
+rosrun two_drones_pkg plots_publisher_node
+rosrun rviz rviz -d $(rospack find two_drones_pkg)/config/default.rviz __name:=rviz
+--- rosnode list
+/av1broadcaster
+/av2broadcaster
+/plots_publisher_node
+/rosout
+/rviz
+--- rostopic info /tf_static
+Type: tf2_msgs/TFMessage
+
+Publishers: 
+ * /av2broadcaster (http://DESKTOP-91LK43L:43862/)
+ * /av1broadcaster (http://DESKTOP-91LK43L:44638/)
+
+Subscribers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:43488/)
+ * /rviz (http://DESKTOP-91LK43L:45270/)
+
+
+--- rostopic info /visuals
+Type: visualization_msgs/MarkerArray
+
+Publishers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:43488/)
+
+Subscribers: 
+ * /rviz (http://DESKTOP-91LK43L:45270/)
+
+

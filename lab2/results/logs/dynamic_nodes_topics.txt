@@ -1,0 +1,64 @@
+Dynamic scene (roslaunch two_drones_pkg two_drones.launch), 2026-09-25 03:29 EDT
+--- rosnode list
+/frames_publisher_node
+/plots_publisher_node
+/rosout
+/rviz
+--- rostopic info /tf
+Type: tf2_msgs/TFMessage
+
+Publishers: 
+ * /frames_publisher_node (http://DESKTOP-91LK43L:44928/)
+
+Subscribers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:45220/)
+ * /rviz (http://DESKTOP-91LK43L:43930/)
+
+
+--- rostopic hz /tf (all frames, ~5 s)
+average rate: 100.175
+	min: 0.000s max: 0.022s std dev: 0.00991s window: 574
+--- per-frame rate: messages on /tf containing each child frame over 5 s
+    239     child_frame_id: "av1"
+    239     child_frame_id: "av2"
+--- rostopic echo -n 2 /tf
+transforms: 
+  - 
+    header: 
+      seq: 0
+      stamp: 
+        secs: 1790321354
+        nsecs: 514524239
+      frame_id: "world"
+    child_frame_id: "av1"
+    transform: 
+      translation: 
+        x: -0.9778275589240144
+        y: 0.20941171172764697
+        z: 0.0
+      rotation: 
+        x: 0.0
+        y: -0.0
+        z: -0.9944414409416007
+        w: -0.10529112278816667
+---
+transforms: 
+  - 
+    header: 
+      seq: 0
+      stamp: 
+        secs: 1790321354
+        nsecs: 514524239
+      frame_id: "world"
+    child_frame_id: "av2"
+    transform: 
+      translation: 
+        x: 0.20941171172764697
+        y: 0.0
+        z: 0.9122934699825938
+      rotation: 
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 1.0
+---

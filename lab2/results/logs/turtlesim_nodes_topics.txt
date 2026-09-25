@@ -1,0 +1,23 @@
+Turtlesim run record, 2026-09-25 03:05 EDT
+--- rosnode list
+/rosout
+/teleop_turtle
+/turtlesim
+--- rostopic list
+/rosout
+/rosout_agg
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+--- rostopic info /turtle1/cmd_vel
+Type: geometry_msgs/Twist
+
+Publishers: 
+ * /teleop_turtle (http://DESKTOP-91LK43L:44136/)
+
+Subscribers: 
+ * /turtlesim (http://DESKTOP-91LK43L:44040/)
+
+
+--- rostopic type /turtle1/cmd_vel
+geometry_msgs/Twist

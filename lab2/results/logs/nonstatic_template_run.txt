@@ -1,0 +1,21 @@
+Launch WITHOUT static:=True, frames_publisher_node still the unmodified template, 2026-09-25 03:27 EDT
+--- rosnode list
+/frames_publisher_node
+/plots_publisher_node
+/rosout
+/rviz
+--- rostopic info /tf
+Type: tf2_msgs/TFMessage
+
+Publishers: None
+
+Subscribers: 
+ * /plots_publisher_node (http://DESKTOP-91LK43L:45108/)
+ * /rviz (http://DESKTOP-91LK43L:43530/)
+
+
+--- rostopic echo -n 1 /tf (5 s timeout)
+exit=124 lines=0
+--- rostopic hz /visuals (5 s)
+no new messages
+no new messages
