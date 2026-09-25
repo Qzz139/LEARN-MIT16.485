@@ -1,0 +1,59 @@
+% Shared layout for the two Lab0 translations: Chinese two-column conference style.
+\usepackage[a4paper,left=1.9cm,right=1.9cm,top=2.4cm,bottom=2.2cm,
+  columnsep=0.7cm,headsep=0.5cm]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica}
+\setmonofont{Menlo}[Scale=0.85]
+% macOS system CJK fonts; Kai/Fang come from TeX Live's Fandol set.
+\setCJKmainfont{Songti SC}[BoldFont={Heiti SC},ItalicFont={FandolKai-Regular.otf}]
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Heiti SC}
+\setCJKfamilyfont{zhhei}{Heiti SC}
+\setCJKfamilyfont{zhkai}{FandolKai-Regular.otf}
+\setCJKfamilyfont{zhfs}{FandolFang-Regular.otf}
+\providecommand{\heiti}{\CJKfamily{zhhei}}
+\providecommand{\kaishu}{\CJKfamily{zhkai}}
+\providecommand{\fangsong}{\CJKfamily{zhfs}}
+\usepackage{newtxmath}
+% fontspec's text fonts have no OT1 shapes; point math alphabets at newtx's Times.
+\DeclareMathAlphabet{\mathrm}{OT1}{ntxtlf}{m}{n}
+\DeclareMathAlphabet{\mathbf}{OT1}{ntxtlf}{b}{n}
+\DeclareMathAlphabet{\mathtt}{OT1}{txtt}{m}{n}
+\DeclareMathAlphabet{\mathsf}{OT1}{phv}{m}{n}
+\SetSymbolFont{operators}{normal}{OT1}{ntxtlf}{m}{n}
+\SetSymbolFont{operators}{bold}{OT1}{ntxtlf}{b}{n}
+\usepackage{graphicx,booktabs,multirow,array}
+\usepackage[font=small,labelsep=quad,skip=4pt]{caption}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\urlstyle{same}
+
+\ctexset{
+  section={format=\heiti\zihao{-4}\raggedright,beforeskip=1.2ex plus .3ex,
+    afterskip=.8ex plus .2ex,aftername=\quad},
+  subsection={format=\heiti\zihao{5}\raggedright,beforeskip=.9ex plus .2ex,
+    afterskip=.5ex plus .1ex,aftername=\quad},
+}
+\setlist{nosep,leftmargin=2em}
+\setlength{\parskip}{0pt}
+\linespread{1.18}
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{10pt plus 2pt minus 3pt}
+\setlength{\dbltextfloatsep}{10pt plus 2pt minus 3pt}
+\emergencystretch=1em
+
+% Bold run-in heading used by both papers ("Photogrammetric calibration." etc.).
+\newcommand{\runin}[1]{\textbf{\heiti #1}\quad}
+% Translator's note in a footnote.
+\newcommand{\yizhe}[1]{\footnote{\kaishu 译者注：#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\small\thepage}
