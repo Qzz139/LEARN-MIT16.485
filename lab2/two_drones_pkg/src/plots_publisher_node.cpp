@@ -11,8 +11,10 @@ class PlotsPublisherNode {
   ros::Timer heartbeat;
   ros::NodeHandle nh;
   ros::Publisher markers_pub;
-  tf2_ros::TransformListener tf_listener;
+  // tf_buffer must be declared before tf_listener: members are constructed in
+  // declaration order, and tf_listener is constructed from tf_buffer.
   tf2_ros::Buffer tf_buffer;
+  tf2_ros::TransformListener tf_listener;
   int num_trails;
 
   class TrajTrail {
@@ -144,6 +146,7 @@ class PlotsPublisherNode {
         ROS_INFO_STREAM("Necessary frames are present, starting!");
         break;
       }
+      ros::Duration(0.1).sleep();
     }
   }
 
