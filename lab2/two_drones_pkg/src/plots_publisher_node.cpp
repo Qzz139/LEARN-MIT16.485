@@ -50,7 +50,9 @@ class PlotsPublisherNode {
          * https://wiki.ros.org/tf2/Tutorials/Writing%20a%20tf2%20listener%20%28C%2B%2B%29#TheCode
          */
 
-        // *** FILL IN ***
+        // Pose of dest_frame expressed in ref_frame, i.e. T^{ref}_{dest};
+        // ros::Time(0) asks for the latest transform available in the buffer.
+        transform = parent->tf_buffer.lookupTransform(ref_frame, dest_frame, ros::Time(0));
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~  END OF EDIT SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~
         while (poses.size() >= buffer_size) {
@@ -88,6 +90,7 @@ class PlotsPublisherNode {
       marker_out.id = parent->num_trails++;
       marker_out.type = visualization_msgs::Marker::LINE_STRIP;
       marker_out.action = visualization_msgs::Marker::ADD;
+      marker_out.pose.orientation.w = 1.0;
       marker_out.color.a = 0.8;
       marker_out.scale.x = 0.02;
       marker_out.lifetime = ros::Duration(1.0);
@@ -127,10 +130,11 @@ class PlotsPublisherNode {
     heartbeat =
         nh.createTimer(ros::Duration(0.02), &PlotsPublisherNode::onPublish, this);
     heartbeat.start();
-    av1trail = TrajTrail(this, "world", "av1", 300);
+    // 400 samples at 50 Hz = 8 s, longer than one 2*pi s period of the world motion.
+    av1trail = TrajTrail(this, "world", "av1", 400);
     av1trail.setColor(0.25, 0.52, 1.0);
     av1trail.setNamespace("Trail av1-world");
-    av2trail = TrajTrail(this, "world", "av2", 300);
+    av2trail = TrajTrail(this, "world", "av2", 400);
     av2trail.setColor(0.8, 0.4, 0.26);
     av2trail.setNamespace("Trail av2-world");
     av2trail_rel = TrajTrail(this, "av1", "av2", 160);
