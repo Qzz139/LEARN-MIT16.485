@@ -1,0 +1,20 @@
+Lab 1 · Shell operations
+Source: live SSH to qz@100.84.51.48, Ubuntu-20.04 WSL2
+Captured: 2026-09-24 08:57:40 CST
+
+$ wc -l -w /home/qz/lab1/data/dante.txt
+ 19567  97676 /home/qz/lab1/data/dante.txt
+
+$ grep -cve '^[[:space:]]*$' /home/qz/lab1/data/dante.txt
+14338
+
+$ sed -n '9,13p' /home/qz/lab1/append_fortunes.sh
+
+: > "$output"
+for n in 1 2 3 4 5; do
+  /usr/games/fortune >> "$output"
+  printf 'append %d: %s bytes total\n' "$n" "$(wc -c < "$output")"
+
+$ wc -c /home/qz/lab1/fortunes.txt; sha256sum /home/qz/lab1/fortunes.txt
+441 /home/qz/lab1/fortunes.txt
+4bf79873e408c5c1db4c1100a7d315a04b20a6a93e29044358b6a4d6970418aa  /home/qz/lab1/fortunes.txt

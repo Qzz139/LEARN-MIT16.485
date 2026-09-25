@@ -1,0 +1,16 @@
+Lab 1 · Compile and run examples
+Source: live SSH to qz@100.84.51.48, Ubuntu-20.04 WSL2
+Captured: 2026-09-24 08:57:39 CST
+
+$ g++ -std=c++11 -Wall -Wextra -pedantic /home/qz/lab1/examples/hello.cpp -o /home/qz/lab1/examples/hello
+(no output; exit status 0)
+
+$ /home/qz/lab1/examples/hello
+Hello from Lab 1 on Ubuntu 20.04!
+
+$ cmake --build /home/qz/lab1/examples/cmake-example/build
+[ 50%] Built target message
+[100%] Built target example
+
+$ /home/qz/lab1/examples/cmake-example/build/example
+CMake library link OK

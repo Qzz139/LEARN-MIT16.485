@@ -1,0 +1,20 @@
+Lab 1 clean C++ build verification (macOS, 2026-09-25)
+
+Build directory: a fresh mktemp directory under /private/tmp.
+Commands (from the project root):
+  c++ -std=c++11 -Wall -Wextra -pedantic lab1/RandomVector/random_vector.cpp lab1/RandomVector/test_random_vector.cpp -o "$build_dir/test_random_vector"
+  "$build_dir/test_random_vector"
+  c++ -std=c++11 -Wall -Wextra -pedantic lab1/RandomVector/random_vector.cpp lab1/RandomVector/main.cpp -o "$build_dir/random_vector"
+  "$build_dir/random_vector"
+
+Test output:
+  Default: 20 values, 5 bins, counts = 8 1 8 2 1; total = 20
+  Boundary cases: singleton, zero maximum, scaled maximum, one bin, eight bins: PASS
+  Invalid parameters: zero size, negative/nonfinite maximum, zero bins: PASS
+
+Default program output began:
+  Mean: 0.393617
+  Min: 0.0667949
+  Max: 0.999018
+
+Both compilations completed without diagnostics. The seeded random sequence differs from the separately recorded Ubuntu/WSL result because the C library implementation differs.

@@ -1,6 +1,6 @@
 # Lab 1 实施方案
 
-状态：执行中，2026-09-24。得分点 1–3 已在远程 x86-64 主机的 WSL 2 Ubuntu 20.04.6 中完成；实测记录见 [environment.txt](results/environment.txt)、[compile_examples.txt](results/compile_examples.txt) 和 [shell.txt](results/shell.txt)。C++ 问答、实践及报告待完成。
+状态：实验与英文 PDF 报告已完成，现场检查及正式提交待按助教通知进行。得分点 1–5 已在远程 x86-64 主机的 WSL 2 Ubuntu 20.04.6 中完成；实测记录见 [environment.txt](results/environment.txt)、[compile_examples.txt](results/compile_examples.txt)、[shell.txt](results/shell.txt) 和 [C++ 验证说明](results/validation.md)。报告见 [lab1-report.pdf](report/lab1-report.pdf)。
 
 目标：搭好后续课程可复用的 Linux 开发环境，完成 Lab 1 各项练习，形成可复现的代码、实验报告和现场演示。
 
@@ -145,7 +145,7 @@ g++ -std=c++11 -Wall -pedantic -o random_vector main.cpp random_vector.cpp
 
 ## 5. 交付物组织
 
-建议在现有 `lab1/` 下逐步增加以下内容，保留原始课件和报告模板。环境、示例编译和 Shell 练习产物已完成，C++ 问答、实践和报告仍待完成。
+在现有 `lab1/` 下保留原始课件和报告模板；五个给分点的源代码、答案、验证记录和正式英文 PDF 报告均已完成。
 
 ```text
 lab1/
@@ -166,9 +166,9 @@ lab1/
     shell.txt              # Shell 命令、数据来源和结果
     random_vector.txt
     validation.md          # 预期行为、实测行为与解释
-    screenshots/
+    figures/               # 基于实时 SSH/WSL 输出排版的证据图，非原生屏幕截图
   report/
-    lab1-report.tex        # 或采用其他报告源文件格式
+    lab1-report.tex
     lab1-report.pdf
 ```
 
@@ -181,11 +181,11 @@ lab1/
 - [x] Ubuntu、工具版本和实际设备架构有记录；见 [environment.txt](results/environment.txt)。
 - [x] 所选教学示例能运行，并能说明实际编译命令；见 [compile_examples.txt](results/compile_examples.txt)。
 - [x] Shell 统计可从保存的输入重新计算，fortune 确为五次追加；见 [shell.txt](results/shell.txt)。
-- [ ] C++ 问答覆盖原题，答案有推导并体现平台差异。
-- [ ] RandomVector 全部 TODO 完成，基础实现未使用 `<algorithm>` 函数。
-- [ ] 保留默认入口演示和边界验证结果，直方图计数守恒。
-- [ ] 报告使用真实实验截图和结果，去除模板中的旧个人信息。
-- [ ] 从干净构建目录重跑通过，命令中的路径与实际文件一致。
+- [x] C++ 问答覆盖原题，答案有推导并体现平台差异；见 [cpp-warmup.txt](cpp-warmup.txt)。
+- [x] RandomVector 全部 TODO 完成，基础实现未使用 `<algorithm>` 函数；见 [random_vector.cpp](RandomVector/random_vector.cpp)。
+- [x] 保留默认入口演示和边界验证结果，直方图计数守恒；见 [validation.md](results/validation.md)。
+- [x] 报告使用实测输出记录及明确标注的证据图，包含正确个人信息；图像为终端输出排版图，非原生屏幕截图。见 [lab1-report.pdf](report/lab1-report.pdf)。
+- [x] 从干净构建目录在 macOS 上重编译并通过 C++ 默认程序及边界测试；Ubuntu 20.04 的实测验证另见 [validation.md](results/validation.md)。
 - [ ] 能现场解释自增、指针与引用、输出追加、随机种子和分桶上界处理。
 - [ ] 按助教通知完成报告/代码提交及单独实验检查。
 

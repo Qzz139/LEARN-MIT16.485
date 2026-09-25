@@ -1,0 +1,50 @@
+Lab 1 — C++ warm-up answers
+Source: https://vnav.mit.edu/labs_2023/lab1/exercises.html
+The numbering below follows Operators (O), References and Pointers (R), and Numbers (N).
+
+O1. After both assignments, i = 2 and j = 1. `++i` first changes i from
+0 to 1, then assigns 1 to j. `i++` then assigns the old i (1) to j and
+changes i to 2. The two statements are separate full expressions.
+
+O2. The output is `b`. The test `42 < 42` is false, so the conditional
+operator selects its third operand.
+
+R1. The output is `10 10`. `ri` is another name for `i`, not a separate
+integer. Assigning 10 through `ri` changes the same object later read twice.
+
+R2. The output is `1764`. `j` points to `i`; the right-hand expression
+`*j**j` is parsed as `(*j) * (*j)`. It multiplies 42 by 42 and stores the
+result through the pointer. It is not an exponentiation operator.
+
+R3. The output is `0`. `i + 2` points to the third element. The statement
+sets it to the second element minus the fourth: 24 - 24 = 0.
+
+R4. The output is `0`. `reset` takes `int&`, so its parameter aliases
+`j`; assigning 0 in the function changes the caller's variable.
+
+N1. All four are signed integer types with different minimum ranges/ranks:
+`short` <= `int` <= `long` <= `long long` in storage width and required
+range. The standard requires minimum maxima of 32767, 32767, 2147483647,
+and 9223372036854775807, respectively. Their exact `sizeof` values depend
+on platform and ABI; `int` and `long` can have equal widths. This Ubuntu
+20.04 x86_64 environment reports 2, 4, 8, and 8 bytes, respectively.
+
+N2. `double` has at least as much precision and range as `float` and
+usually uses more storage; this Ubuntu environment reports 4 bytes for
+float and 8 for double. The unsuffixed literal `3.14` has type double.
+Assigning it to `int i` discards the fractional part, so i is 3; it does
+not round to the nearest integer. The value is representable, so this
+conversion is well-defined.
+
+N3. A signed type represents negative and nonnegative values; an unsigned
+type represents only nonnegative values and arithmetic/conversion is
+modulo 2^N for N value bits. Assuming an 8-bit unsigned char, assigning
+-1 yields 255, so `c == 255`. The question's "chars are 8-bit" condition
+matters; do not assume 255 on an arbitrary wider-char implementation.
+
+N4. The final value of i is 0. In a condition, nonzero 42 converts to
+true, so the first branch runs and assigns 0. The else branch is skipped.
+
+Verification: see results/cpp_warmup_check.txt for a compiled run in the
+Ubuntu 20.04 environment. The explanations above use language rules; the
+reported byte sizes are measurements for this particular platform.

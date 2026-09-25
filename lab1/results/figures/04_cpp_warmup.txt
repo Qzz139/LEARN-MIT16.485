@@ -1,0 +1,15 @@
+Lab 1 · C++ warm-up verification
+Source: live SSH to qz@100.84.51.48, Ubuntu-20.04 WSL2
+Captured: 2026-09-24 08:57:40 CST
+
+$ /home/qz/lab1/results/cpp_warmup_check
+O1 i=2 j=1
+O2 b
+R1 10 10
+R2 1764
+R3 0
+R4 0
+N1 sizeof(short,int,long,long long)=2,4,8,8
+N2 sizeof(float,double)=4,8 i=3
+N3 c=255
+N4 i=0

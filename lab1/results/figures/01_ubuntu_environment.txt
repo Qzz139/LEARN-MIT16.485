@@ -1,0 +1,21 @@
+Lab 1 · Ubuntu installation and setup
+Source: live SSH to qz@100.84.51.48, Ubuntu-20.04 WSL2
+Captured: 2026-09-24 08:57:38 CST
+
+$ cat /etc/os-release | grep -E 'PRETTY_NAME|VERSION_ID|VERSION_CODENAME'
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+VERSION_CODENAME=focal
+
+$ uname -m; id
+x86_64
+uid=1000(qz) gid=1000(qz) groups=1000(qz),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev)
+
+$ dpkg-query -W build-essential cmake git
+build-essential	12.8ubuntu1.1
+cmake	3.16.3-1ubuntu1.20.04.1
+git	1:2.25.1-1ubuntu3.14
+
+$ g++ --version | head -n 1; cmake --version | head -n 1
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+cmake version 3.16.3
