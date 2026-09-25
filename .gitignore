@@ -218,3 +218,13 @@ __marimo__/
 .streamlit/secrets.toml
 
 .DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*Notes.bib

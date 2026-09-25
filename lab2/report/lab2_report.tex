@@ -1,0 +1,149 @@
+\documentclass[a4paper,justified]{tufte-handout}
+\input{../../report-style/preamble}
+\labtitle{2}{ROS, TF and Quaternions}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\pending{summary written after all parts are complete}
+\end{abstract}
+
+\section*{Grading Map}
+
+\begin{table*}[h]
+\small
+\begin{tabularx}{\linewidth}{@{}l r l X@{}}
+\toprule
+Grading item & Points & Section & Evidence \\
+\midrule
+ROS installation & 20 & \cref{sec:install} & Environment table, turtlesim screenshot, node and topic listing \\
+Two-drone motion & 40 & \cref{sec:drones} & Answers on nodes, topics and the launch file; publisher code; static and dynamic scenes; TF tree; \texttt{/tf} rate \\
+Trajectories & 30 & \cref{sec:traj} & Three trajectories in the \texttt{world} and \texttt{av1} frames; numerical check against the analytic model \\
+Mathematical derivation & 10 & \cref{sec:math} & Five derivations with homogeneous transforms \\
+Quaternion properties & 10 & \cref{sec:quat} & Three proofs; note on a sign difference in the lecture slides \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Lab Introduction}\label{sec:intro}
+This lab introduces the Robot Operating System (ROS~1 Noetic) and the \texttt{tf2}
+transform library.
+Two simulated drones are driven by publishing their poses as time-varying
+transforms, their trajectories are drawn in RViz in different reference frames,
+and the observed relative motion is explained with homogeneous transforms.
+The last part proves several properties of the quaternion multiplication
+matrices.
+The tasks follow the MIT VNAV 2023 Lab~2 exercises,\cite{vnav2023lab2} using the
+ROS~1 template code from the \texttt{VNAV2023} release.\cite{vnavlabs}
+The working environment is summarised in \cref{tab:env}.
+
+\gradeditem{sec:install}{ROS Installation}{20}
+
+\paragraph{Platform.}
+All ROS work runs in Ubuntu~20.04 under WSL~2 on an x86-64 Windows~11 desktop
+(\cref{tab:env}).
+Commands are issued from a MacBook over SSH; the Windows desktop is viewed with
+Moonlight, and Linux GUI programs (turtlesim, RViz) are displayed on it through
+WSLg.
+\marginnote{Apple-silicon Macs cannot run the x86-64 simulators required in
+Labs~3 and~4, so the whole course uses this x86-64 host.}
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule
+Component & Version \\
+\midrule
+Windows host & 10.0.26200 (Windows 11), WSL 2.7.12, WSLg 1.0.73 \\
+Linux & Ubuntu 20.04.6 LTS, kernel 6.18.33.2-microsoft-standard-WSL2, x86\_64 \\
+ROS & Noetic (\texttt{ros-noetic-desktop-full} 1.5.0) \\
+Key packages & roscpp 1.17.4, tf2\_ros 0.7.10, rviz 1.14.26, turtlesim 0.10.3 \\
+Build tools & catkin\_tools 0.9.4, g++ 9.4.0, CMake 3.16.3 \\
+Lab code & VNAV-labs tag \texttt{VNAV2023}, commit \texttt{7d234d8} \\
+\bottomrule
+\end{tabularx}
+\caption{Software environment, taken from \texttt{results/logs/environment.txt}.\protect\label{tab:env}}
+\end{table}
+
+\paragraph{Installation.}
+The ROS key used by older installation guides expired on 1~June~2025, so the
+package source was configured with the official \texttt{ros-apt-source}
+package (version 1.3.0), which installs the current signing key and the
+\texttt{packages.ros.org} source.\cite{roskeymigration}
+The desktop-full metapackage and the build tools were then installed with
+\texttt{apt}: 1487 new packages, including 234 \texttt{ros-noetic-*} packages,
+with no apt errors or warnings.
+Finally \texttt{rosdep} was initialised and updated with
+\texttt{--include-eol-distros}, because Noetic reached end of life in May~2025,
+and \texttt{source /opt/ros/noetic/setup.bash} was added to \texttt{\textasciitilde/.bashrc}.
+\marginnote{Full command list and apt summary:
+\texttt{results/logs/ros\_install\_summary.txt}.}
+
+\paragraph{Turtlesim test.}
+\texttt{roscore}, \texttt{turtlesim\_node} and \texttt{turtle\_teleop\_key}
+were started in three shells.
+The teleoperation node reads the arrow keys and publishes
+\texttt{geometry\_msgs/Twist} messages on \texttt{/turtle1/cmd\_vel}, which the
+simulator subscribes to (\cref{lst:turtle}).
+While the turtle was driven by hand, all 32 published commands were recorded:
+12 forward and 2 backward ($v_x=\pm 2$), 7 left and 11 right turns
+($\omega_z=\pm 2$).
+\Cref{fig:turtle} shows the resulting path.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{../results/screenshots/turtlesim_teleop.png}
+\caption{Turtlesim window after keyboard teleoperation; the trail is the path
+driven with the arrow keys.}
+\label{fig:turtle}
+\end{marginfigure}
+
+\lstinputlisting[linerange={2-5,12-19}, caption={Nodes and the command topic
+during teleoperation (\texttt{results/logs/turtlesim\_nodes\_topics.txt}).},
+label=lst:turtle]{../results/logs/turtlesim_nodes_topics.txt}
+
+\begin{evidence}
+\cref{tab:env} (versions); \texttt{ros\_install\_summary.txt} (installation);
+\cref{fig:turtle} (turtlesim with keyboard-driven path); \cref{lst:turtle}
+(nodes and topic connections); \texttt{turtle\_cmd\_vel.csv} (32 recorded
+keyboard commands).
+\end{evidence}
+
+\gradeditem{sec:drones}{ROS Basics and Two-Drone Motion}{40}
+
+\subsection{Nodes, topics and the launch file}
+\pending{answers to the four questions, checked against the running system}
+
+\subsection{Publishing the drone frames}
+\pending{implementation of \texttt{frames\_publisher\_node}}
+
+\subsection{Results}
+\pending{static and dynamic scenes, TF tree, \texttt{/tf} rate}
+
+\gradeditem{sec:traj}{Trajectories and Reference Frames}{30}
+
+\subsection{Querying the relative transform}
+\pending{\texttt{lookupTransform} direction and error handling}
+
+\subsection{Trajectories in RViz}
+\pending{screenshots with fixed frame \texttt{world} and \texttt{av1}}
+
+\subsection{Numerical check}
+\pending{sampled TF against the analytic relative position}
+
+\gradeditem{sec:math}{Mathematical Derivations}{10}
+\pending{five derivations}
+
+\gradeditem{sec:quat}{Quaternion Properties}{10}
+\pending{three proofs and the note on the slides}
+
+\section{Discussion}
+\pending{problems met and how they were solved; reflections}
+
+\section{Conclusions}
+\pending{}
+
+\bibliography{refs}
+\bibliographystyle{plainnat}
+
+\end{document}

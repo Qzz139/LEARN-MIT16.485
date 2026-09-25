@@ -1,0 +1,28 @@
+Commands run as root in Ubuntu-20.04 (WSL 2):
+  apt-get update -qq
+  apt-get install -y -qq curl ca-certificates lsb-release
+  V=1.3.0
+  curl -fsSL -o /tmp/ros-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${V}/ros-apt-source_${V}.focal_all.deb"
+  apt-get install -y -qq /tmp/ros-apt-source.deb
+  cat /etc/apt/sources.list.d/ros*.sources 2>/dev/null || ls /etc/apt/sources.list.d/
+  apt-get update -qq
+  apt-get install -y -q -o Dpkg::Progress-Fancy=0 ros-noetic-desktop-full python3-rosdep python3-catkin-tools python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+  [ -f /etc/ros/rosdep/sources.list.d/20-default.list ] || rosdep init
+
+ROS Noetic installation summary, extracted from /root/ros_noetic_install.log
+--- timestamps
+== start 2026-09-25T02:21:32-04:00
+== ros-noetic packages installed: 234
+== done 2026-09-25T02:52:31-04:00
+--- apt transaction
+0 upgraded, 1487 newly installed, 0 to remove and 0 not upgraded.
+--- apt errors (E:) / warnings (W:)
+E: 0  W: 0
+--- ROS apt source written by ros-apt-source
+Types: deb deb-src
+URIs: http://packages.ros.org/ros/ubuntu
+Suites: focal
+Components: main
+Signed-By: /usr/share/keyrings/ros-archive-keyring.gpg
+--- rosdep
+Wrote /etc/ros/rosdep/sources.list.d/20-default.list

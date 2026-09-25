@@ -1,0 +1,65 @@
+% Shared preamble for all lab reports (Tufte handout layout).
+%
+% Usage, from labN/report/labN_report.tex:
+%   \documentclass[a4paper,justified]{tufte-handout}
+%   \input{../../report-style/preamble}
+%   \labtitle{2}{ROS, TF and Quaternions}
+%
+% Build: latexmk -pdf labN_report.tex
+
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{cleveref}
+
+\setcounter{secnumdepth}{2}
+\crefname{section}{Section}{Sections}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{listing}{Listing}{Listings}
+% In main-column table/figure floats a \label after \caption refers to the
+% section (tufte-latex with the current kernel); write
+% \caption{Text.\protect\label{key}} instead. Margin floats are unaffected.
+\hypersetup{colorlinks=true, allcolors=[rgb]{0.12,0.25,0.55}}
+
+% --- Author and course -------------------------------------------------------
+\newcommand{\studentname}{Xuanye Xu}
+\newcommand{\studentids}{24020036071 / H00490299}
+\newcommand{\coursename}{Robotics Integration I --- VNAV Labs}
+
+% \labtitle{<lab number>}{<topic>}
+\newcommand{\labtitle}[2]{%
+  \title[Lab #1: #2]{Lab #1 Report: #2}%
+  \author[\studentname]{\studentname\\[2pt]
+    {\normalsize\normalfont Student ID \studentids\\ \coursename}}%
+  \date{\today}}
+
+% --- Grading items -----------------------------------------------------------
+% \gradeditem{<label>}{<title>}{<points>} starts a section for one grading item.
+\newcommand{\gradeditem}[3]{%
+  \section{#2\texorpdfstring{\enspace{\normalfont\small[#3~pts]}}{ [#3 pts]}}\label{#1}}
+
+% Evidence summary shown at the end of each graded section.
+\newtcolorbox{evidence}{enhanced, breakable, frame hidden, arc=0pt,
+  colback=black!4, borderline west={1.2pt}{0pt}{black!55},
+  left=6pt, right=4pt, top=3pt, bottom=3pt,
+  before upper={\textsc{Evidence}\quad}}
+
+% Marks unfinished content in red; a final report must contain none.
+\newcommand{\pending}[1]{\textcolor{red}{[PENDING: #1]}}
+
+% --- Code and terminal output ------------------------------------------------
+\lstdefinestyle{code}{language=C++, basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries, commentstyle=\itshape\color{black!60},
+  numbers=left, numberstyle=\tiny\color{black!50}, xleftmargin=1.5em,
+  columns=fullflexible, keepspaces, breaklines, showstringspaces=false,
+  upquote=true}
+\lstdefinestyle{log}{basicstyle=\ttfamily\scriptsize, frame=leftline,
+  framerule=0.6pt, rulecolor=\color{black!40}, xleftmargin=0.8em,
+  columns=fullflexible, keepspaces, breaklines, upquote=true}
+\lstset{style=log}

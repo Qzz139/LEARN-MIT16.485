@@ -1,0 +1,7 @@
+--- rostopic echo -n 1 /turtle1/pose (03:07:29 EDT)
+x: 5.549693584442139
+y: 5.843763828277588
+theta: 0.23518529534339905
+linear_velocity: 0.0
+angular_velocity: 0.0
+---
