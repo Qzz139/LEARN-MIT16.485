@@ -1,7 +1,9 @@
 #include <ros/ros.h>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include <geometry_msgs/TransformStamped.h>
 
+#include <cmath>
 #include <iostream>
 
 class FramesPublisherNode {
@@ -10,7 +12,7 @@ class FramesPublisherNode {
   ros::Time startup_time;
 
   ros::Timer heartbeat;
-  // *** FILL IN *** instantiate a transform broadcaster...
+  tf2_ros::TransformBroadcaster broadcaster;
 
  public:
   FramesPublisherNode() {
@@ -32,7 +34,9 @@ class FramesPublisherNode {
     //   - use the - (subtraction) operator between ros::Time::now() and startup_time
     //   - convert the resulting Duration to seconds, store result into a double
 
-    // double time = *** FILL IN ***;
+    // Read the clock once so that the elapsed time and both stamps agree.
+    const ros::Time now = ros::Time::now();
+    const double time = (now - startup_time).toSec();
 
     // Here we declare two geometry_msgs::TransformStamped objects, which need to be
     // populated
@@ -64,14 +68,36 @@ class FramesPublisherNode {
     //    3. the frame names are crucial for the rest of the assignment,
     //       make sure they are as specified, "av1", "av2" and "world"
 
-    // *** FILL IN ***
+    AV1World.header.stamp = now;
+    AV1World.header.frame_id = "world";
+    AV1World.child_frame_id = "av1";
+    AV1World.transform.translation.x = std::cos(time);
+    AV1World.transform.translation.y = std::sin(time);
+    AV1World.transform.translation.z = 0.0;
+    // yaw = time turns y_1 into (-sin(time), cos(time), 0), the direction of motion
+    // along the circle; roll = pitch = 0 keeps z_1 parallel to z_w.
+    tf2::Quaternion q_av1;
+    q_av1.setRPY(0.0, 0.0, time);
+    AV1World.transform.rotation.x = q_av1.x();
+    AV1World.transform.rotation.y = q_av1.y();
+    AV1World.transform.rotation.z = q_av1.z();
+    AV1World.transform.rotation.w = q_av1.w();
+
+    // AV2 only translates, so it keeps the identity rotation set above.
+    AV2World.header.stamp = now;
+    AV2World.header.frame_id = "world";
+    AV2World.child_frame_id = "av2";
+    AV2World.transform.translation.x = std::sin(time);
+    AV2World.transform.translation.y = 0.0;
+    AV2World.transform.translation.z = std::cos(2 * time);
 
     // 3. Publish the transforms using a tf2_ros::TransformBroadcaster
     //    HINTS:
     //         1. you need to define a tf2_ros::TransformBroadcaster as a member of the
     //            node class (line 11) and use its sendTrasform method below
 
-    // *** FILL IN ***
+    broadcaster.sendTransform(AV1World);
+    broadcaster.sendTransform(AV2World);
   }
 };
 
