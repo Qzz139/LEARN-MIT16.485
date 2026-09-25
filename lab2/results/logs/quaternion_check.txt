@@ -1,0 +1,8 @@
+python3 lab2/scripts/quaternion_check.py
+random trials: 1000 (q unit, x and y arbitrary)
+max |Omega_i(q)^T Omega_i(q) - I|, |Omega_i Omega_i^T - I| = 4.44e-16
+max |Omega_i(q)^T q - [0,0,0,1]|                          = 4.44e-16
+max |Omega_1(x) y - Omega_2(y) x|                         = 1.78e-15
+max |Omega_1(x) Omega_2(y) - Omega_2(y) Omega_1(x)|       = 1.78e-15
+max |Omega_1(x) Omega_2(y)^T - Omega_2(y)^T Omega_1(x)|   = 1.78e-15
+slides' Omega_1: max |Omega_1^T Omega_1 - I|              = 0.999

@@ -1,7 +1,7 @@
 % Shared preamble for all lab reports (Tufte handout layout).
 %
 % Usage, from labN/report/labN_report.tex:
-%   \documentclass[a4paper,justified]{tufte-handout}
+%   \documentclass[a4paper]{tufte-handout}
 %   \input{../../report-style/preamble}
 %   \labtitle{2}{ROS, TF and Quaternions}
 %
@@ -15,6 +15,8 @@
 \usepackage{listings}
 \usepackage[most]{tcolorbox}
 \usepackage{siunitx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{cleveref}
 
 \setcounter{secnumdepth}{2}
@@ -26,6 +28,11 @@
 % section (tufte-latex with the current kernel); write
 % \caption{Text.\protect\label{key}} instead. Margin floats are unaffected.
 \hypersetup{colorlinks=true, allcolors=[rgb]{0.12,0.25,0.55}}
+
+% The main column is narrow: let long identifiers break after underscores
+% and give justification some slack.
+\renewcommand{\_}{\textunderscore\allowbreak}
+\setlength{\emergencystretch}{3em}
 
 % --- Author and course -------------------------------------------------------
 \newcommand{\studentname}{Xuanye Xu}
