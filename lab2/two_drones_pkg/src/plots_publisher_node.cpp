@@ -1,13 +1,13 @@
+// Publishes RViz markers at 50 Hz: a drone mesh at av1 and at av2, plus three trails
+// built from tf lookups (av1 in world, av2 in world, av2 in av1).
 #include <geometry_msgs/Point.h>
 #include <ros/ros.h>
 #include <tf2_ros/transform_listener.h>
 #include <visualization_msgs/MarkerArray.h>
 
-#include <iostream>
 #include <list>
 
 class PlotsPublisherNode {
-  ros::Time startup_time;
   ros::Timer heartbeat;
   ros::NodeHandle nh;
   ros::Publisher markers_pub;
@@ -17,44 +17,22 @@ class PlotsPublisherNode {
   tf2_ros::TransformListener tf_listener;
   int num_trails;
 
+  // The recent positions of dest_frame, expressed in ref_frame, drawn as one line.
   class TrajTrail {
     PlotsPublisherNode* parent;
-    static int id;
-    std::list<geometry_msgs::Point> poses;
+    std::list<geometry_msgs::Point> poses;  // oldest first, at most buffer_size points
     std::string ref_frame, dest_frame;
     size_t buffer_size;
-
-    std::string ns;
-    float r, g, b, a;
-
     visualization_msgs::Marker marker_out;
 
+    // Append the current position of dest_frame to the trail.
     void update() {
-      // NOTE: you need to populate this transform
       geometry_msgs::TransformStamped transform;
       try {
-        // ~~~~~~~~~~~~~~~~~~~~~~  BEGIN OF EDIT SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        /* The transform object needs to be populated with the most recent
-         * transform from ref_frame to dest_frame as provided by tf.
-
-         * Relevant variables in this scope:
-         *   - ref_frame, the frame of reference relative to which the trajectory
-         *                needs to be plotted (given)
-         *   - dest_frame, the frame of reference of the object whose trajectory
-         *                 needs to be plotted (given)
-         *   - parent->tf_buffer, a tf2_ros::Buffer object (given)
-         *   - transform, the geometry_msgs::TransformStamped object that needs to be populated
-         *
-         * HINT: use "lookupTransform", see
-         * https://wiki.ros.org/tf2/Tutorials/Writing%20a%20tf2%20listener%20%28C%2B%2B%29#TheCode
-         */
-
-        // Pose of dest_frame expressed in ref_frame, i.e. T^{ref}_{dest};
-        // ros::Time(0) asks for the latest transform available in the buffer.
+        // T^{ref}_{dest}: pose of dest_frame in ref_frame.
+        // ros::Time(0) = latest transform in the buffer.
         transform = parent->tf_buffer.lookupTransform(ref_frame, dest_frame, ros::Time(0));
 
-        // ~~~~~~~~~~~~~~~~~~~~~~~~  END OF EDIT SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~
         while (poses.size() >= buffer_size) {
           poses.pop_front();
         }
@@ -80,11 +58,6 @@ class PlotsPublisherNode {
           ref_frame(ref_frame_),
           dest_frame(dest_frame_),
           buffer_size(buffer_size_) {
-      if (buffer_size <= 0) {
-        ROS_ERROR_STREAM("invalid buffer size! defaulting to 10");
-        buffer_size = 10;
-      }
-
       marker_out.header.frame_id = ref_frame;
       marker_out.ns = "trails";
       marker_out.id = parent->num_trails++;
@@ -104,6 +77,7 @@ class PlotsPublisherNode {
 
     void setNamespace(const std::string& ns_) { marker_out.ns = ns_; }
 
+    // LINE_LIST joins the points in pairs (0-1, 2-3, ...), so the trail looks dashed.
     void setDashed() { marker_out.type = visualization_msgs::Marker::LINE_LIST; }
 
     visualization_msgs::Marker getMarker() {
@@ -112,6 +86,7 @@ class PlotsPublisherNode {
       marker_out.points.clear();
       for (auto& p : poses) marker_out.points.push_back(p);
 
+      // A LINE_LIST needs an even number of points: drop the newest unpaired one.
       if (marker_out.type == visualization_msgs::Marker::LINE_LIST && poses.size() % 2)
         marker_out.points.resize(poses.size() - 1);
 
@@ -125,11 +100,9 @@ class PlotsPublisherNode {
 
  public:
   PlotsPublisherNode() : tf_listener(tf_buffer), num_trails(0) {
-    startup_time = ros::Time::now();
     markers_pub = nh.advertise<visualization_msgs::MarkerArray>("visuals", 0);
     heartbeat =
         nh.createTimer(ros::Duration(0.02), &PlotsPublisherNode::onPublish, this);
-    heartbeat.start();
     // 400 samples at 50 Hz = 8 s, longer than one 2*pi s period of the world motion.
     av1trail = TrajTrail(this, "world", "av1", 400);
     av1trail.setColor(0.25, 0.52, 1.0);

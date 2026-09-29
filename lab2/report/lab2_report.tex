@@ -230,7 +230,7 @@ A yaw of $t+\pi/2$ would point $x_1$ forward instead, which is the usual
 convention but not the one of this lab.
 AV2 is placed at $(\sin t, 0, \cos 2t)$ and keeps the identity rotation.
 
-\lstinputlisting[style=code, linerange={37-39,71-92,99-100},
+\lstinputlisting[style=code, linerange={25-28,30-45,47-56,58-60},
 caption={Transform computation in \texttt{frames\_publisher\_node.cpp}; the
 broadcaster is a class member.}, label=lst:frames]{../two_drones_pkg/src/frames_publisher_node.cpp}
 
@@ -296,7 +296,7 @@ identity orientation (RViz had warned about an uninitialised quaternion), and
 the world trails keep 400 samples (\SI{8}{s} at \SI{50}{Hz}) instead of 300, so
 that one full $2\pi$\,s period is visible.
 
-\lstinputlisting[style=code, linerange={53-55}, firstnumber=53,
+\lstinputlisting[style=code, linerange={32-34}, firstnumber=32,
 caption={Transform lookup in \texttt{TrajTrail::update()}.},
 label=lst:lookup]{../two_drones_pkg/src/plots_publisher_node.cpp}
 
@@ -513,7 +513,7 @@ $[\bm v]_\times^2 = \bm v\bm v^T - \lVert\bm v\rVert^2 I$.
 \marginnote{The slides print $\Omega_1$ with $(1,3)$ entry $-q_2$ and
 $(2,3)$ entry $+q_1$; the handout has $+q_2$ and $-q_1$. The slide version
 is not orthogonal (a random unit $q$ gives
-$\max|\Omega_1^T\Omega_1 - I| = 0.999$) and is taken as a typo.
+$\max|\Omega_1^T\Omega_1 - I| = 0.9998$) and is taken as a typo.
 \texttt{scripts/quaternion\_check.py} also checks all three properties
 numerically; this is a sanity check, not a proof.}
 

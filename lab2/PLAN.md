@@ -2,7 +2,7 @@
 
 规划日期：2026-09-23，复核日期：2026-09-24。建议采用 **Ubuntu 20.04 + ROS Noetic + 官方 `VNAV2023` 代码**，按“环境 → 静态场景 → 动态 TF → 相对轨迹 → 数学证明 → 报告与现场检查”的顺序完成。
 
-本文是实施计划。当前 `lab2/` 尚无实验实现和实测结果；下文的运行结果、截图、代码目录均为待完成项，公式是理论校验值。本次未安装 ROS，也未运行无人机场景。
+状态：实验与英文 PDF 报告已完成，现场检查及正式提交待按助教通知进行。得分点 1–5（ROS 安装、双机运动、轨迹、数学推导、四元数性质）已在远程 x86-64 主机的 WSL 2 Ubuntu 20.04.6 + ROS Noetic 中完成；代码见 [two_drones_pkg](two_drones_pkg/)，实测记录见 [results/logs](results/logs/) 和 [results/screenshots](results/screenshots/)，数值校验脚本见 [scripts](scripts/)。报告见 [lab2_report.pdf](report/lab2_report.pdf)。下文保留规划时的原文，其中“待完成”等说法以本状态行为准。
 
 ## 1. 任务范围与交付物
 
