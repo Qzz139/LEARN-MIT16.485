@@ -258,17 +258,18 @@ the index is
 \]
 Thus regular bins are left-closed and right-open, while the last bin includes
 the maximum. For \(M=m\), all values go into the first bin to avoid division
-by zero. The histogram is printed as vertical columns. Invalid size,
-nonfinite or negative upper bound, and nonpositive bin count raise
-\texttt{std::invalid\_argument}.
+by zero. The histogram is printed as vertical columns. As in the lab
+template, the code assumes a positive size and bin count and does not
+validate its inputs.
 
 The Ubuntu default run produced 20 values with mean \(0.55804\), minimum
 \(0.0278694\), and maximum \(0.982655\). Its five column counts were
 \(5,1,4,3,7\), summing exactly to 20. Figure~\ref{fig:vector} shows both the
-actual histogram and the verification summary. The test program also checked
-the printed value count and range, independent bin classification from the
-seeded inputs, a singleton, zero and scaled upper bounds, one bin, more bins
-than values, and invalid arguments. All passed on Ubuntu 20.04.
+actual histogram and the verification summary. A separate test program
+checked \(0\le\min\le\text{mean}\le\max\le1\), counted the printed
+\texttt{***} cells to confirm that 1, 5, and 30 bins each hold exactly 20
+values, and checked that equal values all fall into the first bin. All
+checks passed on Ubuntu 20.04.
 
 The Ubuntu sequence differs from the MIT sample and a local macOS run. A
 fixed seed reproduces the sequence within one \texttt{std::rand()}

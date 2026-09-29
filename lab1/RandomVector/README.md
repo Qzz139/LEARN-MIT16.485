@@ -11,4 +11,4 @@ g++ -std=c++11 -Wall -Wextra -pedantic -o test_random_vector test_random_vector.
 ./test_random_vector
 ```
 
-The constructor requires a positive size and a finite, nonnegative `max_val`. The histogram requires a positive bin count. Invalid inputs throw `std::invalid_argument`. If all values are equal, they go in the first bin. Otherwise bins are left-closed and right-open, except that the final bin includes the maximum. The fixed seed in `main.cpp` makes runs repeatable on the same C library; `std::rand()` sequences can differ across platforms.
+`test_random_vector.cpp` checks that `min <= mean <= max`, that the histogram keeps all 20 values (for 1, 5 and 30 bins), and that equal values all land in the first bin. Bins are left-closed and right-open, except that the final bin includes the maximum. There is no input validation: the program assumes a positive size and bin count, as the lab does. The fixed seed in `main.cpp` makes runs repeatable on the same C library; `std::rand()` sequences can differ across platforms.

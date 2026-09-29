@@ -1,8 +1,6 @@
-RandomVector boundary verification
+RandomVector verification
 Ubuntu 20.04.6 LTS, WSL 2, x86_64, user qz
-Captured 2026-09-24T08:59:14+08:00
+Captured 2026-09-29T03:20:17-04:00
 $ /home/qz/lab1/RandomVector/test_random_vector
-Default: 20 values, 5 bins, counts = 5 1 4 3 7; total = 20
-Boundary cases: singleton, zero maximum, scaled maximum, one bin, eight bins: PASS
-Invalid parameters: zero size, negative/nonfinite maximum, zero bins: PASS
+All RandomVector checks passed: range, mean, 20 stars for 1/5/30 bins, equal values
 Exit status: 0

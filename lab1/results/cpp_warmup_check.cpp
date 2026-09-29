@@ -1,3 +1,6 @@
+// Runs the ten C++ warm-up snippets from ../cpp-warmup.txt and prints each result.
+// The labels O1-O2 (operators), R1-R4 (references/pointers), N1-N4 (numeric types)
+// match the question numbers.
 #include <iostream>
 
 void reset(int& value) { value = 0; }

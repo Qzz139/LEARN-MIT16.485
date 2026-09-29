@@ -1,24 +1,19 @@
 #include "random_vector.h"
 
-#include <cmath>
 #include <cstdlib>
-#include <stdexcept>
 
+// Fill the vector with `size` random numbers in [0, max_val].
 RandomVector::RandomVector(int size, double max_val) {
-  if (size <= 0 || !std::isfinite(max_val) || max_val < 0.0) {
-    throw std::invalid_argument("size must be positive and max_val finite and nonnegative");
-  }
-
-  vect.reserve(static_cast<std::size_t>(size));
   for (int i = 0; i < size; ++i) {
-    const double unit = static_cast<double>(std::rand()) / RAND_MAX;
+    // Cast to double first: rand() / RAND_MAX would be integer division (almost always 0).
+    double unit = static_cast<double>(std::rand()) / RAND_MAX;  // in [0, 1]
     vect.push_back(unit * max_val);
   }
 }
 
 void RandomVector::print() {
   for (std::size_t i = 0; i < vect.size(); ++i) {
-    if (i != 0) std::cout << ' ';
+    if (i > 0) std::cout << ' ';
     std::cout << vect[i];
   }
   std::cout << '\n';
@@ -30,6 +25,7 @@ double RandomVector::mean() {
   return sum / vect.size();
 }
 
+// max() and min() start from the first element, not from an arbitrary constant like 0.
 double RandomVector::max() {
   double result = vect[0];
   for (double value : vect) {
@@ -47,30 +43,28 @@ double RandomVector::min() {
 }
 
 void RandomVector::printHistogram(int bins) {
-  if (bins <= 0) throw std::invalid_argument("bins must be positive");
-
-  std::vector<int> counts(static_cast<std::size_t>(bins), 0);
-  const double low = min();
-  const double high = max();
-  if (low == high) {
-    counts[0] = static_cast<int>(vect.size());
-  } else {
-    for (double value : vect) {
-      // Left-closed bins; the maximum belongs to the final bin.
-      int index = static_cast<int>((value - low) / (high - low) * bins);
-      if (index >= bins) index = bins - 1;
-      ++counts[static_cast<std::size_t>(index)];
-    }
+  // Step 1: count how many values fall in each of `bins` equal-width bins over [min, max].
+  std::vector<int> counts(bins, 0);
+  double low = min(), high = max();
+  for (double value : vect) {
+    int index = 0;  // if every value is equal (high == low), all go to the first bin
+    if (high > low) index = static_cast<int>((value - low) / (high - low) * bins);
+    // Bins are [left, right); the maximum itself gives index == bins, so move it
+    // into the last bin instead of writing past the end of `counts`.
+    if (index == bins) index = bins - 1;
+    ++counts[index];
   }
 
+  // Step 2: print the columns from the top row down. A bin gets "***" in every
+  // row whose level is at most its count.
   int tallest = 0;
   for (int count : counts) {
     if (count > tallest) tallest = count;
   }
   for (int level = tallest; level > 0; --level) {
     for (int bin = 0; bin < bins; ++bin) {
-      if (bin != 0) std::cout << ' ';
-      std::cout << (counts[static_cast<std::size_t>(bin)] >= level ? "***" : "   ");
+      if (bin > 0) std::cout << ' ';
+      std::cout << (counts[bin] >= level ? "***" : "   ");
     }
     std::cout << '\n';
   }

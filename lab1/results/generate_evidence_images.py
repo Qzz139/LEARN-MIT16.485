@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Render freshly verified SSH/WSL command output as report figures.
+"""Run commands in the WSL Ubuntu-20.04 over SSH and render their output as report figures.
 
 These are rendered command transcripts, not photographs of a desktop window.
+Needs the shared SSH socket (see SOCKET). Render all figures, or only the named ones:
+    python3 lab1/results/generate_evidence_images.py [05_random_vector ...]
 """
 
 from datetime import datetime
 from pathlib import Path
 import subprocess
+import sys
 import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
@@ -34,11 +37,11 @@ def run(command: str) -> str:
     return result.stdout.replace("\r", "").rstrip()
 
 
-def render(slug: str, title: str, steps: list[tuple[str, str]]) -> None:
+def render(slug: str, title: str, commands: list[str]) -> None:
     lines = []
-    for label, command in steps:
+    for command in commands:
         output = run(command)
-        lines.append(f"$ {label}")
+        lines.append(f"$ {command}")
         lines.extend(output.splitlines() or ["(no output; exit status 0)"])
         lines.append("")
 
@@ -92,52 +95,36 @@ def render(slug: str, title: str, steps: list[tuple[str, str]]) -> None:
     print(OUT / f"{slug}.png")
 
 
-render(
-    "01_ubuntu_environment",
-    "Lab 1 · Ubuntu installation and setup",
-    [
-        ("cat /etc/os-release | grep -E 'PRETTY_NAME|VERSION_ID|VERSION_CODENAME'", "cat /etc/os-release | grep -E 'PRETTY_NAME|VERSION_ID|VERSION_CODENAME'"),
-        ("uname -m; id", "uname -m; id"),
-        ("dpkg-query -W build-essential cmake git", "dpkg-query -W build-essential cmake git"),
-        ("g++ --version | head -n 1; cmake --version | head -n 1", "g++ --version | head -n 1; cmake --version | head -n 1"),
-    ],
-)
+L = "/home/qz/lab1"  # lab1 copy inside WSL
 
-render(
-    "02_compile_examples",
-    "Lab 1 · Compile and run examples",
-    [
-        ("g++ -std=c++11 -Wall -Wextra -pedantic /home/qz/lab1/examples/hello.cpp -o /home/qz/lab1/examples/hello", "g++ -std=c++11 -Wall -Wextra -pedantic /home/qz/lab1/examples/hello.cpp -o /home/qz/lab1/examples/hello"),
-        ("/home/qz/lab1/examples/hello", "/home/qz/lab1/examples/hello"),
-        ("cmake --build /home/qz/lab1/examples/cmake-example/build", "cmake --build /home/qz/lab1/examples/cmake-example/build"),
-        ("/home/qz/lab1/examples/cmake-example/build/example", "/home/qz/lab1/examples/cmake-example/build/example"),
-    ],
-)
+FIGURES = {
+    "01_ubuntu_environment": ("Lab 1 · Ubuntu installation and setup", [
+        "cat /etc/os-release | grep -E 'PRETTY_NAME|VERSION_ID|VERSION_CODENAME'",
+        "uname -m; id",
+        "dpkg-query -W build-essential cmake git",
+        "g++ --version | head -n 1; cmake --version | head -n 1",
+    ]),
+    "02_compile_examples": ("Lab 1 · Compile and run examples", [
+        f"g++ -std=c++11 -Wall -Wextra -pedantic {L}/examples/hello.cpp -o {L}/examples/hello",
+        f"{L}/examples/hello",
+        f"cmake --build {L}/examples/cmake-example/build",
+        f"{L}/examples/cmake-example/build/example",
+    ]),
+    "03_shell_operations": ("Lab 1 · Shell operations", [
+        f"wc -l -w {L}/data/dante.txt",
+        f"grep -cve '^[[:space:]]*$' {L}/data/dante.txt",
+        f"sed -n '9,13p' {L}/append_fortunes.sh",
+        f"wc -c {L}/fortunes.txt; sha256sum {L}/fortunes.txt",
+    ]),
+    "04_cpp_warmup": ("Lab 1 · C++ warm-up verification", [
+        f"{L}/results/cpp_warmup_check",
+    ]),
+    "05_random_vector": ("Lab 1 · RandomVector practice", [
+        f"{L}/RandomVector/random_vector",
+        f"{L}/RandomVector/test_random_vector",
+    ]),
+}
 
-render(
-    "03_shell_operations",
-    "Lab 1 · Shell operations",
-    [
-        ("wc -l -w /home/qz/lab1/data/dante.txt", "wc -l -w /home/qz/lab1/data/dante.txt"),
-        ("grep -cve '^[[:space:]]*$' /home/qz/lab1/data/dante.txt", "grep -cve '^[[:space:]]*$' /home/qz/lab1/data/dante.txt"),
-        ("sed -n '9,13p' /home/qz/lab1/append_fortunes.sh", "sed -n '9,13p' /home/qz/lab1/append_fortunes.sh"),
-        ("wc -c /home/qz/lab1/fortunes.txt; sha256sum /home/qz/lab1/fortunes.txt", "wc -c /home/qz/lab1/fortunes.txt; sha256sum /home/qz/lab1/fortunes.txt"),
-    ],
-)
-
-render(
-    "04_cpp_warmup",
-    "Lab 1 · C++ warm-up verification",
-    [
-        ("/home/qz/lab1/results/cpp_warmup_check", "/home/qz/lab1/results/cpp_warmup_check"),
-    ],
-)
-
-render(
-    "05_random_vector",
-    "Lab 1 · RandomVector practice",
-    [
-        ("/home/qz/lab1/RandomVector/random_vector", "/home/qz/lab1/RandomVector/random_vector"),
-        ("/home/qz/lab1/RandomVector/test_random_vector", "/home/qz/lab1/RandomVector/test_random_vector"),
-    ],
-)
+if __name__ == "__main__":
+    for slug in sys.argv[1:] or FIGURES:
+        render(slug, *FIGURES[slug])

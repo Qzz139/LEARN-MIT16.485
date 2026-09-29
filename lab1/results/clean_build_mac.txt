@@ -1,4 +1,4 @@
-Lab 1 clean C++ build verification (macOS, 2026-09-25)
+Lab 1 clean C++ build verification (macOS, 2026-09-29)
 
 Build directory: a fresh mktemp directory under /private/tmp.
 Commands (from the project root):
@@ -8,9 +8,7 @@ Commands (from the project root):
   "$build_dir/random_vector"
 
 Test output:
-  Default: 20 values, 5 bins, counts = 8 1 8 2 1; total = 20
-  Boundary cases: singleton, zero maximum, scaled maximum, one bin, eight bins: PASS
-  Invalid parameters: zero size, negative/nonfinite maximum, zero bins: PASS
+  All RandomVector checks passed: range, mean, 20 stars for 1/5/30 bins, equal values
 
 Default program output began:
   Mean: 0.393617
