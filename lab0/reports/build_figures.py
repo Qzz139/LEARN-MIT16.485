@@ -1,4 +1,8 @@
-"""Create compact, report-ready figures from the recorded Lab0 outputs."""
+"""Compose the Lab0 report figures from the saved program outputs.
+
+Run after calibrate_phone.py and stereo_depth.py (needs Pillow and macOS Arial):
+    python3.9 lab0/reports/build_figures.py
+"""
 
 import json
 from pathlib import Path
@@ -10,7 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path(__file__).resolve().parent / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 INK = "#242824"
-MUTED = "#68706b"
 RED = "#aa533f"
 TEAL = "#257b83"
 PAPER = "#fbfaf6"
