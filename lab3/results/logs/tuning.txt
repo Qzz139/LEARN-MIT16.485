@@ -1,0 +1,252 @@
+=== A1_static  mode=static  kx=1 kv=1 kr=1 komega=1
+bag: /home/qz/lab3_work/bags/A1_static.bag
+samples: 749 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.364, mean 0.363, max 0.392
+yaw error [deg]:    rms 0.30, max 1.74
+altitude: mean 1.637 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/A1_static.png
+=== A2_static  mode=static  kx=1 kv=1 kr=5 komega=1
+bag: /home/qz/lab3_work/bags/A2_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.366, mean 0.365, max 0.403
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.635 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/A2_static.png
+=== A3_static  mode=static  kx=1 kv=1 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/A3_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.364, mean 0.364, max 0.409
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.636 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/A3_static.png
+=== A4_static  mode=static  kx=1 kv=1 kr=20 komega=1
+bag: /home/qz/lab3_work/bags/A4_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.371, mean 0.370, max 0.416
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.630 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/A4_static.png
+=== B1_static  mode=static  kx=1 kv=1 kr=10 komega=0.5
+bag: /home/qz/lab3_work/bags/B1_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.374, mean 0.373, max 0.429
+yaw error [deg]:    rms 0.00, max 0.02
+altitude: mean 1.627 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/B1_static.png
+=== B2_static  mode=static  kx=1 kv=1 kr=10 komega=2
+bag: /home/qz/lab3_work/bags/B2_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.373, mean 0.373, max 0.400
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.627 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/B2_static.png
+=== B3_static  mode=static  kx=1 kv=1 kr=10 komega=5
+bag: /home/qz/lab3_work/bags/B3_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.800, mean 0.395, max 2.808
+yaw error [deg]:    rms 6.61, max 15.48
+altitude: mean 1.958 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/B3_static.png
+=== C1_static  mode=static  kx=5 kv=1 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/C1_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.369, mean 0.260, max 1.201
+yaw error [deg]:    rms 0.23, max 0.95
+altitude: mean 1.916 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/C1_static.png
+=== C2_static  mode=static  kx=10 kv=1 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/C2_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.053, mean 0.046, max 0.162
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.961 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/C2_static.png
+=== C3_static  mode=static  kx=10 kv=3 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/C3_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.036, mean 0.036, max 0.040
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.964 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/C3_static.png
+=== C4_static  mode=static  kx=10 kv=5 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/C4_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.309, mean 0.270, max 0.415
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.761 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/C4_static.png
+=== C5_static  mode=static  kx=15 kv=3 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/C5_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.331, mean 0.323, max 0.422
+yaw error [deg]:    rms 0.01, max 0.05
+altitude: mean 1.816 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/C5_static.png
+=== D1_static  mode=static  kx=10 kv=3 kr=20 komega=2
+bag: /home/qz/lab3_work/bags/D1_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.037, mean 0.037, max 0.041
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.963 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/D1_static.png
+=== D2_static  mode=static  kx=10 kv=5 kr=20 komega=3
+bag: /home/qz/lab3_work/bags/D2_static.bag
+samples: 750 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.036, mean 0.036, max 0.038
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.964 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/D2_static.png
+=== D3_static  mode=static  kx=15 kv=5 kr=20 komega=3
+bag: /home/qz/lab3_work/bags/D3_static.bag
+samples: 749 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.024, mean 0.024, max 0.026
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.976 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/D3_static.png
+=== D4_static  mode=static  kx=15 kv=6 kr=30 komega=4
+bag: /home/qz/lab3_work/bags/D4_static.bag
+samples: 751 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.024, mean 0.024, max 0.026
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.976 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/D4_static.png
+=== D5_static  mode=static  kx=20 kv=7 kr=30 komega=4
+bag: /home/qz/lab3_work/bags/D5_static.bag
+samples: 749 over 15.0 s (skip first 5.0 s)
+position error [m]: rms 0.018, mean 0.018, max 0.020
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 1.982 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/D5_static.png
+=== E1_circle  mode=circle  kx=10 kv=3 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/E1_circle.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.053, mean 0.052, max 0.152
+yaw error [deg]:    rms 2.60, max 4.74
+altitude: mean 1.965 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E1_circle.png
+=== E2_circle  mode=circle  kx=10 kv=5 kr=20 komega=3
+bag: /home/qz/lab3_work/bags/E2_circle.bag
+samples: 1099 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.045, mean 0.044, max 0.101
+yaw error [deg]:    rms 3.99, max 5.16
+altitude: mean 1.976 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E2_circle.png
+=== E3_circle  mode=circle  kx=15 kv=5 kr=20 komega=3
+bag: /home/qz/lab3_work/bags/E3_circle.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.040, mean 0.038, max 0.136
+yaw error [deg]:    rms 4.01, max 5.83
+altitude: mean 1.984 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E3_circle.png
+=== E4_circle  mode=circle  kx=15 kv=6 kr=30 komega=4
+bag: /home/qz/lab3_work/bags/E4_circle.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.035, mean 0.033, max 0.091
+yaw error [deg]:    rms 3.56, max 4.98
+altitude: mean 1.991 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E4_circle.png
+=== E5_circle  mode=circle  kx=20 kv=7 kr=30 komega=4
+bag: /home/qz/lab3_work/bags/E5_circle.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.035, mean 0.033, max 0.090
+yaw error [deg]:    rms 3.55, max 5.07
+altitude: mean 1.992 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E5_circle.png
+=== E6_circle  mode=circle  kx=25 kv=8 kr=40 komega=5
+bag: /home/qz/lab3_work/bags/E6_circle.bag
+samples: 1099 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.056, mean 0.053, max 0.108
+yaw error [deg]:    rms 9.00, max 21.91
+altitude: mean 1.996 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/E6_circle.png
+=== F0_circle_default  mode=circle  kx=1 kv=1 kr=1 komega=1
+bag: /home/qz/lab3_work/bags/F0_circle_default.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 25.372, mean 21.726, max 53.016
+yaw error [deg]:    rms 84.15, max 179.96
+altitude: mean 3.992 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/F0_circle_default.png
+=== G1_circle_fix  mode=circle  kx=20 kv=7 kr=30 komega=4
+bag: /home/qz/lab3_work/bags/G1_circle_fix.bag
+samples: 1101 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.031, mean 0.029, max 0.140
+yaw error [deg]:    rms 3.63, max 7.00
+altitude: mean 1.993 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/G1_circle_fix.png
+=== G2_circle_fix  mode=circle  kx=10 kv=3 kr=10 komega=1
+bag: /home/qz/lab3_work/bags/G2_circle_fix.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.054, mean 0.052, max 0.156
+yaw error [deg]:    rms 2.71, max 4.54
+altitude: mean 1.961 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/G2_circle_fix.png
+=== G3_circle_fix  mode=circle  kx=25 kv=8 kr=40 komega=5
+bag: /home/qz/lab3_work/bags/G3_circle_fix.bag
+samples: 1100 over 22.0 s (skip first 8.0 s)
+position error [m]: rms 0.040, mean 0.035, max 0.121
+yaw error [deg]:    rms 9.14, max 24.82
+altitude: mean 1.993 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/G3_circle_fix.png
+=== H1_circle  mode=circle  kx=4 kv=3 kr=5 komega=1
+bag: /home/qz/lab3_work/bags/H1_circle.bag
+samples: 850 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.107, mean 0.107, max 0.192
+yaw error [deg]:    rms 5.38, max 7.55
+altitude: mean 1.912 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H1_circle.png
+=== H2_circle  mode=circle  kx=6 kv=4 kr=5 komega=1
+bag: /home/qz/lab3_work/bags/H2_circle.bag
+samples: 851 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.213, mean 0.208, max 0.346
+yaw error [deg]:    rms 4.12, max 6.14
+altitude: mean 1.863 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H2_circle.png
+=== H3_circle  mode=circle  kx=6 kv=4 kr=8 komega=1.5
+bag: /home/qz/lab3_work/bags/H3_circle.bag
+samples: 849 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.074, mean 0.073, max 0.166
+yaw error [deg]:    rms 5.03, max 7.15
+altitude: mean 1.944 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H3_circle.png
+=== H4_circle  mode=circle  kx=8 kv=4 kr=8 komega=1.5
+bag: /home/qz/lab3_work/bags/H4_circle.bag
+samples: 850 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.064, mean 0.063, max 0.215
+yaw error [deg]:    rms 5.02, max 6.67
+altitude: mean 1.957 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H4_circle.png
+=== H5_circle  mode=circle  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab3_work/bags/H5_circle.bag
+samples: 850 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.063, mean 0.061, max 0.208
+yaw error [deg]:    rms 5.38, max 6.55
+altitude: mean 1.959 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H5_circle.png
+=== H6_circle  mode=circle  kx=10 kv=4 kr=10 komega=2
+bag: /home/qz/lab3_work/bags/H6_circle.bag
+samples: 849 over 17.0 s (skip first 8.0 s)
+position error [m]: rms 0.057, mean 0.055, max 0.197
+yaw error [deg]:    rms 5.38, max 6.54
+altitude: mean 1.967 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/H6_circle.png
+=== K1_circle  mode=circle  kx=6 kv=4 kr=8 komega=1.5
+bag: /home/qz/lab3_work/bags/K1_circle.bag
+samples: 1600 over 32.0 s (skip first 8.0 s)
+position error [m]: rms 0.072, mean 0.071, max 0.208
+yaw error [deg]:    rms 5.08, max 6.72
+altitude: mean 1.943 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/K1_circle.png
+=== K2_circle  mode=circle  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab3_work/bags/K2_circle.bag
+samples: 1601 over 32.0 s (skip first 8.0 s)
+position error [m]: rms 0.063, mean 0.061, max 0.210
+yaw error [deg]:    rms 5.38, max 7.08
+altitude: mean 1.960 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/K2_circle.png
+=== K3_circle  mode=circle  kx=8 kv=4 kr=10 komega=2
+bag: /home/qz/lab3_work/bags/K3_circle.bag
+samples: 1599 over 32.0 s (skip first 8.0 s)
+position error [m]: rms 0.063, mean 0.061, max 0.214
+yaw error [deg]:    rms 5.38, max 6.97
+altitude: mean 1.960 m (desired mean 2.000 m)
+plot: /home/qz/lab3_work/plots/K3_circle.png

@@ -1,0 +1,8 @@
+alignment: av-desired TF interpolated at odometry header stamps
+bag: final_circle.bag
+samples: 1996 over 39.9 s (skip first 0.0 s)
+position error [m]: rms 0.018, mean 0.016, max 0.045
+yaw error [deg]:    rms 4.00, max 5.17
+altitude: mean 1.993 m (desired mean 2.000 m)
+plot: final_circle_oldgains.png
+final_circle.bag: roll/pitch jitter 0.42/1.39 deg, roll/pitch rate rms 14.0/23.3 deg/s, rotor step rms 80.3 rad/s, rotor mean 17.8 rad/s, pos err rms 0.037 m

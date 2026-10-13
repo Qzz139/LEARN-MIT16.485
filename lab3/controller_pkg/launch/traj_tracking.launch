@@ -1,0 +1,15 @@
+
+<launch>
+  <!-- Launch desired trajectory -->
+  <node name="traj_publisher" pkg="controller_pkg" type="traj_publisher"/>
+
+  <!-- Launch our controller -->
+  <node name="controller_node" pkg="controller_pkg" type="controller_node"/>
+
+  <!-- Controller gains (tuned, see lab3 report) -->
+  <param name="kx" type="double" value="8" />
+  <param name="kv" type="double" value="5" />
+  <param name="kr" type="double" value="10" />
+  <param name="komega" type="double" value="2" />
+
+</launch>

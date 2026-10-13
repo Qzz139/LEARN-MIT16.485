@@ -1,0 +1,24 @@
+C3_static.bag
+  x: std 0.000 m, dominant 0.92 Hz
+  y: std 0.000 m, dominant 0.92 Hz
+  z: std 0.001 m, dominant 0.25 Hz
+  |omega_world| rms 0.00 rad/s
+  rotor cmd: min -341.3, max 346.5, mean 48.8 rad/s, frac<0 0.019
+C4_static.bag
+  x: std 0.109 m, dominant 1.00 Hz
+  y: std 0.109 m, dominant 1.00 Hz
+  z: std 0.107 m, dominant 0.08 Hz
+  |omega_world| rms 3.43 rad/s
+  rotor cmd: min -338.1, max 343.5, mean 37.3 rad/s, frac<0 0.215
+C5_static.bag
+  x: std 0.194 m, dominant 0.83 Hz
+  y: std 0.194 m, dominant 0.83 Hz
+  z: std 0.026 m, dominant 1.66 Hz
+  |omega_world| rms 3.32 rad/s
+  rotor cmd: min -341.8, max 343.2, mean 35.0 rad/s, frac<0 0.295
+B3_static.bag
+  x: std 0.455 m, dominant 0.08 Hz
+  y: std 0.602 m, dominant 0.08 Hz
+  z: std 0.042 m, dominant 0.08 Hz
+  |omega_world| rms 6.01 rad/s
+  rotor cmd: min -970.2, max 972.4, mean 2.8 rad/s, frac<0 0.500

@@ -1,0 +1,99 @@
+### rosnode list
+/controller_node
+/rosout
+/rviz_1791894430671224267
+/tesse/quadrotor_control_interface
+/tesse/tesse_ros_bridge
+/traj_publisher
+
+### rosnode info /controller_node
+--------------------------------------------------------------------------------
+Node [/controller_node]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rotor_speed_cmds [mav_msgs/Actuators]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /current_state [nav_msgs/Odometry]
+ * /desired_state [trajectory_msgs/MultiDOFJointTrajectoryPoint]
+
+Services: 
+ * /controller_node/get_loggers
+ * /controller_node/set_logger_level
+
+
+contacting node http://DESKTOP-91LK43L:44320/ ...
+Pid: 222839
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (43822 - 127.0.0.1:43341) [17]
+    * transport: TCPROS
+ * topic: /rotor_speed_cmds
+    * to: /tesse/quadrotor_control_interface
+    * direction: outbound (43822 - 127.0.0.1:43333) [14]
+    * transport: TCPROS
+ * topic: /clock
+    * to: /tesse/tesse_ros_bridge (http://DESKTOP-91LK43L:45198/)
+    * direction: inbound (43595 - DESKTOP-91LK43L:43970) [15]
+
+### rostopic info /desired_state
+Type: trajectory_msgs/MultiDOFJointTrajectoryPoint
+
+Publishers: 
+ * /traj_publisher (http://DESKTOP-91LK43L:43434/)
+
+Subscribers: 
+ * /controller_node (http://DESKTOP-91LK43L:44320/)
+
+
+### rostopic info /current_state
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /tesse/tesse_ros_bridge (http://DESKTOP-91LK43L:45198/)
+
+Subscribers: 
+ * /rviz_1791894430671224267 (http://DESKTOP-91LK43L:44626/)
+ * /controller_node (http://DESKTOP-91LK43L:44320/)
+
+
+### rostopic info /rotor_speed_cmds
+Type: mav_msgs/Actuators
+
+Publishers: 
+ * /controller_node (http://DESKTOP-91LK43L:44320/)
+
+Subscribers: 
+ * /tesse/quadrotor_control_interface (http://DESKTOP-91LK43L:45248/)
+
+
+
+### rostopic hz /desired_state
+average rate: 99.775
+	min: 0.000s max: 0.040s std dev: 0.01111s window: 444
+### rostopic hz /current_state
+average rate: 50.000
+	min: 0.000s max: 0.060s std dev: 0.00537s window: 223
+### rostopic hz /rotor_speed_cmds
+average rate: 97.523
+	min: 0.000s max: 0.080s std dev: 0.01138s window: 434
+
+### one /rotor_speed_cmds message
+header: 
+  seq: 7384
+  stamp: 
+    secs: 3819
+    nsecs: 119999999
+  frame_id: ''
+angles: []
+angular_velocities: [65.40117731176785, 22.537564471886846, 69.39874365963541, 24.117848544988192]
+normalized: []
+---
+
+### gains on the parameter server
+kx: 8.0
+kv: 5.0
+kr: 10.0
+komega: 2.0

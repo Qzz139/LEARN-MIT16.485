@@ -1,0 +1,24 @@
+bag: S1_static.bag, 1001 odometry samples, mean dt 20.0 ms
+|v| rms 6.731 m/s, |w| rms 0.555 rad/s
+relative RMS error of the twist field under each hypothesis (smaller wins):
+  linear : world 0.029   body 0.825
+  angular: world 0.168   body 0.757
+
+bag: S4_static.bag, 1002 odometry samples, mean dt 20.0 ms
+|v| rms 0.962 m/s, |w| rms 3.290 rad/s
+relative RMS error of the twist field under each hypothesis (smaller wins):
+  linear : world 0.089   body 0.788
+  angular: world 0.061   body 0.766
+
+bag: S5_static.bag, 1002 odometry samples, mean dt 20.0 ms
+|v| rms 2.756 m/s, |w| rms 2.359 rad/s
+relative RMS error of the twist field under each hypothesis (smaller wins):
+  linear : world 0.078   body 1.411
+  angular: world 0.469   body 1.170
+
+bag: C4_static.bag, 1002 odometry samples, mean dt 20.0 ms
+|v| rms 0.796 m/s, |w| rms 2.750 rad/s
+relative RMS error of the twist field under each hypothesis (smaller wins):
+  linear : world 0.088   body 0.770
+  angular: world 0.062   body 0.743
+

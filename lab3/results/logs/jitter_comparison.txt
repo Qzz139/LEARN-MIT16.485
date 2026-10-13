@@ -1,0 +1,20 @@
+# smoothness + tracking on the circle (receive-time alignment for pos err; see analyze_bag.py for exact values)
+F0_circle_default.bag: roll/pitch jitter 2.38/0.85 deg, roll/pitch rate rms 56.5/46.4 deg/s, rotor step rms 23.8 rad/s, rotor mean 46.8 rad/s, pos err rms 25.364 m
+E1_circle.bag: roll/pitch jitter 0.25/1.19 deg, roll/pitch rate rms 4.4/22.0 deg/s, rotor step rms 19.6 rad/s, rotor mean 46.1 rad/s, pos err rms 0.053 m
+E2_circle.bag: roll/pitch jitter 0.12/0.34 deg, roll/pitch rate rms 3.1/7.2 deg/s, rotor step rms 45.1 rad/s, rotor mean 33.3 rad/s, pos err rms 0.045 m
+E3_circle.bag: roll/pitch jitter 0.16/0.66 deg, roll/pitch rate rms 3.8/12.0 deg/s, rotor step rms 45.7 rad/s, rotor mean 33.7 rad/s, pos err rms 0.040 m
+E4_circle.bag: roll/pitch jitter 0.28/0.74 deg, roll/pitch rate rms 10.3/14.0 deg/s, rotor step rms 74.0 rad/s, rotor mean 19.1 rad/s, pos err rms 0.035 m
+E5_circle.bag: roll/pitch jitter 0.32/1.15 deg, roll/pitch rate rms 10.5/21.2 deg/s, rotor step rms 70.1 rad/s, rotor mean 21.2 rad/s, pos err rms 0.035 m
+E6_circle.bag: roll/pitch jitter 5.66/2.05 deg, roll/pitch rate rms 265.6/42.4 deg/s, rotor step rms 553.6 rad/s, rotor mean 2.2 rad/s, pos err rms 0.056 m
+G1_circle_fix.bag: roll/pitch jitter 0.63/1.65 deg, roll/pitch rate rms 21.1/25.4 deg/s, rotor step rms 125.5 rad/s, rotor mean 17.2 rad/s, pos err rms 0.031 m
+G2_circle_fix.bag: roll/pitch jitter 0.36/1.63 deg, roll/pitch rate rms 6.1/30.5 deg/s, rotor step rms 22.5 rad/s, rotor mean 46.0 rad/s, pos err rms 0.054 m
+G3_circle_fix.bag: roll/pitch jitter 5.79/2.39 deg, roll/pitch rate rms 268.1/41.7 deg/s, rotor step rms 783.6 rad/s, rotor mean 2.2 rad/s, pos err rms 0.040 m
+H1_circle.bag: roll/pitch jitter 0.05/0.08 deg, roll/pitch rate rms 0.9/4.0 deg/s, rotor step rms 7.3 rad/s, rotor mean 50.0 rad/s, pos err rms 0.107 m
+H2_circle.bag: roll/pitch jitter 1.34/2.48 deg, roll/pitch rate rms 31.2/60.1 deg/s, rotor step rms 11.9 rad/s, rotor mean 46.7 rad/s, pos err rms 0.213 m
+H3_circle.bag: roll/pitch jitter 0.08/0.15 deg, roll/pitch rate rms 1.3/4.4 deg/s, rotor step rms 13.5 rad/s, rotor mean 48.6 rad/s, pos err rms 0.074 m
+H4_circle.bag: roll/pitch jitter 0.10/0.27 deg, roll/pitch rate rms 1.7/6.4 deg/s, rotor step rms 15.2 rad/s, rotor mean 48.3 rad/s, pos err rms 0.064 m
+H5_circle.bag: roll/pitch jitter 0.11/0.27 deg, roll/pitch rate rms 1.8/5.7 deg/s, rotor step rms 21.3 rad/s, rotor mean 46.2 rad/s, pos err rms 0.063 m
+H6_circle.bag: roll/pitch jitter 0.22/0.35 deg, roll/pitch rate rms 6.3/7.6 deg/s, rotor step rms 21.4 rad/s, rotor mean 46.3 rad/s, pos err rms 0.057 m
+K1_circle.bag: roll/pitch jitter 0.09/0.18 deg, roll/pitch rate rms 1.4/4.7 deg/s, rotor step rms 14.4 rad/s, rotor mean 48.6 rad/s, pos err rms 0.072 m
+K2_circle.bag: roll/pitch jitter 0.11/0.26 deg, roll/pitch rate rms 1.9/5.7 deg/s, rotor step rms 21.9 rad/s, rotor mean 45.7 rad/s, pos err rms 0.063 m
+K3_circle.bag: roll/pitch jitter 0.09/0.25 deg, roll/pitch rate rms 1.6/5.6 deg/s, rotor step rms 21.5 rad/s, rotor mean 46.1 rad/s, pos err rms 0.063 m

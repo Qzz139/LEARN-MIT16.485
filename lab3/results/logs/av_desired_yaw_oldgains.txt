@@ -1,0 +1,3 @@
+av-desired: 3926 samples, yaw rate -0.5000 rad/s, total rotation -1143.1 deg in 39.9 s
+base_link_gt - av-desired yaw: mean 3.99 deg, std 0.32 deg
+plot: av_desired_yaw.png
