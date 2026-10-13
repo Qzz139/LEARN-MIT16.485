@@ -1,0 +1,1306 @@
+=== R01_default  v_max=8 a_max=4  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/R01_default.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  at t [s] | speed [m/s] | passed
+    0 |       0.036      5.88 |       1.97  | yes
+    1 |       0.026     11.48 |       0.99  | yes
+    2 |       0.035     17.04 |       1.91  | yes
+    3 |       0.034     22.24 |       1.91  | yes
+    4 |       0.039     27.62 |       1.33  | yes
+    5 |       0.065     33.48 |       1.20  | yes
+    6 |      28.398      0.00 |       0.00  | NO
+    7 |      12.629     33.48 |       1.20  | NO
+    8 |      39.209      0.00 |       0.00  | NO
+    9 |      25.311     33.48 |       1.20  | NO
+   10 |      46.900      0.00 |       0.00  | NO
+   11 |      21.472     33.48 |       1.20  | NO
+gates passed in order: 6/12
+race time (trajectory start -> last gate): 33.48 s
+max speed: 2.04 m/s
+collisions during the race: 79  e.g. 0.08s Floor_01, 0.10s Floor_01, 0.12s Floor_01, 0.14s Floor_01, 0.18s Floor_01
+rotor commands: mean 47.3 rad/s, reversed 3.1 %, step rms 12.1 rad/s
+plot: /home/qz/lab4_work/plots/R01_default.png
+=== R_v20  v_max=20 a_max=20  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/R_v20.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  at t [s] | speed [m/s] | passed
+    0 |       0.061      2.58 |       4.76  | yes
+    1 |       0.058      5.62 |       1.62  | yes
+    2 |       0.050      8.72 |       3.59  | yes
+    3 |       0.036     12.10 |       3.14  | yes
+    4 |       0.039     15.34 |       2.43  | yes
+    5 |       0.030     17.86 |       2.25  | yes
+    6 |       0.040     20.94 |       2.27  | yes
+    7 |       0.030     23.60 |       2.50  | yes
+    8 |       0.030     26.56 |       1.63  | yes
+    9 |       3.877     28.50 |       2.88  | NO
+   10 |      46.900      0.00 |       0.00  | NO
+   11 |      13.429     22.60 |       2.12  | NO
+gates passed in order: 9/12
+race time (trajectory start -> last gate): 22.60 s
+max speed: 4.78 m/s
+take-off (z > 0.5 m) at 1.18 s; airborne collisions during the race: 0
+rotor commands: mean 44.4 rad/s, reversed 7.6 %, step rms 20.9 rad/s
+plot: /home/qz/lab4_work/plots/R_v20.png
+=== R_v40  v_max=40 a_max=40  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/R_v40.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  at t [s] | speed [m/s] | passed
+    0 |       0.158      1.60 |       8.57  | yes
+    1 |       0.168      3.64 |       2.55  | yes
+    2 |       0.077      5.76 |       5.75  | yes
+    3 |       0.060      8.20 |       4.61  | yes
+    4 |       0.043     10.48 |       3.56  | yes
+    5 |       0.028     12.02 |       3.53  | yes
+    6 |       0.049     14.10 |       3.40  | yes
+    7 |       0.049     15.80 |       3.92  | yes
+    8 |       0.031     17.74 |       2.50  | yes
+    9 |       0.032     19.80 |       5.63  | yes
+   10 |       0.074     22.10 |       7.94  | yes
+   11 |       0.027     28.32 |       0.03  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 28.32 s
+max speed: 8.57 m/s
+take-off (z > 0.5 m) at 0.74 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.74s
+rotor commands: mean 38.5 rad/s, reversed 18.8 %, step rms 34.0 rad/s
+plot: /home/qz/lab4_work/plots/R_v40.png
+=== R_v60  v_max=60 a_max=60  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/R_v60.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  at t [s] | speed [m/s] | passed
+    0 |       0.490      1.22 |      11.91  | yes
+    1 |       0.652      2.68 |       7.78  | NO
+    2 |       0.143      4.24 |       8.75  | yes
+    3 |       0.152      6.10 |       6.15  | yes
+    4 |       0.060      7.84 |       4.86  | yes
+    5 |       0.077      8.94 |       4.80  | yes
+    6 |       0.072     10.46 |       4.86  | yes
+    7 |       0.055     11.70 |       5.25  | yes
+    8 |       0.053     13.10 |       3.47  | yes
+    9 |       0.072     14.64 |       7.65  | yes
+   10 |       0.116     16.36 |      10.72  | yes
+   11 |       0.029     24.98 |       0.00  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): 24.98 s
+max speed: 12.24 m/s
+take-off (z > 0.5 m) at 0.58 s; airborne collisions during the race: 7  objects: Floor_01, Roof_01  first at 0.58s
+rotor commands: mean 35.7 rad/s, reversed 23.6 %, step rms 41.7 rad/s
+plot: /home/qz/lab4_work/plots/R_v60.png
+=== N_v6_a6  nonlinear=1 tp=500 v_max=6 a_max=6  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/N_v6_a6.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.049      2.98 |       3.12  | yes
+    1 |       0.070      5.84 |       1.35  | yes
+    2 |       0.041      9.08 |       2.64  | yes
+    3 |       0.152     11.84 |       2.03  | yes
+    4 |       0.063     14.76 |       1.81  | yes
+    5 |       0.039     17.86 |       1.59  | yes
+    6 |       0.043     20.92 |       1.62  | yes
+    7 |       0.030     24.10 |       1.84  | yes
+    8 |       0.049     27.00 |       1.25  | yes
+    9 |       7.023     28.00 |       1.26  | NO
+   10 |      46.900      0.00 |       0.00  | NO
+   11 |      13.358     23.10 |       2.11  | NO
+gates passed in order: 9/12
+race time (trajectory start -> last gate): 23.10 s
+max speed: 6.36 m/s
+take-off (z > 0.5 m) at 1.38 s; airborne collisions during the race: 0
+rotor commands: mean 44.8 rad/s, reversed 8.2 %, step rms 21.2 rad/s
+plot: /home/qz/lab4_work/plots/N_v6_a6.png
+=== N_v8_a8  nonlinear=1 tp=500 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/N_v8_a8.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.035      2.64 |       3.16  | yes
+    1 |       0.096      5.30 |       1.28  | yes
+    2 |       0.040      8.40 |       2.79  | yes
+    3 |       0.048     11.72 |       2.70  | yes
+    4 |       0.054     14.56 |       1.76  | yes
+    5 |       0.065     17.28 |       1.49  | yes
+    6 |       0.044     20.18 |       1.53  | yes
+    7 |       0.053     23.02 |       1.79  | yes
+    8 |       0.072     25.68 |       1.18  | yes
+    9 |       3.362     27.96 |       3.86  | NO
+   10 |      46.900      0.00 |       0.00  | NO
+   11 |      13.382     22.18 |       2.74  | NO
+gates passed in order: 9/12
+race time (trajectory start -> last gate): 22.18 s
+max speed: 4.61 m/s
+take-off (z > 0.5 m) at 1.12 s; airborne collisions during the race: 0
+rotor commands: mean 44.3 rad/s, reversed 8.5 %, step rms 23.2 rad/s
+plot: /home/qz/lab4_work/plots/N_v8_a8.png
+=== N_v10_a10  nonlinear=1 tp=500 v_max=10 a_max=10  kx=8 kv=5 kr=10 komega=2
+bag: /home/qz/lab4_work/bags/N_v10_a10.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.031      2.56 |       3.25  | yes
+    1 |       0.108      5.12 |       1.28  | yes
+    2 |       0.041      8.16 |       2.80  | yes
+    3 |       0.052     11.40 |       2.68  | yes
+    4 |       0.067     14.18 |       1.76  | yes
+    5 |       0.072     16.78 |       1.47  | yes
+    6 |       0.051     19.62 |       1.57  | yes
+    7 |       0.050     22.34 |       1.73  | yes
+    8 |       0.081     24.94 |       1.15  | yes
+    9 |       0.476     28.06 |       3.17  | yes
+   10 |       9.150     28.08 |       3.21  | NO
+   11 |      40.687      0.00 |       0.00  | NO
+gates passed in order: 10/12
+race time (trajectory start -> last gate): 0.00 s
+max speed: 4.88 m/s
+take-off (z > 0.5 m) at 1.04 s; airborne collisions during the race: 0
+rotor commands: mean nan rad/s, reversed nan %, step rms nan rad/s
+plot: /home/qz/lab4_work/plots/N_v10_a10.png
+=== N_v8_tp5000  nonlinear=1 tp=5000 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+[0m[INFO] [1791906336.201683889, 617.440000000]: Segment times from v_max = 8.00 m/s, a_max = 8.00 m/s^2[0m
+[0m[INFO] [1791906336.793215248, 618.019999999]: Generated time-optimised trajectory from 13 waypoints, duration 33.48 s[0m
+bag: /home/qz/lab4_work/bags/N_v8_tp5000.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.040      2.56 |       3.05  | yes
+    1 |       0.106      5.16 |       1.25  | yes
+    2 |       0.037      8.22 |       2.69  | yes
+    3 |       0.186     10.38 |       2.29  | yes
+    4 |       0.073     13.18 |       1.26  | yes
+    5 |       0.091     15.78 |       1.31  | yes
+    6 |       0.046     18.66 |       1.51  | yes
+    7 |       0.057     21.42 |       1.69  | yes
+    8 |       0.079     24.00 |       1.14  | yes
+    9 |       0.044     27.18 |       3.09  | yes
+   10 |       0.063     30.50 |       4.45  | yes
+   11 |       0.107     32.42 |       2.38  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 32.42 s
+max speed: 8.26 m/s
+take-off (z > 0.5 m) at 1.04 s; airborne collisions during the race: 1  objects: Floor_01  first at 1.04s
+rotor commands: mean 42.4 rad/s, reversed 12.2 %, step rms 23.6 rad/s
+plot: /home/qz/lab4_work/plots/N_v8_tp5000.png
+=== N_v8_tp50000  nonlinear=1 tp=50000 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+[0m[INFO] [1791906383.714184827, 664.919999999]: Segment times from v_max = 8.00 m/s, a_max = 8.00 m/s^2[0m
+[0m[INFO] [1791906384.325317342, 665.519999999]: Generated time-optimised trajectory from 13 waypoints, duration 33.48 s[0m
+bag: /home/qz/lab4_work/bags/N_v8_tp50000.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.034      2.54 |       3.07  | yes
+    1 |       0.104      5.14 |       1.27  | yes
+    2 |       0.037      8.22 |       2.61  | yes
+    3 |       0.209     10.40 |       2.18  | yes
+    4 |       0.077     13.18 |       1.27  | yes
+    5 |       0.084     15.78 |       1.32  | yes
+    6 |       0.044     18.66 |       1.56  | yes
+    7 |       0.055     21.40 |       1.65  | yes
+    8 |       0.074     24.02 |       1.11  | yes
+    9 |       0.042     27.16 |       3.06  | yes
+   10 |       0.079     30.50 |       4.59  | yes
+   11 |       0.107     32.42 |       2.34  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 32.42 s
+max speed: 8.10 m/s
+take-off (z > 0.5 m) at 1.02 s; airborne collisions during the race: 1  objects: Floor_01  first at 1.02s
+rotor commands: mean 41.8 rad/s, reversed 13.2 %, step rms 26.9 rad/s
+plot: /home/qz/lab4_work/plots/N_v8_tp50000.png
+=== T_c6  time_mode=1 nonlinear=0 tp=500 v_max=6 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 13 waypoints, duration 17.29 s
+Plan: peak speed 7.20 m/s, peak acceleration 6.82 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/T_c6.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.093      1.72 |       6.61  | yes
+    1 |       0.086      2.96 |       5.36  | yes
+    2 |       0.048      4.28 |       7.29  | yes
+    3 |       0.054      5.88 |       5.61  | yes
+    4 |       0.129      7.36 |       6.76  | yes
+    5 |       0.136      8.20 |       5.77  | yes
+    6 |       0.089      9.48 |       6.53  | yes
+    7 |       0.021     10.42 |       5.74  | yes
+    8 |       0.090     11.60 |       6.07  | yes
+    9 |       0.076     12.86 |       7.18  | yes
+   10 |       0.055     14.34 |       6.19  | yes
+   11 |       0.020     16.12 |       1.90  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 16.12 s
+max speed: 7.39 m/s
+take-off (z > 0.5 m) at 0.78 s; airborne collisions during the race: 0
+rotor commands: mean 31.3 rad/s, reversed 29.9 %, step rms 47.0 rad/s
+plot: /home/qz/lab4_work/plots/T_c6.png
+=== T_c8  time_mode=1 nonlinear=0 tp=500 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 13 waypoints, duration 12.97 s
+Plan: peak speed 9.60 m/s, peak acceleration 12.13 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/T_c8.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.248      1.30 |       9.18  | yes
+    1 |       0.432      2.22 |       6.03  | yes
+    2 |       0.246      3.18 |      10.44  | yes
+    3 |       0.130      4.38 |       7.39  | yes
+    4 |       0.206      5.50 |       9.18  | yes
+    5 |       0.405      6.14 |       7.89  | yes
+    6 |       0.283      7.06 |       9.43  | yes
+    7 |       0.102      7.78 |       7.00  | yes
+    8 |       0.396      8.68 |       8.68  | yes
+    9 |       0.147      9.62 |       9.83  | yes
+   10 |       0.154     10.72 |       8.30  | yes
+   11 |       0.026     12.00 |       2.86  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 12.00 s
+max speed: 10.63 m/s
+take-off (z > 0.5 m) at 0.56 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.56s
+rotor commands: mean 28.8 rad/s, reversed 36.2 %, step rms 60.6 rad/s
+plot: /home/qz/lab4_work/plots/T_c8.png
+=== T_c10  time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 13 waypoints, duration 10.38 s
+Plan: peak speed 12.00 m/s, peak acceleration 18.96 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/T_c10.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.663      1.12 |      11.95  | NO
+    1 |       0.559      1.76 |      12.62  | yes
+    2 |       0.641      2.66 |      13.76  | NO
+    3 |       0.411      3.52 |       9.90  | yes
+    4 |       0.516      4.44 |      11.19  | yes
+    5 |       0.707      4.98 |      10.70  | NO
+    6 |       0.514      5.70 |      12.68  | yes
+    7 |       0.234      6.20 |       9.47  | yes
+    8 |       0.745      7.02 |      11.76  | NO
+    9 |       1.610      7.72 |      14.71  | NO
+   10 |       0.493      8.62 |      10.89  | yes
+   11 |       0.023      9.54 |       5.14  | yes
+gates passed in order: 0/12
+race time (trajectory start -> last gate): DNF (stopped at gate 0, 28.6 s recorded)
+max speed: 15.46 m/s
+take-off (z > 0.5 m) at 0.46 s; airborne collisions during the race: 7  objects: Floor_01  first at 0.46s
+rotor commands: mean 41.9 rad/s, reversed 15.7 %, step rms 29.5 rad/s
+plot: /home/qz/lab4_work/plots/T_c10.png
+=== T_c8_exit3  exit=3 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 12.65 s
+Plan: peak speed 10.57 m/s, peak acceleration 21.58 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/T_c8_exit3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.237      1.32 |       9.20  | yes
+    1 |       0.422      2.24 |       5.96  | yes
+    2 |       0.257      3.20 |      10.38  | yes
+    3 |       0.117      4.40 |       7.26  | yes
+    4 |       0.212      5.52 |       9.29  | yes
+    5 |       0.400      6.16 |       7.78  | yes
+    6 |       0.284      7.10 |       9.31  | yes
+    7 |       0.184      7.80 |       7.13  | yes
+    8 |       0.583      8.76 |       9.36  | yes
+    9 |       0.273      9.60 |       8.58  | yes
+   10 |       0.314     10.78 |      10.58  | yes
+   11 |       0.444     11.88 |      12.62  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 11.88 s
+max speed: 12.76 m/s
+take-off (z > 0.5 m) at 0.58 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.58s
+rotor commands: mean 28.1 rad/s, reversed 37.7 %, step rms 55.8 rad/s
+plot: /home/qz/lab4_work/plots/T_c8_exit3.png
+=== T_c9_exit3_sf3  exit=3 sf=3 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 11.85 s
+Plan: peak speed 11.90 m/s, peak acceleration 27.34 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/T_c9_exit3_sf3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.206      1.76 |       8.03  | yes
+    1 |       0.462      2.58 |       9.87  | yes
+    2 |       0.141      3.44 |      10.95  | yes
+    3 |       0.120      4.50 |       7.82  | yes
+    4 |       0.290      5.50 |      10.49  | yes
+    5 |       0.593      6.12 |       8.90  | yes
+    6 |       0.407      6.92 |      11.12  | yes
+    7 |       0.307      7.52 |       7.85  | yes
+    8 |       1.374      8.44 |      10.43  | NO
+    9 |       1.854      9.22 |      14.59  | NO
+   10 |       0.328     10.16 |       8.94  | yes
+   11 |       1.233     11.18 |      14.52  | NO
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 23.6 s recorded)
+max speed: 16.20 m/s
+take-off (z > 0.5 m) at 0.74 s; airborne collisions during the race: 9  objects: Floor_01  first at 8.56s
+rotor commands: mean 39.8 rad/s, reversed 21.4 %, step rms 35.7 rad/s
+plot: /home/qz/lab4_work/plots/T_c9_exit3_sf3.png
+=== G_c9_k15  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/G_c9_k15.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.107      1.16 |      10.00  | yes
+    1 |       0.580      2.00 |       7.03  | yes
+    2 |       0.107      2.84 |      11.29  | yes
+    3 |       0.101      3.92 |       8.66  | yes
+    4 |       0.111      4.90 |      10.26  | yes
+    5 |       0.245      5.48 |       8.85  | yes
+    6 |       0.165      6.32 |      10.29  | yes
+    7 |       0.163      6.96 |       8.34  | yes
+    8 |       0.373      7.76 |       9.96  | yes
+    9 |       0.056      8.56 |      10.04  | yes
+   10 |       0.076      9.56 |       9.74  | yes
+   11 |       0.049     10.52 |       9.88  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.52 s
+max speed: 11.40 m/s
+take-off (z > 0.5 m) at 0.46 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.46s
+rotor commands: mean 9.5 rad/s, reversed 48.4 %, step rms 262.8 rad/s
+plot: /home/qz/lab4_work/plots/G_c9_k15.png
+=== G_c9_k20  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=20 kv=7 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 13.18 m/s, peak acceleration 32.13 m/s^2, z in [0.57, 3.57] m
+bag: /home/qz/lab4_work/bags/G_c9_k20.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.548      1.12 |       9.92  | yes
+    1 |       0.589      2.02 |      15.85  | yes
+    2 |       0.150      2.86 |      10.89  | yes
+    3 |       0.082      3.92 |       6.30  | yes
+    4 |       0.109      4.90 |      10.89  | yes
+    5 |       0.232      5.46 |       8.48  | yes
+    6 |       0.070      6.32 |      10.25  | yes
+    7 |       0.051      6.96 |       8.49  | yes
+    8 |       0.131      7.74 |       9.72  | yes
+    9 |       0.064      8.58 |       9.86  | yes
+   10 |       0.093      9.56 |      10.14  | yes
+   11 |       0.061     10.52 |      10.04  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.52 s
+max speed: 15.89 m/s
+take-off (z > 0.5 m) at 0.00 s; airborne collisions during the race: 27  objects: Floor_01, Wall_Simple_01  first at 0.00s
+rotor commands: mean 9.9 rad/s, reversed 49.1 %, step rms 290.3 rad/s
+plot: /home/qz/lab4_work/plots/G_c9_k20.png
+=== G_c8_k15  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=8 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 14.07 s
+Plan: peak speed 9.60 m/s, peak acceleration 12.06 m/s^2, z in [0.34, 3.57] m
+bag: /home/qz/lab4_work/bags/G_c8_k15.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.095      1.96 |       7.89  | yes
+    1 |       0.162      2.90 |       7.50  | yes
+    2 |       0.075      3.88 |       9.75  | yes
+    3 |       0.044      5.08 |       7.02  | yes
+    4 |       0.096      6.20 |       9.03  | yes
+    5 |       0.127      6.82 |       7.65  | yes
+    6 |       0.059      7.78 |       8.80  | yes
+    7 |       0.025      8.50 |       7.60  | yes
+    8 |       0.108      9.38 |       8.30  | yes
+    9 |       0.075     10.32 |       8.82  | yes
+   10 |       0.094     11.44 |       8.72  | yes
+   11 |       0.018     12.50 |       8.89  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 12.50 s
+max speed: 9.75 m/s
+take-off (z > 0.5 m) at 0.28 s; airborne collisions during the race: 4  objects: Door_Left_01, Floor_01  first at 0.28s
+rotor commands: mean 6.7 rad/s, reversed 49.2 %, step rms 274.6 rad/s
+plot: /home/qz/lab4_work/plots/G_c8_k15.png
+=== M_c9_k12_15  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=15 komega=2.5
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/M_c9_k12_15.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.225      1.18 |      10.11  | yes
+    1 |       0.544      1.92 |      11.69  | yes
+    2 |       0.947      3.00 |      15.11  | NO
+    3 |       0.276      3.92 |       7.76  | yes
+    4 |       0.171      4.92 |      10.02  | yes
+    5 |       0.295      5.48 |       9.11  | yes
+    6 |       0.224      6.32 |      10.41  | yes
+    7 |       0.140      6.94 |       8.02  | yes
+    8 |       0.493      7.76 |      10.21  | yes
+    9 |       0.124      8.58 |      10.31  | yes
+   10 |       0.130      9.56 |      10.03  | yes
+   11 |       0.133     10.52 |       9.86  | yes
+gates passed in order: 2/12
+race time (trajectory start -> last gate): DNF (stopped at gate 2, 20.6 s recorded)
+max speed: 15.17 m/s
+take-off (z > 0.5 m) at 0.50 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.50s
+rotor commands: mean 35.1 rad/s, reversed 24.3 %, step rms 65.0 rad/s
+plot: /home/qz/lab4_work/plots/M_c9_k12_15.png
+=== M_c9_k12_20  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/M_c9_k12_20.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.200      1.16 |      10.05  | yes
+    1 |       0.560      1.92 |      11.57  | yes
+    2 |       0.574      2.98 |      14.24  | yes
+    3 |       0.141      3.92 |       8.00  | yes
+    4 |       0.148      4.90 |      10.11  | yes
+    5 |       0.245      5.48 |       8.81  | yes
+    6 |       0.182      6.32 |      10.17  | yes
+    7 |       0.118      6.94 |       8.23  | yes
+    8 |       0.398      7.76 |       9.97  | yes
+    9 |       0.119      8.56 |      10.24  | yes
+   10 |       0.104      9.56 |       9.96  | yes
+   11 |       0.080     10.52 |       9.87  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.52 s
+max speed: 14.24 m/s
+take-off (z > 0.5 m) at 0.48 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.52s
+rotor commands: mean 23.3 rad/s, reversed 40.7 %, step rms 98.1 rad/s
+plot: /home/qz/lab4_work/plots/M_c9_k12_20.png
+=== P_c9.5_k12_20  exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=9.5 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.57 s
+Plan: peak speed 11.13 m/s, peak acceleration 16.97 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/P_c9.5_k12_20.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.181      1.36 |       8.86  | yes
+    1 |       0.329      2.14 |       9.93  | yes
+    2 |       0.051      2.96 |      11.51  | yes
+    3 |       0.108      3.96 |       8.57  | yes
+    4 |       0.179      4.92 |      10.82  | yes
+    5 |       0.280      5.46 |       9.19  | yes
+    6 |       0.232      6.24 |      10.90  | yes
+    7 |       0.119      6.84 |       8.64  | yes
+    8 |       1.186      7.68 |      10.27  | NO
+    9 |       0.527      8.44 |      13.95  | yes
+   10 |       0.154      9.32 |      10.52  | yes
+   11 |       0.119     10.22 |      10.44  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 20.5 s recorded)
+max speed: 14.33 m/s
+take-off (z > 0.5 m) at 0.56 s; airborne collisions during the race: 4  objects: Floor_01  first at 0.56s
+rotor commands: mean 33.9 rad/s, reversed 24.8 %, step rms 85.9 rad/s
+plot: /home/qz/lab4_work/plots/P_c9.5_k12_20.png
+=== P_c10_k12_20  exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 10.99 s
+Plan: peak speed 11.71 m/s, peak acceleration 18.81 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/P_c10_k12_20.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.192      1.32 |       9.48  | yes
+    1 |       0.830      2.10 |      10.83  | NO
+    2 |       0.209      2.84 |      12.64  | yes
+    3 |       0.091      3.80 |       9.05  | yes
+    4 |       0.215      4.68 |      11.25  | yes
+    5 |       0.389      5.20 |       9.77  | yes
+    6 |       0.272      5.96 |      11.69  | yes
+    7 |       0.160      6.52 |       8.95  | yes
+    8 |       0.760      7.28 |      12.91  | NO
+    9 |       0.399      7.98 |      11.15  | yes
+   10 |       0.109      8.88 |      11.07  | yes
+   11 |       0.106      9.74 |      11.13  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 20.6 s recorded)
+max speed: 12.94 m/s
+take-off (z > 0.5 m) at 0.56 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.56s
+rotor commands: mean 35.1 rad/s, reversed 24.6 %, step rms 78.3 rad/s
+plot: /home/qz/lab4_work/plots/P_c10_k12_20.png
+=== P_c10_k15_30  exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 10.99 s
+Plan: peak speed 11.71 m/s, peak acceleration 18.81 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/P_c10_k15_30.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.153      1.30 |       9.29  | yes
+    1 |       0.340      2.06 |      10.32  | yes
+    2 |       0.082      2.84 |      11.68  | yes
+    3 |       0.103      3.80 |       9.02  | yes
+    4 |       0.176      4.68 |      11.49  | yes
+    5 |       0.254      5.20 |       9.90  | yes
+    6 |       0.267      5.96 |      11.11  | yes
+    7 |       0.154      6.52 |       9.32  | yes
+    8 |       0.623      7.28 |      12.36  | NO
+    9 |       0.182      7.98 |      10.89  | yes
+   10 |       0.098      8.88 |      11.13  | yes
+   11 |       0.087      9.74 |      10.88  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 20.6 s recorded)
+max speed: 12.38 m/s
+take-off (z > 0.5 m) at 0.52 s; airborne collisions during the race: 0
+rotor commands: mean 5.1 rad/s, reversed 49.5 %, step rms 374.0 rad/s
+plot: /home/qz/lab4_work/plots/P_c10_k15_30.png
+=== Q_c9_k12_20_r1  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Q_c9_k12_20_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.181      1.18 |       9.95  | yes
+    1 |       0.703      1.98 |       8.86  | NO
+    2 |       0.170      2.88 |      12.49  | yes
+    3 |       0.112      3.94 |       8.39  | yes
+    4 |       0.156      4.92 |      10.19  | yes
+    5 |       0.234      5.50 |       8.87  | yes
+    6 |       0.196      6.34 |      10.06  | yes
+    7 |       0.114      6.96 |       8.37  | yes
+    8 |       0.370      7.78 |       9.80  | yes
+    9 |       0.096      8.58 |      10.26  | yes
+   10 |       0.121      9.58 |      10.06  | yes
+   11 |       0.114     10.54 |       9.92  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 18.6 s recorded)
+max speed: 12.75 m/s
+take-off (z > 0.5 m) at 0.50 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.50s
+rotor commands: mean 32.2 rad/s, reversed 27.5 %, step rms 91.6 rad/s
+plot: /home/qz/lab4_work/plots/Q_c9_k12_20_r1.png
+=== Q_c9_k12_20_r2  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Q_c9_k12_20_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.195      1.16 |       9.89  | yes
+    1 |       0.511      1.92 |      11.44  | yes
+    2 |       0.414      2.94 |      13.95  | yes
+    3 |       0.130      3.92 |       8.12  | yes
+    4 |       0.155      4.90 |      10.19  | yes
+    5 |       0.252      5.48 |       8.82  | yes
+    6 |       0.185      6.32 |      10.11  | yes
+    7 |       0.119      6.94 |       8.28  | yes
+    8 |       0.356      7.76 |       9.87  | yes
+    9 |       0.109      8.56 |      10.19  | yes
+   10 |       0.129      9.56 |       9.93  | yes
+   11 |       0.074     10.52 |      10.02  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.52 s
+max speed: 13.97 m/s
+take-off (z > 0.5 m) at 0.48 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.48s
+rotor commands: mean 23.4 rad/s, reversed 41.4 %, step rms 101.3 rad/s
+plot: /home/qz/lab4_work/plots/Q_c9_k12_20_r2.png
+=== Q_c9_k12_20_r3  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Q_c9_k12_20_r3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.194      1.16 |       9.92  | yes
+    1 |       0.565      1.94 |      10.98  | yes
+    2 |       0.269      2.90 |      13.49  | yes
+    3 |       0.110      3.92 |       8.64  | yes
+    4 |       0.155      4.90 |      10.17  | yes
+    5 |       0.251      5.48 |       8.76  | yes
+    6 |       0.182      6.32 |      10.09  | yes
+    7 |       0.111      6.94 |       8.33  | yes
+    8 |       0.364      7.76 |       9.78  | yes
+    9 |       0.135      8.56 |      10.47  | yes
+   10 |       0.123      9.56 |       9.98  | yes
+   11 |       0.099     10.52 |       9.89  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.52 s
+max speed: 13.50 m/s
+take-off (z > 0.5 m) at 0.48 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.48s
+rotor commands: mean 23.2 rad/s, reversed 41.6 %, step rms 104.1 rad/s
+plot: /home/qz/lab4_work/plots/Q_c9_k12_20_r3.png
+=== Q_c8_lab3_r1  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 13.40 s
+Plan: peak speed 9.60 m/s, peak acceleration 12.06 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Q_c8_lab3_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.246      1.32 |       9.15  | yes
+    1 |       0.463      2.24 |       5.96  | yes
+    2 |       0.259      3.20 |      10.46  | yes
+    3 |       0.121      4.40 |       7.43  | yes
+    4 |       0.213      5.52 |       9.18  | yes
+    5 |       0.408      6.18 |       7.67  | yes
+    6 |       0.285      7.10 |       9.37  | yes
+    7 |       0.113      7.80 |       7.06  | yes
+    8 |       0.457      8.72 |       8.85  | yes
+    9 |       0.184      9.64 |       9.32  | yes
+   10 |       0.151     10.76 |       8.84  | yes
+   11 |       0.145     11.82 |       8.84  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 11.82 s
+max speed: 10.72 m/s
+take-off (z > 0.5 m) at 0.58 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.58s
+rotor commands: mean 32.9 rad/s, reversed 31.2 %, step rms 40.8 rad/s
+plot: /home/qz/lab4_work/plots/Q_c8_lab3_r1.png
+=== Q_c8_lab3_r2  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=8 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 13.40 s
+Plan: peak speed 9.60 m/s, peak acceleration 12.06 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Q_c8_lab3_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.234      1.32 |       9.19  | yes
+    1 |       0.457      2.24 |       5.97  | yes
+    2 |       0.262      3.20 |      10.40  | yes
+    3 |       0.132      4.40 |       7.37  | yes
+    4 |       0.205      5.52 |       9.04  | yes
+    5 |       0.394      6.16 |       7.93  | yes
+    6 |       0.290      7.10 |       9.16  | yes
+    7 |       0.116      7.80 |       7.16  | yes
+    8 |       0.493      8.72 |       8.87  | yes
+    9 |       0.180      9.62 |       9.45  | yes
+   10 |       0.139     10.76 |       8.96  | yes
+   11 |       0.143     11.82 |       8.79  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 11.82 s
+max speed: 10.69 m/s
+take-off (z > 0.5 m) at 0.56 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.56s
+rotor commands: mean 30.4 rad/s, reversed 34.9 %, step rms 52.1 rad/s
+plot: /home/qz/lab4_work/plots/Q_c8_lab3_r2.png
+=== S_c9_sf16_k12  exit=6 sf=1.6 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.67 s
+Plan: peak speed 11.94 m/s, peak acceleration 23.55 m/s^2, z in [0.22, 3.65] m
+bag: /home/qz/lab4_work/bags/S_c9_sf16_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.376      0.94 |      12.67  | yes
+    1 |       0.678      1.70 |       8.50  | NO
+    2 |       0.199      2.62 |      12.21  | yes
+    3 |       0.161      3.68 |       8.77  | yes
+    4 |       0.119      4.66 |       9.84  | yes
+    5 |       0.249      5.24 |       8.93  | yes
+    6 |       0.195      6.08 |      10.02  | yes
+    7 |       0.099      6.70 |       8.24  | yes
+    8 |       0.387      7.52 |       9.93  | yes
+    9 |       0.095      8.32 |      10.33  | yes
+   10 |       0.114      9.32 |       9.95  | yes
+   11 |       0.078     10.28 |       9.89  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.6 s recorded)
+max speed: 12.72 m/s
+take-off (z > 0.5 m) at 0.40 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.42s
+rotor commands: mean 31.5 rad/s, reversed 29.9 %, step rms 80.1 rad/s
+plot: /home/qz/lab4_work/plots/S_c9_sf16_k12.png
+=== S_c9_sf16_k15  exit=6 sf=1.6 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 11.67 s
+Plan: peak speed 11.94 m/s, peak acceleration 23.55 m/s^2, z in [0.22, 3.65] m
+bag: /home/qz/lab4_work/bags/S_c9_sf16_k15.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.285      0.92 |      12.27  | yes
+    1 |       0.666      1.70 |       8.62  | NO
+    2 |       0.026      2.62 |      12.03  | yes
+    3 |       0.241      3.68 |       8.64  | yes
+    4 |       0.118      4.68 |       9.79  | yes
+    5 |       0.212      5.24 |       9.19  | yes
+    6 |       0.160      6.08 |      10.03  | yes
+    7 |       0.095      6.70 |       8.38  | yes
+    8 |       0.248      7.50 |       9.54  | yes
+    9 |       0.062      8.32 |       9.99  | yes
+   10 |       0.091      9.32 |       9.85  | yes
+   11 |       0.068     10.28 |       9.97  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.6 s recorded)
+max speed: 12.40 m/s
+take-off (z > 0.5 m) at 0.38 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.38s
+rotor commands: mean 5.9 rad/s, reversed 49.5 %, step rms 389.4 rad/s
+plot: /home/qz/lab4_work/plots/S_c9_sf16_k15.png
+=== S_c9_sf14_k12  exit=6 sf=1.4 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.55 s
+Plan: peak speed 13.89 m/s, peak acceleration 30.71 m/s^2, z in [0.22, 3.83] m
+bag: /home/qz/lab4_work/bags/S_c9_sf14_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.511      0.86 |      14.99  | yes
+    1 |       0.862      1.58 |       9.18  | NO
+    2 |       0.040      2.54 |      14.06  | yes
+    3 |       0.152      3.58 |       9.48  | yes
+    4 |       0.093      4.56 |       9.60  | yes
+    5 |       0.258      5.14 |       9.16  | yes
+    6 |       0.190      5.98 |      10.17  | yes
+    7 |       0.106      6.60 |       8.32  | yes
+    8 |       0.369      7.42 |       9.79  | yes
+    9 |       0.094      8.22 |      10.36  | yes
+   10 |       0.120      9.22 |       9.94  | yes
+   11 |       0.086     10.18 |       9.95  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.7 s recorded)
+max speed: 15.03 m/s
+take-off (z > 0.5 m) at 0.38 s; airborne collisions during the race: 9  objects: Floor_01  first at 0.40s
+rotor commands: mean 31.7 rad/s, reversed 29.9 %, step rms 74.7 rad/s
+plot: /home/qz/lab4_work/plots/S_c9_sf14_k12.png
+=== S_c95_k12_a  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9.5 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.29 s
+Plan: peak speed 11.40 m/s, peak acceleration 17.00 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/S_c95_k12_a.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.234      1.10 |      10.70  | yes
+    1 |       0.665      1.86 |       9.97  | NO
+    2 |       0.321      2.72 |      12.12  | yes
+    3 |       0.153      3.72 |       8.62  | yes
+    4 |       0.166      4.64 |      10.84  | yes
+    5 |       0.296      5.18 |       9.35  | yes
+    6 |       0.227      5.98 |      10.90  | yes
+    7 |       0.120      6.58 |       8.70  | yes
+    8 |       1.231      7.42 |       9.33  | NO
+    9 |       0.926      8.18 |      13.24  | NO
+   10 |       0.163      9.06 |      10.62  | yes
+   11 |       0.129      9.96 |      10.49  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.5 s recorded)
+max speed: 15.59 m/s
+take-off (z > 0.5 m) at 0.46 s; airborne collisions during the race: 10  objects: Floor_01  first at 0.46s
+rotor commands: mean 30.5 rad/s, reversed 30.8 %, step rms 81.3 rad/s
+plot: /home/qz/lab4_work/plots/S_c95_k12_a.png
+=== S_c95_k15_a  exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9.5 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 11.29 s
+Plan: peak speed 11.40 m/s, peak acceleration 17.00 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/S_c95_k15_a.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.136      1.12 |      10.53  | yes
+    1 |       0.586      1.88 |       9.82  | yes
+    2 |       0.053      2.72 |      11.93  | yes
+    3 |       0.177      3.72 |       8.52  | yes
+    4 |       0.178      4.66 |      10.51  | yes
+    5 |       0.279      5.20 |       9.73  | yes
+    6 |       0.172      6.00 |      10.75  | yes
+    7 |       0.156      6.60 |       8.74  | yes
+    8 |       1.081      7.44 |       7.59  | NO
+    9 |       0.540      8.44 |      17.42  | yes
+   10 |       0.741      9.10 |      12.33  | NO
+   11 |       0.124      9.98 |      10.54  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 16.6 s recorded)
+max speed: 17.92 m/s
+take-off (z > 0.5 m) at 0.46 s; airborne collisions during the race: 6  objects: Floor_01  first at 0.46s
+rotor commands: mean 6.9 rad/s, reversed 49.2 %, step rms 375.4 rad/s
+plot: /home/qz/lab4_work/plots/S_c95_k15_a.png
+=== V_c10_seg25_k12  seg=[1, 1.25, 1.25, 1, 1, 1, 1, 1, 1.25, 1, 1, 1, 1, 1] exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.28 s
+Plan: peak speed 11.25 m/s, peak acceleration 18.63 m/s^2, z in [0.22, 3.59] m
+bag: /home/qz/lab4_work/bags/V_c10_seg25_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.195      1.04 |      11.01  | yes
+    1 |       0.736      1.94 |       7.21  | NO
+    2 |       0.156      2.96 |      11.54  | yes
+    3 |       0.116      3.90 |       9.65  | yes
+    4 |       0.209      4.80 |      11.49  | yes
+    5 |       0.342      5.32 |       9.80  | yes
+    6 |       0.240      6.06 |      11.81  | yes
+    7 |       0.125      6.62 |       8.93  | yes
+    8 |       0.166      7.56 |       8.94  | yes
+    9 |       0.256      8.26 |      11.60  | yes
+   10 |       0.111      9.16 |      11.63  | yes
+   11 |       0.120     10.02 |      10.83  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.6 s recorded)
+max speed: 12.31 m/s
+take-off (z > 0.5 m) at 0.44 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.44s
+rotor commands: mean 32.8 rad/s, reversed 29.3 %, step rms 62.4 rad/s
+plot: /home/qz/lab4_work/plots/V_c10_seg25_k12.png
+=== V_c10_seg25_k15  seg=[1, 1.25, 1.25, 1, 1, 1, 1, 1, 1.25, 1, 1, 1, 1, 1] exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=15 kv=6 kr=30 komega=4
+Generated linear trajectory from 14 waypoints, duration 11.28 s
+Plan: peak speed 11.25 m/s, peak acceleration 18.63 m/s^2, z in [0.22, 3.59] m
+bag: /home/qz/lab4_work/bags/V_c10_seg25_k15.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.127      1.04 |      10.95  | yes
+    1 |       0.689      1.96 |       6.63  | NO
+    2 |       0.228      2.94 |      11.37  | yes
+    3 |       0.037      3.90 |       9.65  | yes
+    4 |       0.161      4.80 |      11.24  | yes
+    5 |       0.315      5.30 |       9.88  | yes
+    6 |       0.282      6.06 |      12.09  | yes
+    7 |       0.155      6.60 |       8.94  | yes
+    8 |       0.108      7.56 |       9.37  | yes
+    9 |       0.175      8.26 |      11.18  | yes
+   10 |       0.132      9.16 |      11.67  | yes
+   11 |       0.094     10.02 |      10.74  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 16.5 s recorded)
+max speed: 12.13 m/s
+take-off (z > 0.5 m) at 0.44 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.46s
+rotor commands: mean 8.2 rad/s, reversed 48.9 %, step rms 280.3 rad/s
+plot: /home/qz/lab4_work/plots/V_c10_seg25_k15.png
+=== W_c9_omd_k12  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=9 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 11.91 s
+Plan: peak speed 10.80 m/s, peak acceleration 15.26 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/W_c9_omd_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.070      1.12 |       9.63  | yes
+    1 |       0.230      1.96 |       8.25  | yes
+    2 |       0.056      2.84 |      10.90  | yes
+    3 |       0.051      3.92 |       8.24  | yes
+    4 |       0.036      4.88 |       9.99  | yes
+    5 |       0.083      5.46 |       8.73  | yes
+    6 |       0.065      6.32 |       9.61  | yes
+    7 |       0.065      6.94 |       8.78  | yes
+    8 |       0.086      7.72 |       9.01  | yes
+    9 |       0.051      8.58 |       9.87  | yes
+   10 |       0.098      9.56 |       9.74  | yes
+   11 |       0.058     10.50 |       9.56  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 10.50 s
+max speed: 10.90 m/s
+take-off (z > 0.5 m) at 0.42 s; airborne collisions during the race: 4  objects: Floor_01  first at 0.42s
+rotor commands: mean 23.2 rad/s, reversed 40.3 %, step rms 108.5 rad/s
+plot: /home/qz/lab4_work/plots/W_c9_omd_k12.png
+=== W_c10_omd_k12  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 10.72 s
+Plan: peak speed 12.00 m/s, peak acceleration 18.84 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/W_c10_omd_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.069      1.06 |      10.80  | yes
+    1 |       0.393      1.80 |       8.92  | yes
+    2 |       0.117      2.60 |      12.09  | yes
+    3 |       0.050      3.56 |       9.36  | yes
+    4 |       0.046      4.44 |      11.17  | yes
+    5 |       0.097      4.96 |       9.43  | yes
+    6 |       0.072      5.72 |      10.68  | yes
+    7 |       0.094      6.28 |       9.74  | yes
+    8 |       0.288      7.00 |      10.09  | yes
+    9 |       0.125      7.74 |      11.22  | yes
+   10 |       0.056      8.64 |      10.93  | yes
+   11 |       0.064      9.50 |      10.95  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 9.50 s
+max speed: 12.09 m/s
+take-off (z > 0.5 m) at 0.42 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.42s
+rotor commands: mean 27.7 rad/s, reversed 38.6 %, step rms 97.9 rad/s
+plot: /home/qz/lab4_work/plots/W_c10_omd_k12.png
+=== W_c10_omd_lab3  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=10 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 10.72 s
+Plan: peak speed 12.00 m/s, peak acceleration 18.84 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/W_c10_omd_lab3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.125      1.02 |      10.91  | yes
+    1 |       0.455      1.76 |       8.77  | yes
+    2 |       0.291      2.56 |      12.80  | yes
+    3 |       0.185      3.54 |       9.50  | yes
+    4 |       0.020      4.40 |      11.23  | yes
+    5 |       0.132      4.92 |       8.86  | yes
+    6 |       0.107      5.68 |      11.21  | yes
+    7 |       0.092      6.26 |       9.22  | yes
+    8 |       0.445      6.96 |      11.28  | yes
+    9 |       0.125      7.74 |      11.60  | yes
+   10 |       0.115      8.60 |      10.50  | yes
+   11 |       0.051      9.44 |      10.57  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 9.44 s
+max speed: 12.83 m/s
+take-off (z > 0.5 m) at 0.38 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.38s
+rotor commands: mean 32.2 rad/s, reversed 34.9 %, step rms 53.3 rad/s
+plot: /home/qz/lab4_work/plots/W_c10_omd_lab3.png
+=== X_c11_omd_lab3  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=11 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 9.75 s
+Plan: peak speed 13.20 m/s, peak acceleration 22.80 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/X_c11_omd_lab3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.201      0.96 |      12.21  | yes
+    1 |       0.214      1.60 |      10.47  | yes
+    2 |       0.089      2.34 |      13.79  | yes
+    3 |       0.221      3.24 |       9.77  | yes
+    4 |       0.129      4.02 |      12.69  | yes
+    5 |       0.241      4.50 |       9.07  | yes
+    6 |       0.180      5.18 |      13.00  | yes
+    7 |       0.104      5.72 |       9.83  | yes
+    8 |       0.718      6.36 |      13.70  | NO
+    9 |       0.572      7.06 |      11.63  | yes
+   10 |       0.191      7.84 |      12.93  | yes
+   11 |       0.086      8.64 |      11.88  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 16.6 s recorded)
+max speed: 13.84 m/s
+take-off (z > 0.5 m) at 0.36 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.40s
+rotor commands: mean 37.4 rad/s, reversed 25.5 %, step rms 47.2 rad/s
+plot: /home/qz/lab4_work/plots/X_c11_omd_lab3.png
+=== X_c12_omd_lab3  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=12 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 8.93 s
+Plan: peak speed 14.41 m/s, peak acceleration 27.13 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/X_c12_omd_lab3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.295      0.86 |      13.43  | yes
+    1 |       0.101      1.44 |      11.73  | yes
+    2 |       0.056      2.12 |      14.86  | yes
+    3 |       0.217      2.94 |      10.62  | yes
+    4 |       0.152      3.66 |      13.99  | yes
+    5 |       0.252      4.10 |      10.26  | yes
+    6 |       0.241      4.74 |      14.34  | yes
+    7 |       0.137      5.20 |      10.72  | yes
+    8 |       0.561      5.82 |      14.15  | yes
+    9 |       0.590      6.44 |      12.90  | yes
+   10 |       0.255      7.18 |      14.22  | yes
+   11 |       0.119      7.90 |      12.38  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 7.90 s
+max speed: 15.01 m/s
+take-off (z > 0.5 m) at 0.32 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.32s
+rotor commands: mean 33.8 rad/s, reversed 37.9 %, step rms 53.2 rad/s
+plot: /home/qz/lab4_work/plots/X_c12_omd_lab3.png
+=== X_c11_omd_k12  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=11 a_max=8  kx=12 kv=6 kr=20 komega=3
+Generated linear trajectory from 14 waypoints, duration 9.75 s
+Plan: peak speed 13.20 m/s, peak acceleration 22.80 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/X_c11_omd_k12.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.129      0.96 |      11.87  | yes
+    1 |       0.307      1.62 |      10.14  | yes
+    2 |       0.141      2.36 |      13.26  | yes
+    3 |       0.109      3.24 |      10.46  | yes
+    4 |       0.108      4.04 |      12.17  | yes
+    5 |       0.123      4.50 |      10.22  | yes
+    6 |       0.065      5.20 |      11.75  | yes
+    7 |       0.083      5.72 |      10.66  | yes
+    8 |       0.615      6.38 |      12.58  | NO
+    9 |       0.183      7.04 |      11.93  | yes
+   10 |       0.136      7.86 |      12.20  | yes
+   11 |       0.087      8.64 |      11.90  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 16.4 s recorded)
+max speed: 13.26 m/s
+take-off (z > 0.5 m) at 0.36 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.36s
+rotor commands: mean 35.4 rad/s, reversed 24.9 %, step rms 80.6 rad/s
+plot: /home/qz/lab4_work/plots/X_c11_omd_k12.png
+=== Y_c13_r1  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=13 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 8.25 s
+Plan: peak speed 15.61 m/s, peak acceleration 31.84 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Y_c13_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.361      0.82 |      14.49  | yes
+    1 |       0.129      1.36 |      13.06  | yes
+    2 |       0.131      1.98 |      15.84  | yes
+    3 |       0.235      2.74 |      11.19  | yes
+    4 |       0.174      3.40 |      15.56  | yes
+    5 |       0.340      3.78 |      12.39  | yes
+    6 |       0.213      4.40 |      15.28  | yes
+    7 |       0.107      4.82 |      12.26  | yes
+    8 |       0.385      5.36 |      14.75  | yes
+    9 |       0.546      5.96 |      14.38  | yes
+   10 |       0.224      6.66 |      15.04  | yes
+   11 |       0.141      7.30 |      13.17  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 7.30 s
+max speed: 16.04 m/s
+take-off (z > 0.5 m) at 0.32 s; airborne collisions during the race: 3  objects: Floor_01  first at 0.32s
+rotor commands: mean 35.0 rad/s, reversed 38.8 %, step rms 44.2 rad/s
+plot: /home/qz/lab4_work/plots/Y_c13_r1.png
+=== Y_c13_r2  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=13 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 8.25 s
+Plan: peak speed 15.61 m/s, peak acceleration 31.84 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Y_c13_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.450      0.82 |      14.61  | yes
+    1 |       0.184      1.36 |      13.14  | yes
+    2 |       0.136      2.00 |      15.76  | yes
+    3 |       0.238      2.74 |      11.13  | yes
+    4 |       0.148      3.40 |      15.50  | yes
+    5 |       0.330      3.78 |      12.29  | yes
+    6 |       0.247      4.40 |      15.34  | yes
+    7 |       0.107      4.82 |      12.13  | yes
+    8 |       0.371      5.36 |      15.06  | yes
+    9 |       0.610      5.98 |      14.15  | NO
+   10 |       0.234      6.66 |      15.14  | yes
+   11 |       0.123      7.28 |      13.09  | yes
+gates passed in order: 9/12
+race time (trajectory start -> last gate): DNF (stopped at gate 9, 14.5 s recorded)
+max speed: 16.06 m/s
+take-off (z > 0.5 m) at 0.32 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.32s
+rotor commands: mean 37.3 rad/s, reversed 29.9 %, step rms 34.7 rad/s
+plot: /home/qz/lab4_work/plots/Y_c13_r2.png
+=== Y_c13_seg_r1  omd=1 seg=[1, 1, 1, 1, 1, 1, 1, 1.15, 1.15, 1, 1, 1, 1, 1] exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=13 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 8.39 s
+Plan: peak speed 15.58 m/s, peak acceleration 32.38 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Y_c13_seg_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.392      0.80 |      14.66  | yes
+    1 |       0.175      1.34 |      13.09  | yes
+    2 |       0.189      1.98 |      15.81  | yes
+    3 |       0.242      2.74 |      11.28  | yes
+    4 |       0.198      3.40 |      15.42  | yes
+    5 |       0.305      3.78 |      11.86  | yes
+    6 |       0.297      4.40 |      15.20  | yes
+    7 |       0.114      4.88 |       9.11  | yes
+    8 |       0.840      5.54 |      14.75  | NO
+    9 |       0.652      6.12 |      13.71  | NO
+   10 |       0.362      6.80 |      15.85  | yes
+   11 |       0.122      7.44 |      12.60  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 14.5 s recorded)
+max speed: 16.08 m/s
+take-off (z > 0.5 m) at 0.30 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.30s
+rotor commands: mean 32.6 rad/s, reversed 37.3 %, step rms 37.6 rad/s
+plot: /home/qz/lab4_work/plots/Y_c13_seg_r1.png
+=== Y_c13_seg_r2  omd=1 seg=[1, 1, 1, 1, 1, 1, 1, 1.15, 1.15, 1, 1, 1, 1, 1] exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=13 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 8.39 s
+Plan: peak speed 15.58 m/s, peak acceleration 32.38 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Y_c13_seg_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.395      0.82 |      14.58  | yes
+    1 |       0.070      1.34 |      13.56  | yes
+    2 |       0.089      2.00 |      15.73  | yes
+    3 |       0.233      2.74 |      11.19  | yes
+    4 |       0.162      3.40 |      15.56  | yes
+    5 |       0.328      3.78 |      11.92  | yes
+    6 |       0.306      4.40 |      15.24  | yes
+    7 |       0.114      4.88 |       9.19  | yes
+    8 |       0.852      5.54 |      14.88  | NO
+    9 |       0.703      6.12 |      13.43  | NO
+   10 |       0.335      6.82 |      16.04  | yes
+   11 |       0.174      7.46 |      12.68  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 14.7 s recorded)
+max speed: 16.12 m/s
+take-off (z > 0.5 m) at 0.32 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.32s
+rotor commands: mean 31.4 rad/s, reversed 38.1 %, step rms 40.2 rad/s
+plot: /home/qz/lab4_work/plots/Y_c13_seg_r2.png
+=== Y_c14_seg_r1  omd=1 seg=[1, 1, 1, 1, 1, 1, 1, 1.15, 1.15, 1, 1, 1, 1, 1] exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=14 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.79 s
+Plan: peak speed 16.78 m/s, peak acceleration 37.57 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Y_c14_seg_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.544      0.76 |      15.70  | yes
+    1 |       0.196      1.24 |      14.85  | yes
+    2 |       0.169      1.84 |      16.77  | yes
+    3 |       0.299      2.54 |      11.99  | yes
+    4 |       0.177      3.18 |      16.83  | yes
+    5 |       0.437      3.52 |      14.40  | yes
+    6 |       0.207      4.10 |      15.51  | yes
+    7 |       0.044      4.52 |      10.55  | yes
+    8 |       0.656      5.16 |      15.38  | NO
+    9 |       0.576      5.68 |      15.04  | yes
+   10 |       0.303      6.32 |      16.72  | yes
+   11 |       0.112      6.90 |      13.89  | yes
+gates passed in order: 8/12
+race time (trajectory start -> last gate): DNF (stopped at gate 8, 14.6 s recorded)
+max speed: 17.06 m/s
+take-off (z > 0.5 m) at 0.28 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.28s
+rotor commands: mean 33.3 rad/s, reversed 37.6 %, step rms 37.6 rad/s
+plot: /home/qz/lab4_work/plots/Y_c14_seg_r1.png
+=== Z_c14_r1  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=14 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.66 s
+Plan: peak speed 16.81 m/s, peak acceleration 36.93 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Z_c14_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.549      0.76 |      15.80  | yes
+    1 |       0.253      1.24 |      14.52  | yes
+    2 |       0.149      1.82 |      16.79  | yes
+    3 |       0.281      2.52 |      11.99  | yes
+    4 |       0.205      3.16 |      16.73  | yes
+    5 |       0.404      3.50 |      13.86  | yes
+    6 |       0.202      4.08 |      16.26  | yes
+    7 |       0.137      4.46 |      13.30  | yes
+    8 |       0.306      4.96 |      15.81  | yes
+    9 |       0.543      5.50 |      15.96  | yes
+   10 |       0.241      6.16 |      15.61  | yes
+   11 |       0.178      6.74 |      14.62  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 6.74 s
+max speed: 17.13 m/s
+take-off (z > 0.5 m) at 0.26 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.26s
+rotor commands: mean 38.7 rad/s, reversed 38.4 %, step rms 57.9 rad/s
+plot: /home/qz/lab4_work/plots/Z_c14_r1.png
+=== Z_c14_r2  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=14 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.66 s
+Plan: peak speed 16.81 m/s, peak acceleration 36.93 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Z_c14_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.498      0.78 |      16.05  | yes
+    1 |       0.228      1.26 |      14.42  | yes
+    2 |       0.185      1.84 |      16.91  | yes
+    3 |       0.271      2.54 |      11.98  | yes
+    4 |       0.172      3.18 |      16.74  | yes
+    5 |       0.387      3.52 |      14.30  | yes
+    6 |       0.125      4.10 |      15.98  | yes
+    7 |       0.167      4.48 |      13.43  | yes
+    8 |       0.321      4.98 |      15.75  | yes
+    9 |       0.495      5.52 |      15.97  | yes
+   10 |       0.250      6.18 |      15.61  | yes
+   11 |       0.164      6.76 |      14.55  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 6.76 s
+max speed: 17.23 m/s
+take-off (z > 0.5 m) at 0.30 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.30s
+rotor commands: mean 39.2 rad/s, reversed 37.6 %, step rms 43.7 rad/s
+plot: /home/qz/lab4_work/plots/Z_c14_r2.png
+=== Z_c14_r3  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=14 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.66 s
+Plan: peak speed 16.81 m/s, peak acceleration 36.93 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Z_c14_r3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.670      0.80 |      16.13  | NO
+    1 |       0.305      1.26 |      14.84  | yes
+    2 |       0.220      1.84 |      16.57  | yes
+    3 |       0.240      2.54 |      12.32  | yes
+    4 |       0.101      3.18 |      16.51  | yes
+    5 |       0.396      3.52 |      14.46  | yes
+    6 |       0.164      4.10 |      15.97  | yes
+    7 |       0.182      4.48 |      13.64  | yes
+    8 |       0.324      4.98 |      15.62  | yes
+    9 |       0.455      5.52 |      15.92  | yes
+   10 |       0.197      6.18 |      15.71  | yes
+   11 |       0.118      6.76 |      14.53  | yes
+gates passed in order: 0/12
+race time (trajectory start -> last gate): DNF (stopped at gate 0, 14.5 s recorded)
+max speed: 16.99 m/s
+take-off (z > 0.5 m) at 0.32 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.32s
+rotor commands: mean 39.4 rad/s, reversed 28.2 %, step rms 35.1 rad/s
+plot: /home/qz/lab4_work/plots/Z_c14_r3.png
+=== Z_c15_r1  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=15 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.15 s
+Plan: peak speed 18.01 m/s, peak acceleration 42.40 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Z_c15_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.709      0.72 |      17.31  | NO
+    1 |       0.420      1.16 |      15.89  | yes
+    2 |       0.128      1.70 |      18.15  | yes
+    3 |       0.304      2.36 |      12.82  | yes
+    4 |       0.289      2.94 |      17.94  | yes
+    5 |       0.529      3.28 |      15.87  | yes
+    6 |       0.120      3.80 |      17.03  | yes
+    7 |       0.142      4.16 |      14.48  | yes
+    8 |       0.363      4.64 |      17.01  | yes
+    9 |       0.685      5.16 |      17.23  | NO
+   10 |       0.169      5.76 |      16.41  | yes
+   11 |       0.162      6.28 |      16.25  | yes
+gates passed in order: 0/12
+race time (trajectory start -> last gate): DNF (stopped at gate 0, 14.5 s recorded)
+max speed: 18.37 m/s
+take-off (z > 0.5 m) at 0.26 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.26s
+rotor commands: mean 41.0 rad/s, reversed 27.2 %, step rms 32.9 rad/s
+plot: /home/qz/lab4_work/plots/Z_c15_r1.png
+=== Z_c15_r2  omd=1 seg=none exit=6 sf=2.0 time_mode=1 nonlinear=0 tp=500 v_max=15 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.15 s
+Plan: peak speed 18.01 m/s, peak acceleration 42.40 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/Z_c15_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.533      0.72 |      17.08  | yes
+    1 |       0.411      1.18 |      15.94  | yes
+    2 |       0.355      1.72 |      18.32  | yes
+    3 |       0.253      2.36 |      13.27  | yes
+    4 |       0.218      2.96 |      17.48  | yes
+    5 |       0.507      3.30 |      16.37  | yes
+    6 |       0.225      3.82 |      16.93  | yes
+    7 |       0.063      4.18 |      14.46  | yes
+    8 |       0.422      4.66 |      17.12  | yes
+    9 |       0.665      5.18 |      17.21  | NO
+   10 |       0.187      5.78 |      16.54  | yes
+   11 |       0.079      6.30 |      15.96  | yes
+gates passed in order: 9/12
+race time (trajectory start -> last gate): DNF (stopped at gate 9, 14.6 s recorded)
+max speed: 18.52 m/s
+take-off (z > 0.5 m) at 0.26 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.26s
+rotor commands: mean 39.9 rad/s, reversed 29.6 %, step rms 38.1 rad/s
+plot: /home/qz/lab4_work/plots/Z_c15_r2.png
+=== AA_c15_sf25_r1  omd=1 seg=none exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=15 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.33 s
+Plan: peak speed 17.56 m/s, peak acceleration 42.32 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/AA_c15_sf25_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.185      0.88 |      14.02  | yes
+    1 |       0.576      1.38 |      16.30  | yes
+    2 |       1.102      1.92 |      18.67  | NO
+    3 |       0.315      2.58 |      11.80  | yes
+    4 |       0.502      3.16 |      18.81  | yes
+    5 |       0.679      3.48 |      15.53  | NO
+    6 |       0.248      4.02 |      16.96  | yes
+    7 |       0.132      4.36 |      14.77  | yes
+    8 |       0.298      4.84 |      16.95  | yes
+    9 |       0.482      5.34 |      17.24  | yes
+   10 |       0.194      5.96 |      16.46  | yes
+   11 |       0.089      6.48 |      16.16  | yes
+gates passed in order: 2/12
+race time (trajectory start -> last gate): DNF (stopped at gate 2, 13.5 s recorded)
+max speed: 18.88 m/s
+take-off (z > 0.5 m) at 0.34 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.36s
+rotor commands: mean 40.0 rad/s, reversed 31.0 %, step rms 39.8 rad/s
+plot: /home/qz/lab4_work/plots/AA_c15_sf25_r1.png
+=== AA_c15_sf25_r2  omd=1 seg=none exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=15 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.33 s
+Plan: peak speed 17.56 m/s, peak acceleration 42.32 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/AA_c15_sf25_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.245      0.90 |      14.22  | yes
+    1 |       0.508      1.40 |      16.18  | yes
+    2 |       1.009      1.94 |      18.65  | NO
+    3 |       0.253      2.58 |      12.25  | yes
+    4 |       0.380      3.16 |      18.28  | yes
+    5 |       0.620      3.50 |      15.36  | NO
+    6 |       0.119      4.02 |      17.24  | yes
+    7 |       0.158      4.38 |      14.54  | yes
+    8 |       0.335      4.86 |      16.81  | yes
+    9 |       0.564      5.36 |      17.39  | yes
+   10 |       0.192      5.98 |      16.18  | yes
+   11 |       0.158      6.50 |      16.40  | yes
+gates passed in order: 2/12
+race time (trajectory start -> last gate): DNF (stopped at gate 2, 13.5 s recorded)
+max speed: 18.66 m/s
+take-off (z > 0.5 m) at 0.36 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.36s
+rotor commands: mean 38.9 rad/s, reversed 32.5 %, step rms 43.0 rad/s
+plot: /home/qz/lab4_work/plots/AA_c15_sf25_r2.png
+=== AA_c15_sf25_r3  omd=1 seg=none exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=15 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 7.33 s
+Plan: peak speed 17.56 m/s, peak acceleration 42.32 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/AA_c15_sf25_r3.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.241      0.88 |      13.99  | yes
+    1 |       0.533      1.38 |      16.20  | yes
+    2 |       1.004      1.92 |      18.71  | NO
+    3 |       0.307      2.56 |      12.07  | yes
+    4 |       0.442      3.16 |      18.33  | yes
+    5 |       0.648      3.48 |      15.57  | NO
+    6 |       0.228      4.00 |      17.11  | yes
+    7 |       0.103      4.36 |      14.74  | yes
+    8 |       0.331      4.84 |      16.93  | yes
+    9 |       0.548      5.34 |      17.25  | yes
+   10 |       0.180      5.96 |      16.45  | yes
+   11 |       0.131      6.48 |      16.24  | yes
+gates passed in order: 2/12
+race time (trajectory start -> last gate): DNF (stopped at gate 2, 13.5 s recorded)
+max speed: 18.72 m/s
+take-off (z > 0.5 m) at 0.34 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.34s
+rotor commands: mean 39.5 rad/s, reversed 31.6 %, step rms 35.4 rad/s
+plot: /home/qz/lab4_work/plots/AA_c15_sf25_r3.png
+=== AA_c16_sf25_r1  omd=1 seg=none exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=16 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 6.87 s
+Plan: peak speed 18.74 m/s, peak acceleration 48.15 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/AA_c16_sf25_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.234      0.78 |      15.16  | yes
+    1 |       0.489      1.24 |      17.55  | yes
+    2 |       1.124      1.76 |      20.02  | NO
+    3 |       0.390      2.36 |      12.37  | yes
+    4 |       0.518      2.94 |      19.65  | yes
+    5 |       0.861      3.22 |      18.44  | NO
+    6 |       0.510      3.72 |      18.01  | yes
+    7 |       0.147      4.06 |      15.41  | yes
+    8 |       0.498      4.50 |      18.59  | yes
+    9 |       0.870      4.98 |      18.80  | NO
+   10 |       0.262      5.56 |      17.33  | yes
+   11 |       0.068      6.04 |      17.82  | yes
+gates passed in order: 2/12
+race time (trajectory start -> last gate): DNF (stopped at gate 2, 13.5 s recorded)
+max speed: 20.09 m/s
+take-off (z > 0.5 m) at 0.28 s; airborne collisions during the race: 1  objects: Floor_01  first at 0.32s
+rotor commands: mean 40.4 rad/s, reversed 32.3 %, step rms 41.3 rad/s
+plot: /home/qz/lab4_work/plots/AA_c16_sf25_r1.png
+=== AA_c16_sf25_r2  omd=1 seg=none exit=6 sf=2.5 time_mode=1 nonlinear=0 tp=500 v_max=16 a_max=8  kx=8 kv=5 kr=10 komega=2
+Generated linear trajectory from 14 waypoints, duration 6.87 s
+Plan: peak speed 18.74 m/s, peak acceleration 48.15 m/s^2, z in [0.22, 3.57] m
+bag: /home/qz/lab4_work/bags/AA_c16_sf25_r2.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.275      0.86 |      15.45  | yes
+    1 |       0.879      1.30 |      18.78  | NO
+    2 |       1.544      1.90 |      20.50  | NO
+    3 |       0.539      2.38 |      19.17  | yes
+    4 |       0.786      2.98 |      16.38  | NO
+    5 |       0.183      3.26 |      16.49  | yes
+    6 |       0.559      3.76 |      18.28  | yes
+    7 |       0.304      4.12 |      14.67  | yes
+    8 |       0.513      4.56 |      18.33  | yes
+    9 |       1.011      5.04 |      18.97  | NO
+   10 |       0.222      5.62 |      17.31  | yes
+   11 |       0.084      6.10 |      18.30  | yes
+gates passed in order: 1/12
+race time (trajectory start -> last gate): DNF (stopped at gate 1, 13.9 s recorded)
+max speed: 21.62 m/s
+take-off (z > 0.5 m) at 0.36 s; airborne collisions during the race: 5  objects: Floor_01  first at 0.36s
+rotor commands: mean 38.8 rad/s, reversed 34.2 %, step rms 56.4 rad/s
+plot: /home/qz/lab4_work/plots/AA_c16_sf25_r2.png

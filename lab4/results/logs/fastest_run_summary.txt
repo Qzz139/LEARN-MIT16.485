@@ -1,0 +1,20 @@
+bag: Z_c14_r1.bag
+gates: 12, pass radius 0.6 m
+ gate |  closest [m]  entry t [s] | speed [m/s] | passed
+    0 |       0.549      0.76 |      15.80  | yes
+    1 |       0.253      1.24 |      14.52  | yes
+    2 |       0.149      1.82 |      16.79  | yes
+    3 |       0.281      2.52 |      11.99  | yes
+    4 |       0.205      3.16 |      16.73  | yes
+    5 |       0.404      3.50 |      13.86  | yes
+    6 |       0.202      4.08 |      16.26  | yes
+    7 |       0.137      4.46 |      13.30  | yes
+    8 |       0.306      4.96 |      15.81  | yes
+    9 |       0.543      5.50 |      15.96  | yes
+   10 |       0.241      6.16 |      15.61  | yes
+   11 |       0.178      6.74 |      14.62  | yes
+gates passed in order: 12/12
+race time (trajectory start -> last gate): 6.74 s
+max speed: 17.13 m/s
+take-off (z > 0.5 m) at 0.26 s; airborne collisions during the race: 2  objects: Floor_01  first at 0.26s
+rotor commands: mean 38.7 rad/s, reversed 38.4 %, step rms 57.9 rad/s

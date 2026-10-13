@@ -1,0 +1,7 @@
+gate 0 (unity): 0.4226201 2.67 3.165232  quat: ['0', '0.7071068', '0', '0.7071068']
+0.00 m  orientation_correction          d(unity x,y,z) = (0.0, 0.0, 0.0)
+0.00 m  sprite                          d(unity x,y,z) = (0.0, 0.0, 0.0)
+1.09 m  Directional Light Ceiling       d(unity x,y,z) = (-0.442, 0.675, 0.735)
+1.09 m  Directional Light Floor         d(unity x,y,z) = (-0.442, 0.675, 0.735)
+distinct object names: 50
+['3pv', 'BL_Prop', 'BL_Prop_Full', 'BR_Prop', 'BR_Prop_Full', 'Collider_01', 'Collider_02', 'Collider_03', 'Collider_04', 'Collider_05', 'Column_01_Top', 'Directional Light Ceiling', 'Directional Light Floor', 'Door_Arch_01', 'Door_Left_01', 'DroneTrack', 'FL_Prop', 'FL_Prop_Full', 'FR_Prop', 'FR_Prop_Full', 'Fan_01', 'Fan_Wings_01', 'Floor_01', 'Floor_Small_01', 'Light_01', 'OrientationCorrection', 'QuadUAV', 'Roof_01', 'Roof_02', 'Roof_Angle_01', 'Roof_Angle_Large_01', 'Roof_Angle_Smal_01', 'Roof_Door_01', 'Room_Big_Part_01', 'Room_Big_Part_02', 'Room_Big_Part_03', 'Spotlight', 'Wall_Arc_90_01', 'Wall_Arc_90_02', 'Wall_HalfArc_90_02', 'Wall_HalfArc_90_03', 'Wall_Simple_01', '_Level', 'aeroastro_poster', 'mit_poster', 'orientation_correction', 'red_square_drone_door', 'rgb_left', 'rgb_right', 'sprite']

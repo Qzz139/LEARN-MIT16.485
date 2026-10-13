@@ -1,0 +1,22 @@
+Q_c9_k12_20_r2.bag
+  rotor command range -627 .. 634 rad/s; |omega| percentiles 50/90/99: 80 / 203 / 382
+  commanded thrust >12 N at 45.4% of samples; there realised/commanded = 0.99 (median)
+    cmd   10-  14 N: realised median  10.1 N  (n=405)
+    cmd   14-  18 N: realised median  15.6 N  (n=209)
+    cmd   18-  25 N: realised median  19.2 N  (n=111)
+    cmd   25-  40 N: realised median  30.3 N  (n=12)
+    cmd   40- inf N: realised median  50.1 N  (n=16)
+Q_c8_lab3_r1.bag
+  rotor command range -234 .. 242 rad/s; |omega| percentiles 50/90/99: 65 / 129 / 206
+  commanded thrust >12 N at 46.4% of samples; there realised/commanded = 0.99 (median)
+    cmd   10-  14 N: realised median  10.8 N  (n=474)
+    cmd   14-  18 N: realised median  15.4 N  (n=227)
+    cmd   18-  25 N: realised median  19.5 N  (n=84)
+Z_c14_r1.bag
+  rotor command range -351 .. 371 rad/s; |omega| percentiles 50/90/99: 81 / 214 / 338
+  commanded thrust >12 N at 46.5% of samples; there realised/commanded = 0.99 (median)
+    cmd   10-  14 N: realised median  10.2 N  (n=434)
+    cmd   14-  18 N: realised median  16.9 N  (n=32)
+    cmd   18-  25 N: realised median  21.5 N  (n=97)
+    cmd   25-  40 N: realised median  30.6 N  (n=178)
+    cmd   40- inf N: realised median  43.3 N  (n=57)

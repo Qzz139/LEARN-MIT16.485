@@ -1,0 +1,29 @@
+# Offline plan comparison (generated without flying; start = spawn point, 12 gates)
+## template heuristic (mode 0, v_max 8, a_max 4), linear
+Generated linear trajectory from 13 waypoints, duration 67.08 s
+Plan: peak speed 3.25 m/s, peak acceleration 1.27 m/s^2, z in [0.22, 3.61] m
+## heuristic scaled up (mode 0, v_max = a_max = 40), linear
+Generated linear trajectory from 13 waypoints, duration 24.35 s
+Plan: peak speed 7.84 m/s, peak acceleration 8.37 m/s^2, z in [0.22, 4.27] m
+## nonlinear time optimisation from the heuristic (v=a=8, tp 500)
+nlopt result 3 (time allocation method 3, time penalty 500)
+Generated time-optimised trajectory from 13 waypoints, duration 34.80 s
+Plan: peak speed 4.80 m/s, peak acceleration 4.64 m/s^2, z in [0.22, 3.60] m
+## distance/cruise (mode 1, rest-aware ends), cruise 4 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 26.80 s
+Plan: peak speed 4.80 m/s, peak acceleration 3.01 m/s^2, z in [0.22, 3.57] m
+## distance/cruise (mode 1, rest-aware ends), cruise 6 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 17.87 s
+Plan: peak speed 7.20 m/s, peak acceleration 6.78 m/s^2, z in [0.22, 3.57] m
+## distance/cruise (mode 1, rest-aware ends), cruise 8 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 13.40 s
+Plan: peak speed 9.60 m/s, peak acceleration 12.06 m/s^2, z in [0.22, 3.57] m
+## distance/cruise (mode 1, rest-aware ends), cruise 10 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 10.72 s
+Plan: peak speed 12.00 m/s, peak acceleration 18.84 m/s^2, z in [0.22, 3.57] m
+## distance/cruise (mode 1, rest-aware ends), cruise 12 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 8.93 s
+Plan: peak speed 14.41 m/s, peak acceleration 27.13 m/s^2, z in [0.22, 3.57] m
+## distance/cruise (mode 1, rest-aware ends), cruise 14 m/s, exit 6 m
+Generated linear trajectory from 14 waypoints, duration 7.66 s
+Plan: peak speed 16.81 m/s, peak acceleration 36.93 m/s^2, z in [0.22, 3.57] m

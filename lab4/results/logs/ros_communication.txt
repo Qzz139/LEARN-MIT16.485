@@ -1,0 +1,112 @@
+### rosnode list
+/controller_node
+/rosout
+/rviz_1791905188804043238
+/tesse/quadrotor_control_interface
+/tesse/tesse_ros_bridge
+/traj_vertices_publisher
+/trajectory_generation_node
+
+### rosnode info /trajectory_generation_node
+Publications: 
+ * /desired_state [trajectory_msgs/MultiDOFJointTrajectoryPoint]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /current_state [nav_msgs/Odometry]
+ * /desired_traj_vertices [geometry_msgs/PoseArray]
+
+Services: 
+
+### rosnode info /controller_node
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rotor_speed_cmds [mav_msgs/Actuators]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /current_state [nav_msgs/Odometry]
+ * /desired_state [trajectory_msgs/MultiDOFJointTrajectoryPoint]
+
+Services: 
+
+### rosnode info /traj_vertices_publisher
+Publications: 
+ * /desired_traj_vertices [geometry_msgs/PoseArray]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+
+### rostopic info /desired_traj_vertices
+Type: geometry_msgs/PoseArray
+
+Publishers: 
+ * /traj_vertices_publisher (http://DESKTOP-91LK43L:43640/)
+
+Subscribers: 
+ * /rviz_1791905188804043238 (http://DESKTOP-91LK43L:44658/)
+ * /trajectory_generation_node (http://DESKTOP-91LK43L:44984/)
+
+
+### rostopic info /desired_state
+Type: trajectory_msgs/MultiDOFJointTrajectoryPoint
+
+Publishers: 
+ * /trajectory_generation_node (http://DESKTOP-91LK43L:44984/)
+
+Subscribers: 
+ * /controller_node (http://DESKTOP-91LK43L:44662/)
+
+
+### rostopic info /current_state
+Type: nav_msgs/Odometry
+
+Publishers: 
+ * /tesse/tesse_ros_bridge (http://DESKTOP-91LK43L:44132/)
+
+Subscribers: 
+ * /rviz_1791905188804043238 (http://DESKTOP-91LK43L:44658/)
+ * /trajectory_generation_node (http://DESKTOP-91LK43L:44984/)
+ * /controller_node (http://DESKTOP-91LK43L:44662/)
+
+
+### rostopic info /rotor_speed_cmds
+Type: mav_msgs/Actuators
+
+Publishers: 
+ * /controller_node (http://DESKTOP-91LK43L:44662/)
+
+Subscribers: 
+ * /tesse/quadrotor_control_interface (http://DESKTOP-91LK43L:44900/)
+
+
+
+### rostopic hz /desired_traj_vertices
+average rate: 4.977
+	min: 0.160s max: 0.240s std dev: 0.01649s window: 23
+### rostopic hz /desired_state
+average rate: 50.655
+	min: 0.000s max: 0.080s std dev: 0.02021s window: 233
+### rostopic hz /current_state
+average rate: 50.000
+	min: 0.000s max: 0.080s std dev: 0.01124s window: 229
+### rostopic hz /rotor_speed_cmds
+average rate: 88.298
+	min: 0.000s max: 0.120s std dev: 0.01346s window: 416
+
+### parameters
+kx: 8.0
+kv: 5.0
+kr: 10.0
+komega: 2.0
+use_omega_d: true
+a_max: 8.0
+exit_distance: 6.0
+start_factor: 2.0
+time_mode: 1
+v_max: 14.0
+

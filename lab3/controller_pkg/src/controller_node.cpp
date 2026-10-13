@@ -65,6 +65,12 @@ class controllerNode{
   // Do not command the rotors before both states have been received once
   bool got_desired_state = false;
   bool got_current_state = false;
+
+  // Optional angular-velocity feed-forward (lab 4): the desired body rate of the
+  // reference, sent in world frame in velocities[0].angular. Off by default, as
+  // in the handout (eq. (11) without Omega_d).
+  bool use_omega_d = false;
+  Eigen::Vector3d omegad_world = Eigen::Vector3d::Zero();
   // ~~~~ end solution
   // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
   //                                 end part 1
@@ -155,7 +161,9 @@ public:
       nh.getParam("kv", kv);
       nh.getParam("kr", kr);
       nh.getParam("komega", komega);
-      ROS_INFO("Gain values:\nkx: %f \nkv: %f \nkr: %f \nkomega: %f\n", kx, kv, kr, komega);
+      nh.param("use_omega_d", use_omega_d, false);
+      ROS_INFO("Gain values:\nkx: %f \nkv: %f \nkr: %f \nkomega: %f\nuse_omega_d: %d\n",
+               kx, kv, kr, komega, use_omega_d);
 
       //
       // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -200,6 +208,8 @@ public:
       xd << p.x, p.y, p.z;
       vd << vel.x, vel.y, vel.z;
       ad << acc.x, acc.y, acc.z;
+      const geometry_msgs::Vector3& wd = des_state.velocities[0].angular;
+      omegad_world << wd.x, wd.y, wd.z;
       // ~~~~ end solution
       //
       // 3.2 Extract the yaw component from the quaternion in the incoming ROS
@@ -308,7 +318,8 @@ public:
     //
     // ~~~~ begin solution
     er = 0.5 * Vee(Rd.transpose() * R - R.transpose() * Rd);
-    eomega = omega;  // Omega_d is neglected
+    // R^T Rd Omega_d = R^T omega_d,world; neglected unless use_omega_d is set
+    eomega = use_omega_d ? Eigen::Vector3d(omega - R.transpose() * omegad_world) : omega;
     // ~~~~ end solution
     //
     // 5.4 Compute the desired wrench (force + torques) to control the UAV.

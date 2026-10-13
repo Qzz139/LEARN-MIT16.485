@@ -1,0 +1,25 @@
+<launch>
+  <!-- Launch trajectory generation node -->
+  <!-- race configuration of the fastest run (6.74 s): cruise 14 m/s, lab 3 gains,
+       angular-velocity feed-forward in the controller -->
+  <node name="trajectory_generation_node" pkg="trajectory_generation" type="trajectory_generation_node" output="screen">
+    <!-- segment time = distance / cruise speed (x2 for the take-off and the final stop) -->
+    <param name="time_mode" value="1" />
+    <param name="v_max" value="14.0" />
+    <param name="a_max" value="8.0" />
+    <!-- stop 6 m beyond the last gate so it is flown through at speed -->
+    <param name="exit_distance" value="6.0" />
+    <param name="start_factor" value="2.0" />
+  </node>
+
+  <!-- Launch our controller -->
+  <node name="controller_node" pkg="controller_pkg" type="controller_node" />
+
+  <!-- Controller gains from lab 3 (kx=8 kv=5 kr=10 komega=2) -->
+  <!-- use the reference body rate sent by trajectory_generation_node (Omega_d) -->
+  <param name="use_omega_d" type="bool" value="true" />
+  <param name="kx" type="double" value="8" />
+  <param name="kv" type="double" value="5" />
+  <param name="kr" type="double" value="10" />
+  <param name="komega" type="double" value="2" />
+</launch>

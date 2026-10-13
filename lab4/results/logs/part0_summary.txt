@@ -1,0 +1,7 @@
+alignment: av-desired TF interpolated at odometry header stamps
+bag: /home/qz/lab4_work/part0/part0.bag
+samples: 731 over 14.8 s (skip first 10.0 s)
+position error [m]: rms 0.044, mean 0.042, max 0.119
+yaw error [deg]:    rms 0.00, max 0.00
+altitude: mean 2.628 m (desired mean 2.670 m)
+plot: /home/qz/lab4_work/part0/part0.png

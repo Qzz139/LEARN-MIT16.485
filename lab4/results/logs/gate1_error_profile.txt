@@ -1,0 +1,33 @@
+Q_c9_k12_20_r1.bag
+  t 0.0-0.5s: track err mean 0.03 max 0.14 m | desired |acc| max  13.8 | z_cur 0.28
+  t 0.5-1.0s: track err mean 0.25 max 0.34 m | desired |acc| max  15.0 | z_cur 1.32
+  t 1.0-1.5s: track err mean 0.19 max 0.42 m | desired |acc| max   9.9 | z_cur 2.78
+  t 1.5-2.0s: track err mean 0.37 max 0.83 m | desired |acc| max  11.7 | z_cur 2.49
+  t 2.0-2.5s: track err mean 1.02 max 1.12 m | desired |acc| max  14.6 | z_cur 1.79
+  t 2.5-3.0s: track err mean 0.36 max 0.77 m | desired |acc| max  12.7 | z_cur 2.47
+  t 3.0-3.5s: track err mean 0.25 max 0.43 m | desired |acc| max  11.2 | z_cur 3.36
+  gate 0: closest 0.18 m at t=1.20s, offset (x,y,z) [-0.11  0.07  0.13]
+  gate 1: closest 0.70 m at t=1.96s, offset (x,y,z) [ 0.66  0.12 -0.2 ]
+  gate 2: closest 0.17 m at t=2.90s, offset (x,y,z) [ 0.05 -0.13 -0.1 ]
+Q_c9_k12_20_r2.bag
+  t 0.0-0.5s: track err mean 0.04 max 0.16 m | desired |acc| max  14.2 | z_cur 0.30
+  t 0.5-1.0s: track err mean 0.26 max 0.38 m | desired |acc| max  15.0 | z_cur 1.41
+  t 1.0-1.5s: track err mean 0.19 max 0.30 m | desired |acc| max   9.9 | z_cur 2.84
+  t 1.5-2.0s: track err mean 0.38 max 1.03 m | desired |acc| max  12.0 | z_cur 2.43
+  t 2.0-2.5s: track err mean 1.87 max 2.16 m | desired |acc| max  14.6 | z_cur 1.24
+  t 2.5-3.0s: track err mean 1.24 max 2.07 m | desired |acc| max  12.1 | z_cur 2.70
+  t 3.0-3.5s: track err mean 0.28 max 0.48 m | desired |acc| max  11.2 | z_cur 3.39
+  gate 0: closest 0.19 m at t=1.18s, offset (x,y,z) [-0.11  0.09  0.13]
+  gate 1: closest 0.51 m at t=1.92s, offset (x,y,z) [ 0.44  0.16 -0.21]
+  gate 2: closest 0.41 m at t=2.94s, offset (x,y,z) [ 0.01 -0.33  0.24]
+S_c95_k12_a.bag
+  t 0.0-0.5s: track err mean 0.05 max 0.18 m | desired |acc| max  16.3 | z_cur 0.31
+  t 0.5-1.0s: track err mean 0.30 max 0.54 m | desired |acc| max  16.8 | z_cur 1.54
+  t 1.0-1.5s: track err mean 0.25 max 0.33 m | desired |acc| max  11.1 | z_cur 2.95
+  t 1.5-2.0s: track err mean 0.54 max 1.07 m | desired |acc| max  15.0 | z_cur 2.16
+  t 2.0-2.5s: track err mean 1.13 max 1.30 m | desired |acc| max  16.2 | z_cur 0.90
+  t 2.5-3.0s: track err mean 0.39 max 0.78 m | desired |acc| max  11.9 | z_cur 2.58
+  t 3.0-3.5s: track err mean 0.31 max 0.58 m | desired |acc| max  12.4 | z_cur 3.49
+  gate 0: closest 0.23 m at t=1.12s, offset (x,y,z) [-0.12  0.05  0.19]
+  gate 1: closest 0.66 m at t=1.84s, offset (x,y,z) [ 0.52  0.17 -0.38]
+  gate 2: closest 0.32 m at t=2.74s, offset (x,y,z) [-0.18 -0.03 -0.26]
