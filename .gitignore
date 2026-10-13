@@ -228,3 +228,5 @@ __marimo__/
 *.out
 *.synctex.gz
 *Notes.bib
+
+./lab0/results/calibration/corners
