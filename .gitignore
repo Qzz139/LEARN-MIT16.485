@@ -229,4 +229,8 @@ __marimo__/
 *.synctex.gz
 *Notes.bib
 
-./lab0/results/calibration/corners
+# Lab0 phone photos and large calibration images (kept locally)
+/lab0/data/phone/
+/lab0/data/phone_jpg/
+/lab0/results/calibration/corners/
+/lab0/results/calibration/before_after.png

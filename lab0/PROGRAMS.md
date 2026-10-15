@@ -10,7 +10,7 @@ python -m pip install -r lab0/requirements.txt
 
 ## Lab0-1：手机相机内参标定（`code/calibrate_phone.py`）
 
-19 张手机原图在 `lab0/data/phone/`（HEIC），已用 `heif-convert` 转为 `lab0/data/phone_jpg/` 中的 JPG。照片体积大，未推送到 GitHub；克隆后需放入自己的棋盘照片。HEIC 转 JPG：
+19 张手机原图在 `lab0/data/phone/`（HEIC），已用 `heif-convert` 转为 `lab0/data/phone_jpg/` 中的 JPG。照片体积大，不随仓库提供，只保存在本地；克隆后需放入自己的棋盘照片。HEIC 转 JPG：
 
 ```bash
 mkdir -p lab0/data/phone_jpg
@@ -36,7 +36,7 @@ python3.9 lab0/code/calibrate_phone.py --images lab0/data/phone_jpg --square-siz
 | `corners/*.png` | 标出角点的照片，供报告核对 |
 | `before_after.png` | 第一张照片去畸变前后对比 |
 
-GitHub 上只保留 `summary.json`、`calibration.npz` 和报告里用到的精选图。K 的焦距以像素计；方格边长只影响每张照片位姿的平移尺度，不影响 K。
+`corners/` 和 `before_after.png` 体积大，只保存在本地；仓库只保留 `summary.json`、`calibration.npz` 和报告里用到的精选图（`lab0/reports/figures/`）。K 的焦距以像素计；方格边长只影响每张照片位姿的平移尺度，不影响 K。
 
 ## Lab0-2：OpenCV Aloe 双目深度（`code/stereo_depth.py`）
 

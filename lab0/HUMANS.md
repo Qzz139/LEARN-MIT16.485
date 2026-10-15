@@ -20,7 +20,7 @@ python -m pip install -r lab0/requirements.txt
 
 ## 1. 手机相机标定
 
-棋盘照片体积大，没有推送到 GitHub。克隆仓库后，把自己拍的棋盘照片放进 `lab0/data/phone/`。iPhone 拍的 HEIC 格式先转成 JPG：
+棋盘照片体积大，不随仓库提供，只保存在本地。克隆仓库后，把自己拍的棋盘照片放进 `lab0/data/phone/`。iPhone 拍的 HEIC 格式先转成 JPG：
 
 ```bash
 mkdir -p lab0/data/phone_jpg
@@ -42,7 +42,7 @@ python3.9 lab0/code/calibrate_phone.py --images lab0/data/phone_jpg --square-siz
 | fx、fy | 2859.8、2856.4 px |
 | 主点 (cx, cy) | (2014.6, 1523.8) |
 
-输出在 `lab0/results/calibration/`：角点图 `corners/*.png`、去畸变对比图 `before_after.png`。
+输出在 `lab0/results/calibration/`：角点图 `corners/*.png`、去畸变对比图 `before_after.png`（这两项体积大，不提交）。
 
 ## 2. 双目深度估计（OpenCV Aloe 示例图）
 
@@ -73,5 +73,5 @@ cd lab0/reports && latexmk -xelatex lab0_1_camera_calibration.tex lab0_2_stereo_
 cd lab0/translation && latexmk -xelatex zhang1999_zh.tex fusiello2000_zh.tex && cd -
 ```
 
-1. **第一条**：从 §1、§2 的输出重新生成报告插图。
+1. **第一条**：从 §1、§2 的输出重新生成报告插图。它按文件名读取原来 19 张照片的 §1 输出，所以只能在存有原照片的机器上运行。
 2. **后两条**：重新编译报告和译稿的 PDF。
