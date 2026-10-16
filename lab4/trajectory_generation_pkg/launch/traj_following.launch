@@ -1,11 +1,14 @@
 <launch>
+  <!-- cruise speed of the race, e.g. roslaunch ... traj_following.launch cruise:=12 -->
+  <arg name="cruise" default="14.0" />
+
   <!-- Launch trajectory generation node -->
   <!-- race configuration of the fastest run (6.74 s): cruise 14 m/s, lab 3 gains,
        angular-velocity feed-forward in the controller -->
   <node name="trajectory_generation_node" pkg="trajectory_generation" type="trajectory_generation_node" output="screen">
     <!-- segment time = distance / cruise speed (x2 for the take-off and the final stop) -->
     <param name="time_mode" value="1" />
-    <param name="v_max" value="14.0" />
+    <param name="v_max" value="$(arg cruise)" />
     <param name="a_max" value="8.0" />
     <!-- stop 6 m beyond the last gate so it is flown through at speed -->
     <param name="exit_distance" value="6.0" />

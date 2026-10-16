@@ -19,3 +19,11 @@ LAB4 environment (2026-10-13/14), same WSL2 Ubuntu 20.04.6 + ROS Noetic host as 
   so a zero command is published first (scripts/run_race.sh).
 - Collisions: every take-off reports 1-3 Floor_01 contacts at the instant the drone leaves the floor;
   no other collisions in the successful runs.
+- Correction (2026-10-16): -force-gfx-direct alone does not prevent that abort. On 2026-10-16, 13 of 18
+  starts with it still crashed, ~1.5 s after the window appears, in IsRendererSupported, i.e. while Unity
+  probes which OpenGL version it can use (an XInitThreads() LD_PRELOAD shim made no difference).
+  Asking for the 3.3 core profile it ends up with, -force-glcore33, gave 9 of 9 clean starts with the
+  same renderer (D3D12, OpenGL 3.3 Core, Mesa 21.2.6) and the same race result (12/12, 6.76 s).
+  Separately, WSLg once left a new simulator window hidden on the Windows desktop (RAIL window without
+  WS_VISIBLE while X reported it mapped); unmapping and mapping the X window again shows it (race.sh does
+  this on every run).

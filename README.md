@@ -83,8 +83,8 @@ python lab0/code/stereo_depth.py --scale 0.5   # writes lab0/results/stereo/
 **LAB4 race**: one-time setup and the environment to source in each terminal are in [lab4/HUMANS.md](lab4/HUMANS.md); start everything from an Ubuntu terminal on the Windows desktop so the simulator window shows.
 
 ```bash
-# Terminal 1: Unity simulator (WSLg needs -force-gfx-direct)
-cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct \
+# Terminal 1: Unity simulator (WSLg needs -force-gfx-direct -force-glcore33)
+cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct -force-glcore33 \
   -screen-fullscreen 0 -screen-width 1024 -screen-height 768
 # Terminal 2
 roscore
@@ -108,7 +108,7 @@ Reset, pass criterion, the one-shot script and the speed-up history are in [lab4
 The Mac drives WSL over SSH; Moonlight streams the Windows desktop when the simulator window is needed.
 
 > [!NOTE]
-> The VNAV Unity simulators need three fixes under WSLg: `-force-gfx-direct` (single-threaded rendering), `python3` shebangs in the bridge nodes, and a patch for the bridge's assertion when the simulator clock resets. Details: [LAB3 environment.txt](lab3/results/logs/environment.txt) and [LAB4 environment.txt](lab4/results/logs/environment.txt).
+> The VNAV Unity simulators need three fixes under WSLg: `-force-gfx-direct -force-glcore33` for LAB4 (single-threaded rendering, and no OpenGL version probing, which crashes the player at start-up), `python3` shebangs in the bridge nodes, and a patch for the bridge's assertion when the simulator clock resets. Details: [LAB3 environment.txt](lab3/results/logs/environment.txt) and [LAB4 environment.txt](lab4/results/logs/environment.txt).
 
 ## Repository layout
 

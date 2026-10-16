@@ -1,0 +1,19 @@
+# lab4/race.sh runs on 2026-10-16: official launch files, cruise 14 m/s (the configuration of the
+# fastest run). Each run's race.bag, race.png, summary.txt and params.txt are in WSL ~/lab4_runs/<run>/.
+# commit = git describe of the WSL clone; "-dirty" because race.sh and the cruise argument of
+# traj_following.launch were not committed yet. Two more runs, 20261016-061025 and 20261016-061823,
+# were stopped before the end and have no summary.
+run                    gates   race time   commit
+20261016-060316_c14    12/12   6.78 s      3dda863-dirty
+20261016-060433_c14    12/12   6.76 s      3dda863-dirty
+20261016-060720_c14    12/12   6.78 s      3dda863-dirty
+20261016-060815_c14    12/12   6.78 s      3dda863-dirty
+20261016-060846_c14    12/12   6.76 s      3dda863-dirty
+20261016-060931_c14    12/12   6.74 s      3dda863-dirty
+20261016-061948_c14    12/12   6.74 s      3dda863-dirty
+20261016-062032_c14    12/12   6.76 s      3dda863-dirty
+20261016-062409_c14    12/12   6.78 s      3dda863-dirty
+20261016-083029_c14    12/12   6.76 s      3dda863-dirty
+20261016-084212_c14    12/12   6.76 s      3dda863-dirty
+20261016-084244_c14    12/12   6.76 s      3dda863-dirty
+20261016-084721_c14    12/12   6.76 s      3dda863-dirty

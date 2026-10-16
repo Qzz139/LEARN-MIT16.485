@@ -83,8 +83,8 @@ python lab0/code/stereo_depth.py --scale 0.5   # 结果写入 lab0/results/stere
 **LAB4 竞速**：一次性准备和每个终端要加载的环境见 [lab4/HUMANS.md](lab4/HUMANS.md)；所有终端都在 Windows 桌面上的 Ubuntu 终端里打开，模拟器窗口才会显示。
 
 ```bash
-# 终端 1：Unity 模拟器（WSLg 下必须加 -force-gfx-direct）
-cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct \
+# 终端 1：Unity 模拟器（WSLg 下必须加 -force-gfx-direct -force-glcore33）
+cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct -force-glcore33 \
   -screen-fullscreen 0 -screen-width 1024 -screen-height 768
 # 终端 2
 roscore
@@ -108,7 +108,7 @@ roslaunch planner_pkg traj_gen.launch
 Mac 通过 SSH 操作 WSL；需要看模拟器画面时，用 Moonlight 串流 Windows 桌面。
 
 > [!NOTE]
-> 在 WSLg 下运行 VNAV 的 Unity 模拟器需要三处处理：加 `-force-gfx-direct` 单线程渲染、桥接节点首行改为 `python3`、修补桥接节点在模拟器时钟回退时的断言。细节见 [LAB3 environment.txt](lab3/results/logs/environment.txt) 和 [LAB4 environment.txt](lab4/results/logs/environment.txt)。
+> 在 WSLg 下运行 VNAV 的 Unity 模拟器需要三处处理：LAB4 模拟器加 `-force-gfx-direct -force-glcore33`（单线程渲染，并跳过会让它启动时崩溃的 OpenGL 版本探测）、桥接节点首行改为 `python3`、修补桥接节点在模拟器时钟回退时的断言。细节见 [LAB3 environment.txt](lab3/results/logs/environment.txt) 和 [LAB4 environment.txt](lab4/results/logs/environment.txt)。
 
 ## 仓库结构
 

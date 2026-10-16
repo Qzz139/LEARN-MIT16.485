@@ -6,9 +6,9 @@
 
 - Windows 主机的 WSL2 `Ubuntu-20.04`，ROS Noetic，工作区 `~/vnav_ws`。
 - 模拟器在 `~/vnav-builds/lab4`，下载自 `vnav.mit.edu/material/lab4.zip`。
-- `~/vnav_ws/src` 中需要有以下包：
-  - 本仓库的 `lab3/controller_pkg`；
-  - 本仓库的 `lab4/planner_pkg`、`lab4/trajectory_generation_pkg`；
+- 本仓库克隆在 WSL 的 `~/LEARN-MIT16.485`。`~/vnav_ws/src` 里的三个包是指向克隆的软链接，另外两个是 VNAV2023 的原件：
+  - `controller_pkg` → `~/LEARN-MIT16.485/lab3/controller_pkg`；
+  - `planner_pkg`、`trajectory_generation_pkg` → `~/LEARN-MIT16.485/lab4/` 下的同名目录；
   - VNAV2023 的 `tesse-ros-bridge` 和 `lab4/dependencies`。
 - **所有命令都在 Windows 桌面上打开的 Ubuntu-20.04 终端里执行**，否则模拟器窗口不会显示。每开一个新终端，都要先运行：
 
@@ -17,6 +17,13 @@ source ~/vnav_ws/devel/setup.bash
 ```
 
 ### 一次性准备（已做过可跳过）
+
+克隆仓库，并在工作区里建立软链接（`~/vnav_ws/src` 里如果已有同名目录，先移走）：
+
+```bash
+git clone https://github.com/Qzz139/LEARN-MIT16.485.git ~/LEARN-MIT16.485
+cd ~/vnav_ws/src && ln -s ~/LEARN-MIT16.485/lab3/controller_pkg controller_pkg && ln -s ~/LEARN-MIT16.485/lab4/planner_pkg planner_pkg && ln -s ~/LEARN-MIT16.485/lab4/trajectory_generation_pkg trajectory_generation_pkg
+```
 
 编译工作区：
 
@@ -30,18 +37,24 @@ cd ~/vnav_ws && catkin build
 sed -i '1s|^#!/usr/bin/env python$|#!/usr/bin/env python3|' ~/vnav_ws/src/tesse-ros-bridge/ROS/src/tesse_ros_bridge/tesse_ros_node.py ~/vnav_ws/src/tesse-ros-bridge/ROS/src/tesse_ros_bridge/quadrotor_control_interface.py
 ```
 
-修补桥接节点的时间断言。LAB4 模拟器切换场景时会重置时钟，不修补的话收不到 `/current_state`。脚本在本仓库 `lab4/scripts/patch_bridge.py`，WSL 里已有一份：
+修补桥接节点的时间断言。LAB4 模拟器切换场景时会重置时钟，不修补的话收不到 `/current_state`（`race.sh` 也会自动检查并修补）：
 
 ```bash
-python3 ~/lab4_work/patch_bridge.py ~/vnav_ws/src/tesse-ros-bridge/ROS/src/tesse_ros_bridge/tesse_ros_node.py
+python3 ~/LEARN-MIT16.485/lab4/scripts/patch_bridge.py ~/vnav_ws/src/tesse-ros-bridge/ROS/src/tesse_ros_bridge/tesse_ros_node.py
 ```
 
 ## 启动基础环境（每次实验前，各开一个终端）
 
-1. 模拟器。必须加 `-force-gfx-direct`，否则在 WSLg 下会崩溃：
+1. 模拟器。必须加 `-force-gfx-direct -force-glcore33`，否则在 WSLg 下启动时大多会崩溃（终端显示 `[xcb] Unknown sequence number`）：
 
 ```bash
-cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct -screen-fullscreen 0 -screen-width 1024 -screen-height 768
+cd ~/vnav-builds/lab4 && env -u LIBGL_ALWAYS_SOFTWARE ./lab4.x86_64 -force-gfx-direct -force-glcore33 -screen-fullscreen 0 -screen-width 1024 -screen-height 768
+```
+
+如果模拟器在运行，但 Windows 桌面和任务栏上都看不到它的窗口（WSLg 偶尔会这样），在任一终端运行下面的命令，窗口就会重新出现：
+
+```bash
+W=$(xdotool search --name tesse_vnav_scenes | head -1); xdotool windowunmap --sync $W; xdotool windowmap --sync $W
 ```
 
 2. roscore：
@@ -59,13 +72,13 @@ roslaunch tesse_ros_bridge tesse_quadrotor_bridge.launch publish_collisions:=tru
 4. 可选，用 rviz 俯视观看。先启动门的中转节点（给门的位姿补上坐标系，rviz 才能显示）：
 
 ```bash
-python3 ~/lab4_work/gate_relay.py
+python3 ~/LEARN-MIT16.485/lab4/scripts/gate_relay.py
 ```
 
 再开 rviz：
 
 ```bash
-rviz -d ~/lab4_work/lab4_topview.rviz
+rviz -d ~/LEARN-MIT16.485/lab4/rviz/lab4_topview.rviz
 ```
 
 ## 给分点复现
@@ -97,10 +110,10 @@ roslaunch planner_pkg static_point_test.launch
 5. 等终端 B 录满 30 秒自动退出，然后在终端 B 分析：
 
 ```bash
-python3 ~/lab4_work/race_check.py ~/race.bag --plot ~/race.png
+python3 ~/LEARN-MIT16.485/lab4/scripts/race_check.py ~/race.bag --plot ~/race.png
 ```
 
-**应看到**：`gates passed in order: 12/12` 和 `race time ... 6.7x s`，判据为距门心 0.6 m 以内。这个配置的成功率约 4/5，失败时会显示 `DNF`。
+**应看到**：`gates passed in order: 12/12` 和 `race time ... 6.7x s`，判据为距门心 0.6 m 以内。这个配置一共完整飞了 18 次，成功 17 次（记录见 `logs/race_attempts.csv`、`logs/official_run*_summary.txt`、`logs/race_sh_runs.txt`）；失败时会显示 `DNF`。
 
 **再跑一次**：
 
@@ -118,11 +131,27 @@ rostopic pub -1 /rotor_speed_cmds mav_msgs/Actuators "{angular_velocities: [0, 0
 
 ### 一键版（现场演示用）
 
-前提是模拟器、roscore、桥接节点已经启动。下面这条命令会自动完成复位、两条 launch、录 bag、录模拟器画面、截取节点图和分析，结果保存在 `~/lab4_work/official/<名字>/`：
+在 Windows 桌面上打开的 Ubuntu-20.04 终端里运行。不需要事先手动启动任何东西：模拟器、roscore、桥接节点、rviz 中哪个没在运行，就自动启动哪个，然后复位、按官方的两条 launch 跑一次比赛、录 bag 并分析：
 
 ```bash
-~/lab4_work/official_run.sh demo1
+~/LEARN-MIT16.485/lab4/race.sh
 ```
+
+**应看到**：终端最后打印 `gates passed in order: 12/12` 和 `race time ... 6.7x s`，退出码为 0。冷启动约 1 分钟，模拟器已在运行时约 30 秒。结果保存在 `~/lab4_runs/<时间>_c14/`，包括 `race.bag`、`race.png`、`summary.txt` 和 `params.txt`。
+
+常用选项：
+
+| 命令 | 作用 |
+|---|---|
+| `race.sh --cruise 12` | 改用 12 m/s 巡航（默认 14） |
+| `race.sh --runs 3` | 连续跑 3 次 |
+| `race.sh --record` | 同时录制模拟器视角的视频 `unity_view.mp4` |
+| `race.sh --stop` | 关闭模拟器、桥接节点、rviz 和 roscore |
+
+- 每次运行都会把模拟器窗口重新显示在屏幕左上角、置于最前。
+- 跑完后模拟器保持运行，无人机悬停在出口点，再次运行会自动复位。
+- 比赛中按 Ctrl+C，会停止录制和比赛节点，并让螺旋桨停转。
+- 门被穿过后会变绿，并且一直保持绿色。想让门的颜色重置，就关掉模拟器窗口，再运行 `race.sh`，它会启动一个新的模拟器。
 
 ## 证据文件位置（`lab4/results/`）
 
@@ -131,6 +160,6 @@ rostopic pub -1 /rotor_speed_cmds mav_msgs/Actuators "{angular_velocities: [0, 0
 | ROS 通信 | `screenshots/rqt_graph.png`、`logs/ros_communication.txt` |
 | 穿过 1 个门 | `screenshots/sim_part0_gate0.png`、`plots/part0_hover.png` |
 | 穿过 6 个 / 12 个门 | `plots/Z_c14_r1.png`、`logs/fastest_run_summary.txt`、`bags/fastest_run_6.74s.bag` |
-| 竞速用时 | `logs/race_attempts.csv`，最快一次 6.74 s；官方 launch 复跑 6.78 s 和 6.80 s，见 `logs/official_run*_summary.txt` |
+| 竞速用时 | `logs/race_attempts.csv`，最快一次 6.74 s；官方 launch 复跑 6.78 s 和 6.80 s，见 `logs/official_run*_summary.txt`；`race.sh` 13 次全部 12/12（6.74–6.78 s），见 `logs/race_sh_runs.txt` |
 | 视频 | `video/rviz_fastest_6.74s_replay.mp4`、`video/unity_view_official_6.78s.mp4` |
 | 简答题 1、2 | `logs/d1_qp_check.txt`、`logs/d2_constraint_count.txt`（Mac 上运行 `python3 lab4/scripts/d1_qp_check.py` 即可复现） |
