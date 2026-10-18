@@ -15,23 +15,24 @@
 
 ```bash
 sudo apt install -y ros-noetic-ackermann-msgs python3-pip python3-scipy ffmpeg libgflags-dev
-cd ~ && git clone https://github.com/Qzz139/26second-seme.git
+git clone https://github.com/Qzz139/LEARN-MIT16.485.git ~/LEARN-MIT16.485
 mkdir -p ~/labs && cd ~/labs && curl -L -o VNAV2023.tar.gz https://github.com/MIT-SPARK/VNAV-labs/archive/refs/tags/VNAV2023.tar.gz && tar -xzf VNAV2023.tar.gz --strip-components=1
 mkdir -p ~/vnav_ws/src && cd ~/vnav_ws && catkin init
 # LAB3、LAB4 共用一个工作区；catkin_simple 和 mav_comm 用 dependencies/ 里的副本，不要另外复制
 cp -r ~/labs/lab3/tesse-ros-bridge ~/labs/lab4/dependencies ~/vnav_ws/src/
-cp -r ~/26second-seme/lab3/controller_pkg ~/26second-seme/lab4/planner_pkg ~/26second-seme/lab4/trajectory_generation_pkg ~/vnav_ws/src/
+# 本仓库的三个包用软链接接入工作区，git pull 后无需再复制
+cd ~/vnav_ws/src && ln -s ~/LEARN-MIT16.485/lab3/controller_pkg controller_pkg && ln -s ~/LEARN-MIT16.485/lab4/planner_pkg planner_pkg && ln -s ~/LEARN-MIT16.485/lab4/trajectory_generation_pkg trajectory_generation_pkg
 # 桥接修补：节点脚本改用 python3；LAB4 模拟器时钟清零时不再因断言崩溃
 cd ~/vnav_ws/src/tesse-ros-bridge/ROS/src/tesse_ros_bridge
 sed -i '1s|^#!/usr/bin/env python$|#!/usr/bin/env python3|' tesse_ros_node.py quadrotor_control_interface.py
-python3 ~/26second-seme/lab4/scripts/patch_bridge.py tesse_ros_node.py
+python3 ~/LEARN-MIT16.485/lab4/scripts/patch_bridge.py tesse_ros_node.py
 cd ~/vnav_ws/src/tesse-ros-bridge/tesse-interface && pip3 install --user --no-deps --no-build-isolation .
 cd ~/vnav_ws && catkin build && source devel/setup.bash
 mkdir -p ~/vnav-builds && cd ~/vnav-builds && curl -L -o lab3.zip https://vnav.mit.edu/material/lab3.zip && unzip -oq lab3.zip && chmod +x lab3/lab3.x86_64
 # 辅助脚本与环境文件（LAB4 也会用到）
 mkdir -p ~/lab3_work/bags ~/lab3_work/plots ~/lab3_work/logs
 printf 'source /opt/ros/noetic/setup.bash\nsource ~/vnav_ws/devel/setup.bash\nexport DISPLAY=:0\n' > ~/lab3_work/env.sh
-cp ~/26second-seme/lab3/scripts/*.py ~/26second-seme/lab3/scripts/run_trial.sh ~/lab3_work/ && chmod +x ~/lab3_work/run_trial.sh
+cp ~/LEARN-MIT16.485/lab3/scripts/*.py ~/LEARN-MIT16.485/lab3/scripts/d1_tf2_check.cpp ~/LEARN-MIT16.485/lab3/scripts/run_trial.sh ~/lab3_work/ && chmod +x ~/lab3_work/run_trial.sh
 ```
 
 编译应显示 `All N packages succeeded!`：这台主机上 N = 20（含 lab2 的包），全新环境是 19。每打开一个新终端，先运行 `source ~/lab3_work/env.sh`。
@@ -98,7 +99,7 @@ rqt_graph
 - **`tf_echo`**：打印的 yaw 角持续变化。rviz 里 `av-desired` 和 `base_link_gt` 两个坐标系一起转动，并且几乎重合。
 - **`yaw_plot.py`**：期望偏航角以 −0.5 rad/s 匀速转动，无人机偏航滞后 5.86° ± 0.10°，参照 [av_desired_yaw.txt](results/logs/av_desired_yaw.txt)。
 - **`rosnode info`**：控制器订阅 `/desired_state` 和 `/current_state`，发布 `/rotor_speed_cmds`。
-- **话题频率**：`/rotor_speed_cmds` 约 99 Hz。
+- **话题频率**：`/rotor_speed_cmds` 约 98 Hz（参照记录为 97.5 Hz）。
 - **导出节点图 PNG**：`python3 ~/lab3_work/rosgraph_dot.py /tmp/g.dot && dot -Tpng /tmp/g.dot -o ~/lab3_work/rqt_graph.png`。
 
 ## 4. 调参
@@ -120,7 +121,7 @@ for b in demo_default demo_accurate demo_final; do python3 ~/lab3_work/jitter_ch
 | 20/7/30/4 | 跟得紧，但高频颤振，螺旋桨频繁反转 | 1.15° | 约 20 rad/s |
 | **8/5/10/2（最终）** | 平稳 | 0.26° | 约 46 rad/s |
 
-全部 23 组调参实验见 [tuning.txt](results/logs/tuning.txt) 和 [plots](results/plots/)。
+全部 36 组调参实验（悬停 17 组、绕圈 19 组）见 [tuning.txt](results/logs/tuning.txt) 和 [plots](results/plots/)。
 
 ## 5. 简答题
 
