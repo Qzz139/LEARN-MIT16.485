@@ -234,3 +234,7 @@ __marimo__/
 /lab0/data/phone_jpg/
 /lab0/results/calibration/corners/
 /lab0/results/calibration/before_after.png
+
+# Lab reports from LAB3 on (kept locally, handed in with the submission zip)
+/lab3/report/
+/lab4/report/
