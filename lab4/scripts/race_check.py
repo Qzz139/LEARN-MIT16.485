@@ -4,8 +4,8 @@
 Needs /current_state, /desired_state, /desired_traj_vertices (gates) and, if the bridge
 was started with publish_collisions:=true, /tesse/collision.
   - gate i is passed when the drone comes within R of the gate centre, in gate order
-  - gate time = first entry into the R-ball (the closest approach can be much later when
-    the drone settles into a hover at the final gate)
+  - gate time = first entry into the R-ball, interpolated between the 20 ms odometry samples
+    (the closest approach can be much later, when the drone hovers at the final gate)
   - race time = from the first /desired_state (trajectory start) to the last gate's time
   - smoothness: share of reversed rotor commands, rotor-command step RMS
 """
@@ -75,14 +75,16 @@ def main():
         else:
             j_in = j
         passed += int(hit and passed == i)
-        last_t = t[j_in]
-        t_gate.append(t[j_in])
-        print(f" {i:4d} | {d[j]:11.3f}  {t[j_in]:8.2f} | {np.linalg.norm(vel[j_in]):10.2f}  | {'yes' if hit else 'NO'}")
+        last_t = t_in = t[j_in]
+        if hit and j_in > 0 and d[j_in - 1] > args.pass_radius:  # interpolate the crossing between the 20 ms samples
+            t_in = t[j_in - 1] + (d[j_in - 1] - args.pass_radius) / (d[j_in - 1] - d[j_in]) * (t[j_in] - t[j_in - 1])
+        t_gate.append(t_in)
+        print(f" {i:4d} | {d[j]:11.3f}  {t_in:8.3f} | {np.linalg.norm(vel[j_in]):10.2f}  | {'yes' if hit else 'NO'}")
     finished = passed == len(gates)
     race_time = t_gate[-1] if finished else t[-1]
     print(f"gates passed in order: {passed}/{len(gates)}")
     print(f"race time (trajectory start -> last gate): "
-          + (f"{race_time:.2f} s" if finished else f"DNF (stopped at gate {passed}, {t[-1]:.1f} s recorded)"))
+          + (f"{race_time:.3f} s" if finished else f"DNF (stopped at gate {passed}, {t[-1]:.1f} s recorded)"))
     print(f"max speed: {np.max(np.linalg.norm(vel, axis=1)):.2f} m/s")
     # resting on the floor before take-off reports Floor contacts: only count airborne ones
     airborne = np.nonzero(pos[:, 2] > 0.5)[0]
@@ -124,7 +126,7 @@ def main():
         ax[1].set_xlabel("time since trajectory start [s]")
         ax[1].set_ylabel("z [m]")
         ax[1].legend()
-        ax[1].set_title((f"race time {race_time:.2f} s" if finished else "DNF") + f", {passed}/{len(gates)} gates")
+        ax[1].set_title((f"race time {race_time:.3f} s" if finished else "DNF") + f", {passed}/{len(gates)} gates")
         fig.suptitle(args.title)
         fig.tight_layout()
         fig.savefig(args.plot, dpi=140)
