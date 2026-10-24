@@ -90,6 +90,7 @@ grep -q "sim time went back" "$BRIDGE/tesse_ros_node.py" || {
 sed -i '1s|^#!/usr/bin/env python$|#!/usr/bin/env python3|' "$BRIDGE/tesse_ros_node.py" "$BRIDGE/quadrotor_control_interface.py"
 
 # ---- bring-up (only what is not running) ------------------------------------
+tmux ls 2> /dev/null | grep -q ^lab3- && "$REPO/lab3/circle.sh" stop   # LAB3 leftovers would keep publishing the circle
 if ! master_up; then say "starting roscore"; start lab4-core roscore; wait_for "roscore" 30 master_up; fi
 # Probing which OpenGL version it can use crashes the Unity player under WSLg most of
 # the time ("[xcb] Unknown sequence number while processing queue"), ~1.5 s after its
