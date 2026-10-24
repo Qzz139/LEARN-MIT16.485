@@ -42,7 +42,7 @@ cp ~/LEARN-MIT16.485/lab3/scripts/*.py ~/LEARN-MIT16.485/lab3/scripts/d1_tf2_che
 第一个终端必须是 Windows 桌面上的 Ubuntu 终端。`~/.bashrc` 里设置了 `LIBGL_ALWAYS_SOFTWARE=1`（给 rviz 用），启动模拟器时要去掉它，否则 Unity 会退回软件渲染：
 
 ```bash
-cd ~/vnav-builds/lab3 && env -u LIBGL_ALWAYS_SOFTWARE ./lab3.x86_64
+cd ~/vnav-builds/lab3 && env -u LIBGL_ALWAYS_SOFTWARE ./lab3.x86_64 -force-glcore33
 ```
 
 ```bash
@@ -122,6 +122,18 @@ for b in demo_default demo_accurate demo_final; do python3 ~/lab3_work/jitter_ch
 | **8/5/10/2（最终）** | 平稳 | 0.26° | 约 46 rad/s |
 
 全部 36 组调参实验（悬停 17 组、绕圈 19 组）见 [tuning.txt](results/logs/tuning.txt) 和 [plots](results/plots/)。
+
+## 一键版（现场演示用）
+
+在 Windows 桌面上打开的 Ubuntu-20.04 终端里运行。模拟器、roscore、桥接节点、rviz 中哪个没在运行就启动哪个，然后复位、用 `traj_tracking.launch` 绕圈，15 s 后录 40 s 并分析：
+
+```bash
+~/LEARN-MIT16.485/lab3/circle.sh
+```
+
+**应看到**：位置误差 RMS 约 0.04 m、偏航误差约 5.9°、俯仰抖动约 0.26°，以及 `base_link_gt - av-desired yaw: mean` 约 5.9°。结果保存在 `~/lab3_runs/<时间>/`（`circle.bag`、`circle.png`、`yaw.png`、`summary.txt`）。跑完后无人机继续绕圈。
+
+关闭：`~/LEARN-MIT16.485/lab3/circle.sh stop`。LAB3 和 LAB4 的模拟器占用同样的端口；`circle.sh` 和 `lab4/race.sh` 启动时都会先关掉对方留下的进程，可以直接切换。
 
 ## 5. 简答题
 
